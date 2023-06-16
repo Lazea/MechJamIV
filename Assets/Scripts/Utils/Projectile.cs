@@ -19,7 +19,6 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         damage = damage.Clone();
-        Debug.LogFormat("[{0}] {1}", this.name, damage.guid);
     }
 
     // Update is called once per frame

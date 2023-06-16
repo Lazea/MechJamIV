@@ -28,17 +28,9 @@ public static class CombatUtils
         Queue<System.Guid> guidBuffer,
         System.Guid guid)
     {
-        Debug.Log("Buffer:");
-        foreach(System.Guid g in guidBuffer)
-            Debug.Log(g);
-        Debug.LogFormat("Check against {0}", guid);
         if (guidBuffer.Any(o => o.Equals(guid)))
-        {
-            Debug.Log("GUID is in Buffer");
             return false;
-        }
 
-        Debug.Log("GUID is NOT in Buffer");
         if (guidBuffer.Count >= GameSettings.guidBufferCapacity)
             guidBuffer.Dequeue();
         guidBuffer.Enqueue(guid);

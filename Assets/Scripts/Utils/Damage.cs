@@ -12,7 +12,6 @@ public class Damage
         DamageType damageType)
     {
         guid = System.Guid.NewGuid();
-        UnityEngine.Debug.Log("Damage new GUID: " + guid);
         this.amount = amount;
         this.shieldMultiplier = shieldMultiplier;
         this.damageType = damageType;
