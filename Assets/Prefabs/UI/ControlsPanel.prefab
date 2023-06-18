@@ -295,12 +295,12 @@ PrefabInstance:
     - target: {fileID: 187662810350801411, guid: 7ad591f95acd6ae4eb5ba726ea3c709f,
         type: 3}
       propertyPath: m_Name
-      value: Title (TMP)
+      value: Controls Title (TMP)
       objectReference: {fileID: 0}
     - target: {fileID: 4337624617820781864, guid: 7ad591f95acd6ae4eb5ba726ea3c709f,
         type: 3}
       propertyPath: m_fontSize
-      value: 96.65
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4730422485241956871, guid: 7ad591f95acd6ae4eb5ba726ea3c709f,
         type: 3}

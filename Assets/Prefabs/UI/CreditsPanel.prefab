@@ -233,6 +233,16 @@ PrefabInstance:
       propertyPath: m_text
       value: Credits
       objectReference: {fileID: 0}
+    - target: {fileID: 3958027473355435505, guid: 26e0758a6ee50744cb9aa1846b673895,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958027473355435505, guid: 26e0758a6ee50744cb9aa1846b673895,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5969351783252316279, guid: 26e0758a6ee50744cb9aa1846b673895,
         type: 3}
       propertyPath: m_Name
@@ -281,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 6862902757044124555, guid: 26e0758a6ee50744cb9aa1846b673895,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6862902757044124555, guid: 26e0758a6ee50744cb9aa1846b673895,
         type: 3}

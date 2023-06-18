@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e652fa06c37c84b84c9e6c51b3b39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainPanel: {fileID: 1657763792}
   mainMenuPanel: {fileID: 601881638}
   optionsMenuPanel: {fileID: 813387387}
   controlsPanel: {fileID: 2079097148}
