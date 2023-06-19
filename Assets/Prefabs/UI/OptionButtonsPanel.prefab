@@ -510,6 +510,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectsVolumeSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 8530551080599177573, guid: 5e57fc41bd8640343a12c92c4593ed7e,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 0.009
+      objectReference: {fileID: 0}
     - target: {fileID: 8530551080690394993, guid: 5e57fc41bd8640343a12c92c4593ed7e,
         type: 3}
       propertyPath: m_text
@@ -538,6 +543,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3869189082248613312}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4886552907191665827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8530551080599177571, guid: 5e57fc41bd8640343a12c92c4593ed7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3869189082248613312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6494009958599301673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4886552907191665827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ed55936bdb54d84e15ca3031fc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerParameter: EffectsVolumeParam
 --- !u!1001 &3869189082416982666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -680,6 +704,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicVolumeSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 8530551080599177573, guid: 5e57fc41bd8640343a12c92c4593ed7e,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 0.009
+      objectReference: {fileID: 0}
     - target: {fileID: 8530551080690394993, guid: 5e57fc41bd8640343a12c92c4593ed7e,
         type: 3}
       propertyPath: m_text
@@ -708,6 +737,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3869189082416982666}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4886552907357938665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8530551080599177571, guid: 5e57fc41bd8640343a12c92c4593ed7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3869189082416982666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5632458683044778229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4886552907357938665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ed55936bdb54d84e15ca3031fc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerParameter: MusicVolumeParam
 --- !u!1001 &3869189082426050114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -850,6 +898,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIVolumeSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 8530551080599177573, guid: 5e57fc41bd8640343a12c92c4593ed7e,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 0.009
+      objectReference: {fileID: 0}
     - target: {fileID: 8530551080690394993, guid: 5e57fc41bd8640343a12c92c4593ed7e,
         type: 3}
       propertyPath: m_text
@@ -878,6 +931,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3869189082426050114}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4886552907364912929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8530551080599177571, guid: 5e57fc41bd8640343a12c92c4593ed7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3869189082426050114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1442023361908967318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4886552907364912929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ed55936bdb54d84e15ca3031fc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerParameter: UIVolumeParam
 --- !u!1001 &4886552906817039561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1020,6 +1092,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MasterVolumeSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 8530551080599177573, guid: 5e57fc41bd8640343a12c92c4593ed7e,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 0.009
+      objectReference: {fileID: 0}
     - target: {fileID: 8530551080690394993, guid: 5e57fc41bd8640343a12c92c4593ed7e,
         type: 3}
       propertyPath: m_text
@@ -1042,6 +1119,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e57fc41bd8640343a12c92c4593ed7e, type: 3}
+--- !u!1 &3869189081901245866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8530551080599177571, guid: 5e57fc41bd8640343a12c92c4593ed7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4886552906817039561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2246923624671859444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3869189081901245866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ed55936bdb54d84e15ca3031fc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerParameter: MasterVolumeParam
 --- !u!224 &3869189081901245867 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8530551080599177570, guid: 5e57fc41bd8640343a12c92c4593ed7e,
