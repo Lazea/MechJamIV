@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour
 {
+    public GameObject mainPanel;
     public GameObject mainMenuPanel;
     public GameObject optionsMenuPanel;
     public GameObject controlsPanel;
@@ -16,6 +17,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void DisplayMainMenu()
     {
+        mainPanel.SetActive(true);
         mainMenuPanel.SetActive(true);
         optionsMenuPanel.SetActive(false);
         controlsPanel.SetActive(false);
@@ -24,6 +26,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void DisplayOptionsMenu()
     {
+        mainPanel.SetActive(true);
         mainMenuPanel.SetActive(false);
         optionsMenuPanel.SetActive(true);
         controlsPanel.SetActive(false);
@@ -32,6 +35,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void DisplayControls()
     {
+        mainPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         optionsMenuPanel.SetActive(false);
         controlsPanel.SetActive(true);
@@ -40,6 +44,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void DisplayCredits()
     {
+        mainPanel.SetActive(true);
         mainMenuPanel.SetActive(false);
         optionsMenuPanel.SetActive(false);
         controlsPanel.SetActive(false);

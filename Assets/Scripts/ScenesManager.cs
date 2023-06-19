@@ -39,12 +39,14 @@ public class ScenesManager : Singleton<ScenesManager>
     public void LoadScene(int i)
     {
         Debug.Log("Loading Scene: " + i);
+        Time.timeScale = 1f;
         SceneManager.LoadScene(i);
     }
 
     public void QuitGame()
     {
         Debug.Log("Quitting Game");
+        Time.timeScale = 1f;
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
