@@ -80,20 +80,12 @@ public class PlayerMovementController : MonoBehaviour
         anim.SetFloat("SpeedY", move.y);
 
         rb.AddForce(Vector3.down * downForce);
-        bool grounded = GroundCheck();
-        if(!isGrounded && grounded)
+        isGrounded = GroundCheck();
+        if (isGrounded && verticalThrusterFuel <= 0f)
         {
             verticalThrusterFuel = maxVerticalThrusterFuel;
             verticalThrustLock = true;
         }
-        if(verticalThrusterFuel != maxVerticalThrusterFuel)
-        {
-            if(!verticalThrustLock && isGrounded)
-            {
-                verticalThrusterFuel = maxVerticalThrusterFuel;
-            }
-        }
-        isGrounded = GroundCheck();
 
         HandleVerticalThrust();
         lateralThrustCooldownTime = Mathf.Max(
