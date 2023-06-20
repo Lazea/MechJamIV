@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
+                    "name": "VerticalThrust",
                     "type": "Button",
                     "id": "1ed59bdc-988d-46ba-91fc-318f5d41b280",
                     "expectedControlType": "Button",
@@ -214,7 +214,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "VerticalThrust",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -225,7 +225,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "VerticalThrust",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

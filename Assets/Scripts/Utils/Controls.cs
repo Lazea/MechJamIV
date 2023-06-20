@@ -55,7 +55,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""name"": ""VerticalThrust"",
                     ""type"": ""Button"",
                     ""id"": ""1ed59bdc-988d-46ba-91fc-318f5d41b280"",
                     ""expectedControlType"": ""Button"",
@@ -236,7 +236,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""VerticalThrust"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -247,7 +247,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""VerticalThrust"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -432,7 +432,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
-        m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
+        m_Gameplay_VerticalThrust = m_Gameplay.FindAction("VerticalThrust", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Melee = m_Gameplay.FindAction("Melee", throwIfNotFound: true);
         m_Gameplay_Shoot = m_Gameplay.FindAction("Shoot", throwIfNotFound: true);
@@ -506,7 +506,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Movement;
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_Dash;
-    private readonly InputAction m_Gameplay_Jump;
+    private readonly InputAction m_Gameplay_VerticalThrust;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Melee;
     private readonly InputAction m_Gameplay_Shoot;
@@ -520,7 +520,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
-        public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
+        public InputAction @VerticalThrust => m_Wrapper.m_Gameplay_VerticalThrust;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Melee => m_Wrapper.m_Gameplay_Melee;
         public InputAction @Shoot => m_Wrapper.m_Gameplay_Shoot;
@@ -545,9 +545,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
+            @VerticalThrust.started += instance.OnVerticalThrust;
+            @VerticalThrust.performed += instance.OnVerticalThrust;
+            @VerticalThrust.canceled += instance.OnVerticalThrust;
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
@@ -579,9 +579,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
+            @VerticalThrust.started -= instance.OnVerticalThrust;
+            @VerticalThrust.performed -= instance.OnVerticalThrust;
+            @VerticalThrust.canceled -= instance.OnVerticalThrust;
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
@@ -668,7 +668,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
+        void OnVerticalThrust(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);

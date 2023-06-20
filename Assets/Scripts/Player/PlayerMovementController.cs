@@ -9,10 +9,16 @@ public class PlayerMovementController : MonoBehaviour
     public float downForce = 5f;
     Vector2 inputMove;
 
-    [Header("Jumping")]
-    public float jumpHeight = 2.5f;
-    int airJumpsPerformed;
-    public int airJumps = 1;
+    [Header("Vertical Thrusters")]
+    public float verticalThrust = 15f;
+    public AnimationCurve maxVerticalSpeedFuleFalloff;
+    public float maxVerticalThrusterFuel = 100f;
+    public float verticalThrusterFuleRate = 10f;
+    float verticalThrusterFuel;
+    bool verticalThrusting;
+    bool verticalThrustLock;
+    public float verticalThrustCooldown = 1.5f;
+    float verticalThrustCooldownTime;
 
     [Header("Ground Check")]
     public float groundCheckDistance = 0.2f;
@@ -35,14 +41,28 @@ public class PlayerMovementController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<CapsuleCollider>();
-        coll.material = staticMaterial;
+        coll.material = new PhysicMaterial();
+        coll.material.staticFriction = staticMaterial.staticFriction;
+        coll.material.dynamicFriction = staticMaterial.dynamicFriction;
+        coll.material.frictionCombine = staticMaterial.frictionCombine;
+        coll.material.bounciness = staticMaterial.bounciness;
+        coll.material.bounceCombine = staticMaterial.bounceCombine;
 
         anim = GetComponent<Animator>();
+
+        verticalThrustCooldownTime = verticalThrustCooldown;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    private void FixedUpdate()
+    {
+        HandleColliderMaterial();
+
         anim.SetFloat(
             "Speed",
             Mathf.Lerp(anim.GetFloat("Speed"), inputMove.magnitude, moveSmooth)
@@ -55,18 +75,23 @@ public class PlayerMovementController : MonoBehaviour
         anim.SetFloat("SpeedX", move.x);
         anim.SetFloat("SpeedY", move.y);
 
-        HandleColliderMaterial();
-    }
-
-    private void FixedUpdate()
-    {
         rb.AddForce(Vector3.down * downForce);
         bool grounded = GroundCheck();
         if(!isGrounded && grounded)
         {
-            airJumpsPerformed = 0;
+            verticalThrusterFuel = maxVerticalThrusterFuel;
+            verticalThrustLock = true;
+        }
+        if(verticalThrusterFuel != maxVerticalThrusterFuel)
+        {
+            if(!verticalThrustLock && isGrounded)
+            {
+                verticalThrusterFuel = maxVerticalThrusterFuel;
+            }
         }
         isGrounded = GroundCheck();
+
+        HandleVerticalThrust();
     }
 
     public bool GroundCheck()
@@ -84,10 +109,67 @@ public class PlayerMovementController : MonoBehaviour
 
     void HandleColliderMaterial()
     {
-        float targetFric = (inputMove.magnitude >= 0.05f) ? dynamicMaterial.staticFriction : staticMaterial.staticFriction;
-        float fric = Mathf.Lerp(coll.material.staticFriction, targetFric, 0.25f);
-        coll.material.staticFriction = fric;
-        coll.material.dynamicFriction = fric;
+        float targetStaticFriction = 0f;
+        float targetDynamicFriction = 0f;
+        if (isGrounded)
+        {
+            bool isMoving = (inputMove.magnitude >= 0.01f);
+            coll.material.frictionCombine = isMoving ?
+                dynamicMaterial.frictionCombine : staticMaterial.frictionCombine;
+            targetStaticFriction = (inputMove.magnitude >= 0.01f) ?
+                dynamicMaterial.staticFriction : staticMaterial.staticFriction;
+            targetDynamicFriction = (inputMove.magnitude >= 0.01f) ?
+                dynamicMaterial.dynamicFriction : staticMaterial.dynamicFriction;
+        }
+        else
+        {
+            coll.material.frictionCombine = dynamicMaterial.frictionCombine;
+            targetStaticFriction = dynamicMaterial.staticFriction;
+            targetDynamicFriction = dynamicMaterial.dynamicFriction;
+        }
+
+        coll.material.staticFriction = Mathf.Lerp(
+            coll.material.staticFriction,
+            targetStaticFriction,
+            0.65f);
+        coll.material.dynamicFriction = Mathf.Lerp(
+            coll.material.dynamicFriction,
+            targetDynamicFriction,
+            0.65f);
+    }
+
+    public void HandleVerticalThrust()
+    {
+        if(verticalThrustLock)
+        {
+            verticalThrustCooldownTime += Time.fixedDeltaTime;
+            if(verticalThrustCooldownTime >= verticalThrustCooldown)
+            {
+                verticalThrustCooldownTime = 0f;
+                verticalThrustLock = false;
+            }
+        }
+        else if (verticalThrusting)
+        {
+            if (verticalThrusterFuel <= 0f)
+            {
+                verticalThrusterFuel = 0f;
+            }
+            else
+            {
+                rb.AddForce(Vector3.up * verticalThrust);
+                float _maxVerticalSpeed = maxVerticalSpeedFuleFalloff.Evaluate(
+                    verticalThrusterFuel / maxVerticalThrusterFuel);
+                if (rb.velocity.y >= _maxVerticalSpeed)
+                {
+                    Vector3 rbVel = rb.velocity;
+                    rbVel.y = _maxVerticalSpeed;
+                    rb.velocity = rbVel;
+                }
+
+                verticalThrusterFuel -= verticalThrusterFuleRate * Time.fixedDeltaTime;
+            }
+        }
     }
 
     public void Move(Vector2 move)
@@ -95,32 +177,14 @@ public class PlayerMovementController : MonoBehaviour
         inputMove = move;
     }
 
-    public bool CanJump()
+    public void VerticalThrust()
     {
-        if(isGrounded)
-        {
-            return true;
-        }
-        else
-        {
-            return (airJumpsPerformed < airJumps);
-        }
+        verticalThrusting = !verticalThrustLock;
     }
 
-    public void Jump()
+    public void VerticalThrustRelease()
     {
-        if(!CanJump())
-            return;
-        
-        if(!isGrounded)
-        {
-            airJumpsPerformed++;
-        }
-        
-        float jumpSpeed = Mathf.Sqrt(-2f * (Physics.gravity.y - downForce) * jumpHeight);
-        Vector3 vel = rb.velocity;
-        vel.y = jumpSpeed;
-        rb.velocity = vel;
+        verticalThrusting = false;
     }
 
     private void OnDrawGizmos()

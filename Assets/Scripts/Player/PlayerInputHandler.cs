@@ -10,19 +10,24 @@ public class PlayerInputHandler : MonoBehaviour
     [Header("Movement Events")]
     public UnityEvent<Vector2> onLook;
     public UnityEvent<Vector2> onMove;
-    public UnityEvent onJump;
+    public UnityEvent onVerticalThrustHold;
+    public UnityEvent onVerticalThrustRelease;
     public UnityEvent onDash;
 
     [Header("Action Events")]
     public UnityEvent onShoot;
     public UnityEvent onMelee;
     public UnityEvent onInteractHold;
+    public UnityEvent onInteractRelease;
     public UnityEvent onAbilityA;
     public UnityEvent onAbilityAHold;
+    public UnityEvent onAbilityARelease;
     public UnityEvent onAbilityB;
     public UnityEvent onAbilityBHold;
+    public UnityEvent onAbilityBRelease;
     public UnityEvent onAbilityC;
     public UnityEvent onAbilityCHold;
+    public UnityEvent onAbilityCRelease;
 
     void Awake()
     {
@@ -33,20 +38,25 @@ public class PlayerInputHandler : MonoBehaviour
         controls.Movement.performed += ctx => { onMove.Invoke(ctx.ReadValue<Vector2>()); };
         controls.Movement.canceled += ctx => { onMove.Invoke(Vector2.zero); };
 
-        controls.Jump.started += ctx => { onJump.Invoke(); };
+        controls.VerticalThrust.started += ctx => { onVerticalThrustHold.Invoke(); };
+        controls.VerticalThrust.canceled += ctx => { onVerticalThrustRelease.Invoke(); };
         controls.Dash.started += ctx => { onDash.Invoke(); };
 
         controls.Shoot.started += ctx => { onShoot.Invoke(); };
         controls.Melee.started += ctx => { onMelee.Invoke(); };
         controls.Interact.started += ctx => { onInteractHold.Invoke(); };
         controls.Interact.performed += ctx => { onInteractHold.Invoke(); };
+        controls.Interact.canceled += ctx => { onInteractRelease.Invoke(); };
 
-        controls.AbilityA.started += ctx => { onAbilityA.Invoke(); onAbilityAHold.Invoke(); };
+        controls.AbilityA.started += ctx => { onAbilityA.Invoke(); };
         controls.AbilityA.performed += ctx => { onAbilityAHold.Invoke(); };
-        controls.AbilityB.started += ctx => { onAbilityB.Invoke(); onAbilityBHold.Invoke(); };
+        controls.AbilityA.canceled += ctx => { onAbilityARelease.Invoke(); };
+        controls.AbilityB.started += ctx => { onAbilityB.Invoke(); };
         controls.AbilityB.performed += ctx => { onAbilityBHold.Invoke(); };
-        controls.AbilityC.started += ctx => { onAbilityC.Invoke(); onAbilityCHold.Invoke(); };
+        controls.AbilityB.canceled += ctx => { onAbilityBRelease.Invoke(); };
+        controls.AbilityC.started += ctx => { onAbilityC.Invoke(); };
         controls.AbilityC.performed += ctx => { onAbilityCHold.Invoke(); };
+        controls.AbilityC.canceled += ctx => { onAbilityCRelease.Invoke(); };
     }
 
     private void OnEnable()
