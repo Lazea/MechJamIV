@@ -12,7 +12,7 @@ public class PlayerInputHandler : MonoBehaviour
     public UnityEvent<Vector2> onMove;
     public UnityEvent onVerticalThrustHold;
     public UnityEvent onVerticalThrustRelease;
-    public UnityEvent onDash;
+    public UnityEvent onLateralThrust;
 
     [Header("Action Events")]
     public UnityEvent onShoot;
@@ -40,7 +40,7 @@ public class PlayerInputHandler : MonoBehaviour
 
         controls.VerticalThrust.started += ctx => { onVerticalThrustHold.Invoke(); };
         controls.VerticalThrust.canceled += ctx => { onVerticalThrustRelease.Invoke(); };
-        controls.Dash.started += ctx => { onDash.Invoke(); };
+        controls.LateralThrust.started += ctx => { onLateralThrust.Invoke(); };
 
         controls.Shoot.started += ctx => { onShoot.Invoke(); };
         controls.Melee.started += ctx => { onMelee.Invoke(); };

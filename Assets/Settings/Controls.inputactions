@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
+                    "name": "LateralThrust",
                     "type": "Button",
                     "id": "f2acc314-309f-4e7a-ac32-8a8b6b4045b5",
                     "expectedControlType": "Button",
@@ -192,7 +192,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "LateralThrust",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -203,7 +203,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "LateralThrust",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -9,6 +9,10 @@ public class PlayerMovementController : MonoBehaviour
     public float downForce = 5f;
     Vector2 inputMove;
 
+    [Header("Lateral Thrusters")]
+    public float lateralThrustCooldown = 1.5f;
+    float lateralThrustCooldownTime;
+
     [Header("Vertical Thrusters")]
     public float verticalThrust = 15f;
     public AnimationCurve maxVerticalSpeedFuleFalloff;
@@ -92,6 +96,9 @@ public class PlayerMovementController : MonoBehaviour
         isGrounded = GroundCheck();
 
         HandleVerticalThrust();
+        lateralThrustCooldownTime = Mathf.Max(
+            lateralThrustCooldownTime - Time.fixedDeltaTime,
+            0f);
     }
 
     public bool GroundCheck()
@@ -185,6 +192,15 @@ public class PlayerMovementController : MonoBehaviour
     public void VerticalThrustRelease()
     {
         verticalThrusting = false;
+    }
+
+    public void LateralThrust()
+    {
+        if (lateralThrustCooldownTime > 0f)
+            return;
+
+        anim.SetTrigger("LatThrust");
+        lateralThrustCooldownTime = lateralThrustCooldown;
     }
 
     private void OnDrawGizmos()
