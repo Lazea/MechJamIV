@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Handles application input events and invokes corresponding Unity events.
+/// </summary>
 public class AppInputHandler : MonoBehaviour
 {
     public Controls.AppActions appControls;

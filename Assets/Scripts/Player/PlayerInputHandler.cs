@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Handles player input events and invokes corresponding Unity events based on the player's actions.
+/// </summary>
 public class PlayerInputHandler : MonoBehaviour
 {
     public Controls.GameplayActions controls;

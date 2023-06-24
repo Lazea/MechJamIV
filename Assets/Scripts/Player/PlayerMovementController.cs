@@ -1,27 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SOGESys = SOGameEventSystem;
 
+/// <summary>
+/// Controls the movement of the player character using Unity's Rigidbody component.
+/// </summary>
 public class PlayerMovementController : MonoBehaviour
 {
+    public PlayerData data;
+
     [Header("Move Params")]
     public float moveSmooth = 1f;
     public float downForce = 5f;
     Vector2 inputMove;
 
-    [Header("Lateral Thrusters")]
-    public float lateralThrustCooldown = 1.5f;
+    // Lateral Thrusters
     float lateralThrustCooldownTime;
 
-    [Header("Vertical Thrusters")]
-    public float verticalThrust = 15f;
-    public AnimationCurve maxVerticalSpeedFuleFalloff;
-    public float maxVerticalThrusterFuel = 100f;
-    public float verticalThrusterFuleRate = 10f;
+    // Vertical Thrusters
     float verticalThrusterFuel;
     bool verticalThrusting;
     bool verticalThrustLock;
-    public float verticalThrustCooldown = 1.5f;
     float verticalThrustCooldownTime;
 
     [Header("Ground Check")]
@@ -34,6 +34,10 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Physics Material")]
     public PhysicMaterial staticMaterial;
     public PhysicMaterial dynamicMaterial;
+
+    [Header("Events")]
+    public SOGESys.Events.FloatGameEvent onVerticalThrustersFuelChange;
+    public SOGESys.BaseGameEvent onLateralThrustersReady;
 
     // Components
     Rigidbody rb;
@@ -54,7 +58,7 @@ public class PlayerMovementController : MonoBehaviour
 
         anim = GetComponent<Animator>();
 
-        verticalThrustCooldownTime = verticalThrustCooldown;
+        verticalThrustCooldownTime = data.verticalThrustCooldown;
     }
 
     // Update is called once per frame
@@ -67,6 +71,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         HandleColliderMaterial();
 
+        // Set speed for the animator
         anim.SetFloat(
             "Speed",
             Mathf.Lerp(anim.GetFloat("Speed"), inputMove.magnitude, moveSmooth)
@@ -79,21 +84,21 @@ public class PlayerMovementController : MonoBehaviour
         anim.SetFloat("SpeedX", move.x);
         anim.SetFloat("SpeedY", move.y);
 
+        // Applies a downward force
         rb.AddForce(Vector3.down * downForce);
+
+        // Handle ground
         isGrounded = GroundCheck();
-        if (isGrounded && verticalThrusterFuel <= 0f)
-        {
-            verticalThrusterFuel = maxVerticalThrusterFuel;
-            verticalThrustLock = true;
-        }
 
         HandleVerticalThrust();
-        lateralThrustCooldownTime = Mathf.Max(
-            lateralThrustCooldownTime - Time.fixedDeltaTime,
-            0f);
+        HandleLateralThrust();
     }
 
-    public bool GroundCheck()
+    /// <summary>
+    /// Checks if the player character is grounded by performing a raycast downward.
+    /// </summary>
+    /// <returns>True if the character is grounded, false otherwise.</returns>
+    bool GroundCheck()
     {
         Ray ray = new Ray(
             transform.position + coll.center,
@@ -106,12 +111,18 @@ public class PlayerMovementController : MonoBehaviour
         );
     }
 
+    /// <summary>
+    /// Handles the collider material properties based on the grounded state and input movement.
+    /// </summary>
     void HandleColliderMaterial()
     {
+        // Set the target friction values
         float targetStaticFriction = 0f;
         float targetDynamicFriction = 0f;
+
         if (isGrounded)
         {
+            // Check if the character is moving
             bool isMoving = (inputMove.magnitude >= 0.01f);
             coll.material.frictionCombine = isMoving ?
                 dynamicMaterial.frictionCombine : staticMaterial.frictionCombine;
@@ -127,6 +138,7 @@ public class PlayerMovementController : MonoBehaviour
             targetDynamicFriction = dynamicMaterial.dynamicFriction;
         }
 
+        // Smoothly interpolate the static and dynamic friction values
         coll.material.staticFriction = Mathf.Lerp(
             coll.material.staticFriction,
             targetStaticFriction,
@@ -137,18 +149,21 @@ public class PlayerMovementController : MonoBehaviour
             0.65f);
     }
 
-    public void HandleVerticalThrust()
+    /// <summary>
+    /// Handles the vertical thrusting behavior of the player character.
+    /// </summary>
+    void HandleVerticalThrust()
     {
-        if(verticalThrustLock)
+        if (verticalThrustLock)  // Lock thrust
         {
             verticalThrustCooldownTime += Time.fixedDeltaTime;
-            if(verticalThrustCooldownTime >= verticalThrustCooldown)
+            if(verticalThrustCooldownTime >= data.verticalThrustCooldown)
             {
                 verticalThrustCooldownTime = 0f;
                 verticalThrustLock = false;
             }
         }
-        else if (verticalThrusting)
+        else if (verticalThrusting) // Handle thrust
         {
             if (verticalThrusterFuel <= 0f)
             {
@@ -156,9 +171,9 @@ public class PlayerMovementController : MonoBehaviour
             }
             else
             {
-                rb.AddForce(Vector3.up * verticalThrust);
-                float _maxVerticalSpeed = maxVerticalSpeedFuleFalloff.Evaluate(
-                    verticalThrusterFuel / maxVerticalThrusterFuel);
+                rb.AddForce(Vector3.up * data.verticalThrust);
+                float _maxVerticalSpeed = data.maxVerticalSpeedFuelFalloff.Evaluate(
+                    verticalThrusterFuel / data.maxVerticalThrusterFuel);
                 if (rb.velocity.y >= _maxVerticalSpeed)
                 {
                     Vector3 rbVel = rb.velocity;
@@ -166,33 +181,69 @@ public class PlayerMovementController : MonoBehaviour
                     rb.velocity = rbVel;
                 }
 
-                verticalThrusterFuel -= verticalThrusterFuleRate * Time.fixedDeltaTime;
+                verticalThrusterFuel -= data.verticalThrusterFuleRate * Time.fixedDeltaTime;
             }
         }
+
+        if (isGrounded && verticalThrusterFuel <= 0f)
+        {
+            verticalThrusterFuel = data.maxVerticalThrusterFuel;
+            verticalThrustLock = true;
+        }
+
+        onVerticalThrustersFuelChange.Raise(verticalThrusterFuel);
     }
 
+    /// <summary>
+    /// Handles the cooldown time for lateral thrust.
+    /// </summary>
+    void HandleLateralThrust()
+    {
+        float prevCooldown = lateralThrustCooldownTime;
+        lateralThrustCooldownTime = Mathf.Max(
+            lateralThrustCooldownTime - Time.fixedDeltaTime,
+            0f);
+
+        // Check if cooldown is completed this frame
+        if (prevCooldown > 0f && lateralThrustCooldownTime <= 0f)
+            onLateralThrustersReady.Raise();
+    }
+
+    /// <summary>
+    /// Updates the input for character movement.
+    /// </summary>
+    /// <param name="move">The movement vector representing the input.</param>
     public void Move(Vector2 move)
     {
         inputMove = move;
     }
 
+    /// <summary>
+    /// Initiates vertical thrusting if not currently locked.
+    /// </summary>
     public void VerticalThrust()
     {
         verticalThrusting = !verticalThrustLock;
     }
 
+    /// <summary>
+    /// Stops vertical thrusting.
+    /// </summary>
     public void VerticalThrustRelease()
     {
         verticalThrusting = false;
     }
 
+    /// <summary>
+    /// Initiates lateral thrusting if the lateral thrust cooldown is not active.
+    /// </summary>
     public void LateralThrust()
     {
         if (lateralThrustCooldownTime > 0f)
             return;
 
         anim.SetTrigger("LatThrust");
-        lateralThrustCooldownTime = lateralThrustCooldown;
+        lateralThrustCooldownTime = data.lateralThrustCooldown;
     }
 
     private void OnDrawGizmos()

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the rotation of a camera target object based on input.
+/// </summary>
 public class CameraTarget : MonoBehaviour
 {
     Vector2 look;
@@ -45,6 +48,10 @@ public class CameraTarget : MonoBehaviour
         transform.localEulerAngles = angles;
     }
 
+    /// <summary>
+    /// Sets the input for camera rotation.
+    /// </summary>
+    /// <param name="look">The input vector representing the camera rotation.</param>
     public void SetLook(Vector2 look)
     {
         this.look = look;

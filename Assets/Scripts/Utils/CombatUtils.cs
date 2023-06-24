@@ -2,9 +2,19 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Provides utility methods for combat-related functionality.
+/// </summary>
 public static class CombatUtils
 {
-    public static void ApplyDamage(Damage damage, IDamageable damageable)
+    /// <summary>
+    /// Applies damage to a damageable object, taking into account shields and health.
+    /// </summary>
+    /// <param name="damage">The damage object to apply.</param>
+    /// <param name="damageable">The damageable object.</param>
+    public static void ApplyDamage(
+        Damage damage,
+        IDamageable damageable)
     {
         // Check GUID before applying damage
         if (!damageable.CheckGUIDIsInBuffer(damage.guid))
@@ -24,6 +34,12 @@ public static class CombatUtils
         }
     }
 
+    /// <summary>
+    /// Checks if the specified GUID is present in the GUID buffer.
+    /// </summary>
+    /// <param name="guidBuffer">The GUID buffer.</param>
+    /// <param name="guid">The GUID to check.</param>
+    /// <returns>True if the GUID is in the buffer, false otherwise.</returns>
     public static bool CheckGUIDIsInBuffer(
         Queue<System.Guid> guidBuffer,
         System.Guid guid)
@@ -37,6 +53,16 @@ public static class CombatUtils
         return true;
     }
 
+    /// <summary>
+    /// Performs a hit scan check to detect if a damageable object is hit by a raycast.
+    /// </summary>
+    /// <param name="damage">The damage to apply if a hit is detected.</param>
+    /// <param name="origin">The origin of the raycast.</param>
+    /// <param name="dir">The direction of the raycast.</param>
+    /// <param name="distance">The maximum distance of the raycast.</param>
+    /// <param name="hit">The RaycastHit information.</param>
+    /// <param name="mask">The layer mask for the raycast.</param>
+    /// <returns>True if a hit is detected, false otherwise.</returns>
     public static bool HitScanCheck(
         Damage damage,
         Vector3 origin,
@@ -60,6 +86,17 @@ public static class CombatUtils
         return false;
     }
 
+    /// <summary>
+    /// Performs a hitbox check to detect if damageable objects are hit within a specific area.
+    /// </summary>
+    /// <param name="damage">The damage to apply if hits are detected.</param>
+    /// <param name="origin">The origin of the hitbox.</param>
+    /// <param name="end">The end point of the hitbox.</param>
+    /// <param name="radius">The radius of the hitbox.</param>
+    /// <param name="hits">An array of RaycastHit information for each hit.</param>
+    /// <param name="mask">The layer mask for the hitbox check.</param>
+    /// <param name="coverMask">The layer mask for cover detection (optional).</param>
+    /// <returns>True if at least one hit is detected, false otherwise.</returns>
     public static bool HitboxCheck(
         Damage damage,
         Vector3 origin,
@@ -104,6 +141,16 @@ public static class CombatUtils
         return hitConfirm;
     }
 
+    /// <summary>
+    /// Performs an area-of-effect hit check to detect damageable objects within a specified radius.
+    /// </summary>
+    /// <param name="origin">The origin of the area-of-effect.</param>
+    /// <param name="radius">The radius of the area-of-effect.</param>
+    /// <param name="mask">The layer mask for the area-of-effect check.</param>
+    /// <param name="damage">The damage to apply to each detected damageable object.</param>
+    /// <param name="colliders">An array of colliders for the detected damageable objects.</param>
+    /// <param name="damageFalloff">The damage falloff curve (optional).</param>
+    /// <param name="coverMask">The layer mask for cover detection (optional).</param>
     public static void AOEHitCheck(
         Vector3 origin,
         float radius,

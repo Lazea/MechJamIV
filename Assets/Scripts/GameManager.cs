@@ -5,7 +5,10 @@ using UnityEngine.Events;
 
 public class GameManager : Singleton<GameManager>
 {
-    PlayerData playerData;
+    public PlayerData playerData;
+
+    GameObject player;
+    public GameObject Player { get { return player; } }
 
     public bool IsPaused
     {
@@ -15,6 +18,11 @@ public class GameManager : Singleton<GameManager>
     [Header("Events")]
     public UnityEvent onPause;
     public UnityEvent onResume;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     // Update is called once per frame
     void Update()
