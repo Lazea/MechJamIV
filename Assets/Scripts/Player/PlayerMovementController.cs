@@ -154,44 +154,47 @@ public class PlayerMovementController : MonoBehaviour
     /// </summary>
     void HandleVerticalThrust()
     {
-        if (verticalThrustLock)  // Lock thrust
+        if (verticalThrusting)
+            ApplyVerticalThrustForce();
+
+        if (!isGrounded)
+        {
+            verticalThrustCooldownTime = 0f;
+        }
+        else if(verticalThrusterFuel < data.maxVerticalThrusterFuel)
         {
             verticalThrustCooldownTime += Time.fixedDeltaTime;
-            if(verticalThrustCooldownTime >= data.verticalThrustCooldown)
+            if (verticalThrustCooldownTime >= data.verticalThrustCooldown)
             {
-                verticalThrustCooldownTime = 0f;
-                verticalThrustLock = false;
+                verticalThrustCooldownTime = data.verticalThrustCooldown;
+                float refillRate = data.verticalThrusterFuleRate * 2f * Time.fixedDeltaTime;
+                verticalThrusterFuel = Mathf.Min(
+                    verticalThrusterFuel + refillRate,
+                    data.maxVerticalThrusterFuel);
             }
-        }
-        else if (verticalThrusting) // Handle thrust
-        {
-            if (verticalThrusterFuel <= 0f)
-            {
-                verticalThrusterFuel = 0f;
-            }
-            else
-            {
-                rb.AddForce(Vector3.up * data.verticalThrust);
-                float _maxVerticalSpeed = data.maxVerticalSpeedFuelFalloff.Evaluate(
-                    verticalThrusterFuel / data.maxVerticalThrusterFuel);
-                if (rb.velocity.y >= _maxVerticalSpeed)
-                {
-                    Vector3 rbVel = rb.velocity;
-                    rbVel.y = _maxVerticalSpeed;
-                    rb.velocity = rbVel;
-                }
-
-                verticalThrusterFuel -= data.verticalThrusterFuleRate * Time.fixedDeltaTime;
-            }
-        }
-
-        if (isGrounded && verticalThrusterFuel <= 0f)
-        {
-            verticalThrusterFuel = data.maxVerticalThrusterFuel;
-            verticalThrustLock = true;
         }
 
         onVerticalThrustersFuelChange.Raise(verticalThrusterFuel);
+    }
+
+    void ApplyVerticalThrustForce()
+    {
+        if (verticalThrusterFuel <= 0f)
+            return;
+
+        rb.AddForce(Vector3.up * data.verticalThrust);
+        float _maxVerticalSpeed = data.maxVerticalSpeedFuelFalloff.Evaluate(
+            verticalThrusterFuel / data.maxVerticalThrusterFuel);
+        if (rb.velocity.y >= _maxVerticalSpeed)
+        {
+            Vector3 rbVel = rb.velocity;
+            rbVel.y = _maxVerticalSpeed;
+            rb.velocity = rbVel;
+        }
+
+        verticalThrusterFuel = Mathf.Max(
+            verticalThrusterFuel - data.verticalThrusterFuleRate * Time.fixedDeltaTime,
+            0f);
     }
 
     /// <summary>
