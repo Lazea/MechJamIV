@@ -1,0 +1,33 @@
+{
+    "FireMode": [
+        "SemiAuto",
+        "BurstFire",
+        "FullAuto"
+    ],
+    "FireModeModifier": [
+        "None",
+        "ClusterFire",
+        "RampUpFire",
+        "DualSplit",
+        "TrippleSplit"
+    ],
+    "ProjectileType": [
+        "Ballistic",
+        "EnergyBeam",
+        "Rocket",
+        "Laser"
+    ],
+    "ProjectileModifier": [
+        "None",
+        "Ricochet",
+        "Penetrate",
+        "ClusterOnHit",
+        "ExplodeOnHit"
+    ],
+    "DamageType": [
+        "Normal",
+        "Energy",
+        "Fire",
+        "Shock"
+    ]
+}

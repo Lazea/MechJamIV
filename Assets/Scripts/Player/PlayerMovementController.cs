@@ -89,6 +89,8 @@ public class PlayerMovementController : MonoBehaviour
 
         // Handle ground
         isGrounded = GroundCheck();
+        anim.SetBool("IsGrounded", isGrounded);
+        anim.SetBool("VertThrust", (verticalThrusting && verticalThrusterFuel > 0f));
 
         HandleVerticalThrust();
         HandleLateralThrust();

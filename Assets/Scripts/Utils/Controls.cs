@@ -82,7 +82,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Shoot"",
+                    ""name"": ""Fire"",
                     ""type"": ""Button"",
                     ""id"": ""2ac43459-8a69-4810-94d6-5b5595babf13"",
                     ""expectedControlType"": ""Button"",
@@ -280,7 +280,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -291,7 +291,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -435,7 +435,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Gameplay_VerticalThrust = m_Gameplay.FindAction("VerticalThrust", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Melee = m_Gameplay.FindAction("Melee", throwIfNotFound: true);
-        m_Gameplay_Shoot = m_Gameplay.FindAction("Shoot", throwIfNotFound: true);
+        m_Gameplay_Fire = m_Gameplay.FindAction("Fire", throwIfNotFound: true);
         m_Gameplay_AbilityA = m_Gameplay.FindAction("AbilityA", throwIfNotFound: true);
         m_Gameplay_AbilityB = m_Gameplay.FindAction("AbilityB", throwIfNotFound: true);
         m_Gameplay_AbilityC = m_Gameplay.FindAction("AbilityC", throwIfNotFound: true);
@@ -509,7 +509,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_VerticalThrust;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Melee;
-    private readonly InputAction m_Gameplay_Shoot;
+    private readonly InputAction m_Gameplay_Fire;
     private readonly InputAction m_Gameplay_AbilityA;
     private readonly InputAction m_Gameplay_AbilityB;
     private readonly InputAction m_Gameplay_AbilityC;
@@ -523,7 +523,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @VerticalThrust => m_Wrapper.m_Gameplay_VerticalThrust;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Melee => m_Wrapper.m_Gameplay_Melee;
-        public InputAction @Shoot => m_Wrapper.m_Gameplay_Shoot;
+        public InputAction @Fire => m_Wrapper.m_Gameplay_Fire;
         public InputAction @AbilityA => m_Wrapper.m_Gameplay_AbilityA;
         public InputAction @AbilityB => m_Wrapper.m_Gameplay_AbilityB;
         public InputAction @AbilityC => m_Wrapper.m_Gameplay_AbilityC;
@@ -554,9 +554,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Melee.started += instance.OnMelee;
             @Melee.performed += instance.OnMelee;
             @Melee.canceled += instance.OnMelee;
-            @Shoot.started += instance.OnShoot;
-            @Shoot.performed += instance.OnShoot;
-            @Shoot.canceled += instance.OnShoot;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
             @AbilityA.started += instance.OnAbilityA;
             @AbilityA.performed += instance.OnAbilityA;
             @AbilityA.canceled += instance.OnAbilityA;
@@ -588,9 +588,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Melee.started -= instance.OnMelee;
             @Melee.performed -= instance.OnMelee;
             @Melee.canceled -= instance.OnMelee;
-            @Shoot.started -= instance.OnShoot;
-            @Shoot.performed -= instance.OnShoot;
-            @Shoot.canceled -= instance.OnShoot;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
             @AbilityA.started -= instance.OnAbilityA;
             @AbilityA.performed -= instance.OnAbilityA;
             @AbilityA.canceled -= instance.OnAbilityA;
@@ -671,7 +671,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnVerticalThrust(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
-        void OnShoot(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
         void OnAbilityA(InputAction.CallbackContext context);
         void OnAbilityB(InputAction.CallbackContext context);
         void OnAbilityC(InputAction.CallbackContext context);

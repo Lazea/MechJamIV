@@ -24,9 +24,9 @@ public class CameraTarget : MonoBehaviour
     void Update()
     {
         transform.rotation *= Quaternion.AngleAxis(
-            look.x * xSensitivity, Vector3.up);
+            look.x * xSensitivity * Time.deltaTime, Vector3.up);
 
-        float yLook = look.y * ySensitivity;
+        float yLook = look.y * ySensitivity * Time.deltaTime;
         if (!invertedY)
             yLook *= -1f;
         transform.rotation *= Quaternion.AngleAxis(yLook, Vector3.right);

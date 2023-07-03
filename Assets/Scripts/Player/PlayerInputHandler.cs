@@ -18,7 +18,8 @@ public class PlayerInputHandler : MonoBehaviour
     public UnityEvent onLateralThrust;
 
     [Header("Action Events")]
-    public UnityEvent onShoot;
+    public UnityEvent onFire;
+    public UnityEvent onFireRelease;
     public UnityEvent onMelee;
     public UnityEvent onInteractHold;
     public UnityEvent onInteractRelease;
@@ -45,7 +46,8 @@ public class PlayerInputHandler : MonoBehaviour
         controls.VerticalThrust.canceled += ctx => { onVerticalThrustRelease.Invoke(); };
         controls.LateralThrust.started += ctx => { onLateralThrust.Invoke(); };
 
-        controls.Shoot.started += ctx => { onShoot.Invoke(); };
+        controls.Fire.started += ctx => { onFire.Invoke(); };
+        controls.Fire.canceled += ctx => { onFireRelease.Invoke(); };
         controls.Melee.started += ctx => { onMelee.Invoke(); };
         controls.Interact.started += ctx => { onInteractHold.Invoke(); };
         controls.Interact.performed += ctx => { onInteractHold.Invoke(); };
