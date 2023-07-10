@@ -14,3 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   shield: 35
+  aimSpeed: 1
+  attackInterval: 0.2
+  minAttackEventRate: 2
+  maxAttackEventRate: 3.5
+  aimAngle: 15
+  combatRange: 105

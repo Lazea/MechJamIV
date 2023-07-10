@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour, IDamageable
 {
+    public GameObject GameObject { get { return gameObject; } }
     Queue<Guid> guidBuffer = new Queue<Guid>(GameSettings.guidBufferCapacity);
     public int health;
     public int Health
@@ -14,7 +15,7 @@ public class Damageable : MonoBehaviour, IDamageable
     public int Shield
     {
         get { return 0; }
-        set {; }
+        set { ; }
     }
 
     // Start is called before the first frame update

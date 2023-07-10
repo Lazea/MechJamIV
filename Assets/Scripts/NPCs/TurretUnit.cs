@@ -3,72 +3,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretUnit : MonoBehaviour, IDamageable
+public class TurretUnit : BaseNPC
 {
-    [SerializeField]
-    ActorData data;
+    [HeaderAttribute("Aim Base")]
+    public Transform aimBase;
+    public float minLookAngle;
+    public float maxLookAngle;
 
-    Queue<Guid> guidBuffer = new Queue<Guid>(GameSettings.guidBufferCapacity);
-    public int health;
-    public int Health
-    {
-        get { return health; }
-        set { health = value; }
-    }
-    public int shield;
-    public int Shield
-    {
-        get { return shield; }
-        set { shield = value; }
-    }
-
-    Animator anim;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        health = data.health;
-        shield = data.shield;
-
-        anim = GetComponent<Animator>();
-    }
+    int maxShotCount = 6;
+    int shotCount;
+    float nextAttackTime;
+    float nextAttackEventTime;
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
-    }
+        base.Update();
 
-    public bool CheckGUIDIsInBuffer(Guid guid)
-    {
-        return CombatUtils.CheckGUIDIsInBuffer(guidBuffer, guid);
-    }
+        if(hasTarget)
+        {
+            HandleAim(aimBase, aim, minLookAngle, maxLookAngle);
+            
+            if(targetInCombatRange && targetInAim)
+            {
+                float t = Time.time;
+                if(t >= nextAttackEventTime)
+                {
+                    if(t >= nextAttackTime)
+                    {
+                        SpawnProjectile();
 
-    public void ApplyDamage(Damage damage)
-    {
-        CombatUtils.ApplyDamage(damage, this);
+                        shotCount++;
+                        if(shotCount >= maxShotCount)
+                        {
+                            shotCount = 0;
+                            
+                            float dt = UnityEngine.Random.Range(data.minAttackEventRate, data.maxAttackEventRate);
+                            nextAttackEventTime = Time.time + dt;
+                            nextAttackTime = nextAttackEventTime;
+                        }
+                        else
+                        {
+                            nextAttackTime = Time.time + data.attackInterval;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            shotCount = 0;
 
-        if (shield <= 0)
-            BreakShield();
-
-        if (health <= 0)
-            Kill();
-    }
-
-    [ContextMenu("Break Shield")]
-    public void BreakShield()
-    {
-        shield = 0;
-
-        // TODO: Call fx to provide feedback
-    }
-
-    [ContextMenu("Kill Unit")]
-    public void Kill()
-    {
-        health = 0;
-
-        // TODO: Set anim state to "Death" and destroy on animation event
-        Destroy(gameObject);
+            float dt = UnityEngine.Random.Range(data.minAttackEventRate, data.maxAttackEventRate);
+            nextAttackEventTime = Time.time + dt;
+            nextAttackTime = nextAttackEventTime;
+        }
     }
 }

@@ -25,9 +25,9 @@ public static class CombatUtils
         damageable.Shield -= shieldDamage;
         if (damageable.Shield <= 0)
         {
-            int healthDamage = Mathf.RoundToInt(Mathf.Abs(damageable.Shield) / damage.shieldMultiplier);
+            int healthDamage = Mathf.RoundToInt(
+                Mathf.Abs(damageable.Shield - shieldDamage) / damage.shieldMultiplier);
             damageable.Shield = 0;
-
             damageable.Health -= healthDamage;
             if (damageable.Health <= 0)
                 damageable.Health = 0;
@@ -56,28 +56,31 @@ public static class CombatUtils
     /// <summary>
     /// Performs a hit scan check to detect if a damageable object is hit by a raycast.
     /// </summary>
-    /// <param name="damage">The damage to apply if a hit is detected.</param>
     /// <param name="origin">The origin of the raycast.</param>
     /// <param name="dir">The direction of the raycast.</param>
     /// <param name="distance">The maximum distance of the raycast.</param>
     /// <param name="hit">The RaycastHit information.</param>
     /// <param name="mask">The layer mask for the raycast.</param>
+    /// <param name="damage">The damage to apply if a hit is detected (optional).</param>
     /// <returns>True if a hit is detected, false otherwise.</returns>
     public static bool HitScanCheck(
-        Damage damage,
         Vector3 origin,
         Vector3 dir,
         float distance,
         out RaycastHit hit,
-        LayerMask mask)
+        LayerMask mask,
+        Damage damage = default)
     {
         Ray ray = new Ray(origin, dir);
         if(Physics.Raycast(ray, out hit, distance, mask))
         {
-            IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
-            if (damageable != null)
+            if(damage != default)
             {
-                damageable.ApplyDamage(damage);
+                IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
+                if (damageable != null)
+                {
+                    damageable.ApplyDamage(damage);
+                }
             }
 
             return true;
@@ -89,22 +92,22 @@ public static class CombatUtils
     /// <summary>
     /// Performs a hitbox check to detect if damageable objects are hit within a specific area.
     /// </summary>
-    /// <param name="damage">The damage to apply if hits are detected.</param>
     /// <param name="origin">The origin of the hitbox.</param>
     /// <param name="end">The end point of the hitbox.</param>
     /// <param name="radius">The radius of the hitbox.</param>
     /// <param name="hits">An array of RaycastHit information for each hit.</param>
     /// <param name="mask">The layer mask for the hitbox check.</param>
     /// <param name="coverMask">The layer mask for cover detection (optional).</param>
+    /// <param name="damage">The damage to apply if hits are detected (optional).</param>
     /// <returns>True if at least one hit is detected, false otherwise.</returns>
     public static bool HitboxCheck(
-        Damage damage,
         Vector3 origin,
         Vector3 end,
         float radius,
         out RaycastHit[] hits,
         LayerMask mask,
-        LayerMask coverMask = default)
+        LayerMask coverMask = default,
+        Damage damage = default)
     {
         Vector3 disp = end - origin;
         Ray ray = new Ray(origin, disp.normalized);
@@ -114,9 +117,12 @@ public static class CombatUtils
         {
             if (coverMask == default)
             {
-                IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
-                if (damageable != null)
-                    damageable.ApplyDamage(damage);
+                if(damage != default)
+                {
+                    IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
+                    if (damageable != null)
+                        damageable.ApplyDamage(damage);
+                }
 
                 hitConfirm = true;
             }
@@ -129,9 +135,12 @@ public static class CombatUtils
                     disp.magnitude,
                     coverMask))
                 {
-                    IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
-                    if (damageable != null)
-                        damageable.ApplyDamage(damage);
+                    if(damage != default)
+                    {
+                        IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
+                        if (damageable != null)
+                            damageable.ApplyDamage(damage);
+                    }
 
                     hitConfirm = true;
                 }
@@ -147,44 +156,83 @@ public static class CombatUtils
     /// <param name="origin">The origin of the area-of-effect.</param>
     /// <param name="radius">The radius of the area-of-effect.</param>
     /// <param name="mask">The layer mask for the area-of-effect check.</param>
-    /// <param name="damage">The damage to apply to each detected damageable object.</param>
     /// <param name="colliders">An array of colliders for the detected damageable objects.</param>
+    /// <param name="damage">The damage to apply to each detected damageable object (optional).</param>
     /// <param name="damageFalloff">The damage falloff curve (optional).</param>
     /// <param name="coverMask">The layer mask for cover detection (optional).</param>
     public static void AOEHitCheck(
         Vector3 origin,
         float radius,
         LayerMask mask,
-        Damage damage,
         out Collider[] colliders,
+        Damage damage = default,
         AnimationCurve damageFalloff = default,
         LayerMask coverMask = default)
     {
+        origin += Vector3.up * 0.1f;
         colliders = Physics.OverlapSphere(origin, radius, mask);
         foreach(Collider c in colliders)
         {
             Vector3 disp = c.transform.position - origin;
-
-            IDamageable damageable = c.GetComponentInParent<IDamageable>();
-            if (damageable != null)
+            if (coverMask != default)
             {
-                if (damageFalloff != null)
+                if (!Physics.Raycast(origin, disp.normalized, disp.magnitude, coverMask))
                 {
-                    Damage _damage = damage.Clone();
-                    float k = damageFalloff.Evaluate(disp.magnitude / radius);
-                    _damage.amount *= k;
-                }
-
-                if (coverMask == default)
-                {
-                    damageable.ApplyDamage(damage);
-                }
-                else
-                {
-                    if (!Physics.Raycast(origin, disp.normalized, disp.magnitude, coverMask))
+                    if(damage != default)
                     {
+                        IDamageable damageable = c.GetComponentInParent<IDamageable>();
+                        if (damageable != null)
+                        {
+                            if (damageFalloff != null)
+                            {
+                                Damage _damage = damage.Clone();
+                                float k = damageFalloff.Evaluate(disp.magnitude / radius);
+                                _damage.amount *= k;
+                            }
+
+                            damageable.ApplyDamage(damage);
+                        }
+                        
+                        if(c.attachedRigidbody != null)
+                        {
+                            c.attachedRigidbody.AddExplosionForce(
+                                damage.pushForce,
+                                origin,
+                                radius,
+                                damage.upPushForce,
+                                ForceMode.Impulse
+                            );
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if(damage != default)
+                {
+                    IDamageable damageable = c.GetComponentInParent<IDamageable>();
+                    if (damageable != null)
+                    {
+                        if (damageFalloff != null)
+                        {
+                            Damage _damage = damage.Clone();
+                            float k = damageFalloff.Evaluate(disp.magnitude / radius);
+                            _damage.amount *= k;
+                        }
+
                         damageable.ApplyDamage(damage);
                     }
+
+                    if(c.attachedRigidbody != null)
+                        {
+                            c.attachedRigidbody.AddExplosionForce(
+                                damage.pushForce,
+                                origin,
+                                radius,
+                                damage.upPushForce,
+                                ForceMode.Impulse
+                            );
+                        }
                 }
             }
         }

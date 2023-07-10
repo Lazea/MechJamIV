@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1080272270774718888}
   - component: {fileID: 1080272270774718890}
   - component: {fileID: 1080272270774718889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Test_BaseLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,6 +65,12 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 9c484700b86ad8647822cda613264a5a, type: 2}
   health: 0
   shield: 0
+  moveState: 0
+  fireState: 0
+  projectile: {fileID: 0}
+  projectileSpawn: {fileID: 0}
+  onDeath: {fileID: 0}
+  gun: {fileID: 0}
 --- !u!1 &1674447377231164232
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +83,7 @@ GameObject:
   - component: {fileID: 3876534089606212149}
   - component: {fileID: 1022493754539752676}
   - component: {fileID: 6072055507883504879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Test_BaseLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
 
     GameObject player;
     public GameObject Player { get { return player; } }
+    public Vector3 PlayerCenter { get { return player.transform.position + Vector3.up * 1f; } }
 
     public bool IsPaused
     {

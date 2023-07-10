@@ -10,6 +10,9 @@ public class PlayerInputHandler : MonoBehaviour
 {
     public Controls.GameplayActions controls;
 
+    Vector2 look;
+    Vector2 move;
+
     [Header("Movement Events")]
     public UnityEvent<Vector2> onLook;
     public UnityEvent<Vector2> onMove;
@@ -37,10 +40,10 @@ public class PlayerInputHandler : MonoBehaviour
     {
         controls = new Controls().Gameplay;
 
-        controls.Look.performed += ctx => { onLook.Invoke(ctx.ReadValue<Vector2>()); };
-        controls.Look.canceled += ctx => { onLook.Invoke(Vector2.zero); };
-        controls.Movement.performed += ctx => { onMove.Invoke(ctx.ReadValue<Vector2>()); };
-        controls.Movement.canceled += ctx => { onMove.Invoke(Vector2.zero); };
+        controls.Look.performed += ctx => { look = ctx.ReadValue<Vector2>(); };
+        controls.Look.canceled += ctx => { look = Vector2.zero; };
+        controls.Movement.performed += ctx => { move = ctx.ReadValue<Vector2>(); };
+        controls.Movement.canceled += ctx => { move = Vector2.zero; };
 
         controls.VerticalThrust.started += ctx => { onVerticalThrustHold.Invoke(); };
         controls.VerticalThrust.canceled += ctx => { onVerticalThrustRelease.Invoke(); };
@@ -77,6 +80,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        onLook.Invoke(look);
+        onMove.Invoke(move);
     }
 }

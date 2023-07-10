@@ -15,8 +15,8 @@ public class RadarUI : MonoBehaviour
     [System.Serializable]
     public struct Marker
     {
-        public RectTransform marker;
-        public GameObject markedNPC;
+        public RectTransform marker;    // UI Marker
+        public GameObject markedNPC;    // NPC GameObject
     }
     public List<Marker> markers;
 
@@ -94,6 +94,8 @@ public class RadarUI : MonoBehaviour
 
     public void RemoveEnemyMarker(Transform npc)
     {
-        markers.Remove(markers.Single(m => m.markedNPC.Equals(npc.gameObject)));
+        Marker marker = markers.Single(m => m.markedNPC.Equals(npc.gameObject));
+        markers.Remove(marker);
+        Destroy(marker.marker.gameObject);
     }
 }

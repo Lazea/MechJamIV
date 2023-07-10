@@ -10,6 +10,7 @@ using SOGESys = SOGameEventSystem;
 public class Player : MonoBehaviour, IDamageable
 {
     public PlayerData data;
+    public GameObject GameObject { get { return gameObject; } }
 
     Queue<Guid> guidBuffer = new Queue<Guid>(GameSettings.guidBufferCapacity);
     public int Health
@@ -22,6 +23,9 @@ public class Player : MonoBehaviour, IDamageable
         get { return data.shield; }
         set { data.shield = value; }
     }
+
+    public bool invulnerable;
+    public bool killable;
 
     [Header("Events")]
     public SOGESys.Events.IntGameEvent onHealthChange;
@@ -60,6 +64,9 @@ public class Player : MonoBehaviour, IDamageable
     /// <param name="damage">The damage to apply.</param>
     public void ApplyDamage(Damage damage)
     {
+        if(invulnerable)
+            return;
+
         CombatUtils.ApplyDamage(damage, this);
 
         onHealthChange.Raise(data.health);
@@ -75,6 +82,9 @@ public class Player : MonoBehaviour, IDamageable
     [ContextMenu("Kill Player")]
     public void Kill()
     {
+        if(!killable)
+            return;
+
         data.health = 0;
 
         onDeath.Raise();
