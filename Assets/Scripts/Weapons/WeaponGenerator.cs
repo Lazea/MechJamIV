@@ -51,6 +51,15 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         GenerateWeapon(npcTransform.position + Vector3.up);
     }
 
+    public void GenerateWeapon(Vector3 position, WeaponData data)
+    {
+        int i = Random.Range(0, weaponPrefabs.Length);
+        Instantiate(
+            weaponPrefabs[i],
+            position,
+            Quaternion.identity).GetComponent<WeaponPickup>().data = data;
+    }
+
     [ContextMenu("Test Generate Weapon")]
     public void TestGenerateWeapon()
     {

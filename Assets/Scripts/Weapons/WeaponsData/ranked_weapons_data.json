@@ -1,348 +1,4 @@
 {
-    "Common": [
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "Penetrate"
-            ],
-            "damageType": "Energy",
-            "power": 24,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 9,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 43,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 13,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit"
-            ],
-            "damageType": "Normal",
-            "power": 28,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "Laser",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 11,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "Laser",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 14,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 40,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 10,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 11,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Laser",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 13,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 14,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 17,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Laser",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 17,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 19,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
-            "damageType": "Energy",
-            "power": 14,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Normal",
-            "power": 5,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "Penetrate"
-            ],
-            "damageType": "Fire",
-            "power": 30,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 43,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 16,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 17,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 20,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 22,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 15,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate"
-            ],
-            "damageType": "Shock",
-            "power": 33,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [],
-            "damageType": "Normal",
-            "power": 6,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 13,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 14,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit"
-            ],
-            "damageType": "Normal",
-            "power": 32,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 14,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "Penetrate"
-            ],
-            "damageType": "Fire",
-            "power": 33,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 18,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Normal",
-            "power": 12,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 18,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Laser",
-            "projectileModifiers": [],
-            "damageType": "Energy",
-            "power": 16,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Laser",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 22,
-            "rarity": "Common"
-        }
-    ],
     "Uncommon": [
         {
             "fireMode": "SemiAuto",
@@ -350,58 +6,22 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 63,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit",
-                "Penetrate",
-                "Ricochet"
-            ],
-            "damageType": "Normal",
-            "power": 64,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ExplodeOnHit",
                 "Penetrate"
             ],
-            "damageType": "Energy",
-            "power": 56,
+            "damageType": "Shock",
+            "power": 54,
             "rarity": "Uncommon"
         },
         {
             "fireMode": "SemiAuto",
             "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 69,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "DualSplit",
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
-                "ExplodeOnHit"
+                "ClusterOnHit",
+                "Penetrate"
             ],
-            "damageType": "Shock",
-            "power": 48,
+            "damageType": "Fire",
+            "power": 53,
             "rarity": "Uncommon"
         },
         {
@@ -418,49 +38,60 @@
         {
             "fireMode": "SemiAuto",
             "fireModeModifier": "TrippleSplit",
+            "projectileType": "Rocket",
+            "projectileModifiers": [
+                "ExplodeOnHit"
+            ],
+            "damageType": "Shock",
+            "power": 51,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "projectileType": "Rocket",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Shock",
+            "power": 68,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "ClusterFire",
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
                 "Penetrate"
             ],
             "damageType": "Shock",
-            "power": 62,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 48,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "None",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Shock",
-            "power": 54,
+            "power": 57,
             "rarity": "Uncommon"
         },
         {
             "fireMode": "BurstFire",
             "fireModeModifier": "ClusterFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 66,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
             "projectileType": "Ballistic",
             "projectileModifiers": [
                 "ExplodeOnHit",
-                "Penetrate",
                 "Ricochet"
             ],
-            "damageType": "Normal",
-            "power": 65,
+            "damageType": "Fire",
+            "power": 57,
             "rarity": "Uncommon"
         },
         {
@@ -468,11 +99,34 @@
             "fireModeModifier": "DualSplit",
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
-                "ExplodeOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Energy",
+            "power": 61,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
                 "Penetrate"
             ],
-            "damageType": "Fire",
-            "power": 64,
+            "damageType": "Shock",
+            "power": 61,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ExplodeOnHit"
+            ],
+            "damageType": "Shock",
+            "power": 49,
             "rarity": "Uncommon"
         },
         {
@@ -500,100 +154,19 @@
         {
             "fireMode": "BurstFire",
             "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 50,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
             "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 48,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 52,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Normal",
-            "power": 60,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 68,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 71,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 69,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
             "projectileModifiers": [
                 "Penetrate",
-                "Ricochet"
+                "ExplodeOnHit"
             ],
-            "damageType": "Shock",
-            "power": 49,
+            "damageType": "Energy",
+            "power": 63,
             "rarity": "Uncommon"
         },
         {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ExplodeOnHit"
             ],
@@ -602,32 +175,9 @@
             "rarity": "Uncommon"
         },
         {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
             "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 75,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 49,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ExplodeOnHit"
             ],
@@ -637,11 +187,11 @@
         },
         {
             "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
+            "fireModeModifier": "ClusterFire",
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 64,
@@ -649,14 +199,94 @@
         },
         {
             "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
+            "fireModeModifier": "ClusterFire",
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
                 "ExplodeOnHit"
             ],
-            "damageType": "Energy",
+            "damageType": "Fire",
+            "power": 67,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Shock",
             "power": 70,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "Rocket",
+            "projectileModifiers": [
+                "ExplodeOnHit"
+            ],
+            "damageType": "Shock",
+            "power": 47,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "RampUpFire",
+            "projectileType": "Rocket",
+            "projectileModifiers": [
+                "ExplodeOnHit"
+            ],
+            "damageType": "Shock",
+            "power": 49,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "Ballistic",
+            "projectileModifiers": [
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 64,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "Ballistic",
+            "projectileModifiers": [
+                "ExplodeOnHit",
+                "Ricochet"
+            ],
+            "damageType": "Normal",
+            "power": 52,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "Rocket",
+            "projectileModifiers": [
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 48,
+            "rarity": "Uncommon"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "Ballistic",
+            "projectileModifiers": [
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 48,
             "rarity": "Uncommon"
         },
         {
@@ -664,11 +294,253 @@
             "fireModeModifier": "TrippleSplit",
             "projectileType": "Rocket",
             "projectileModifiers": [
+                "ClusterOnHit"
+            ],
+            "damageType": "Shock",
+            "power": 47,
+            "rarity": "Uncommon"
+        }
+    ],
+    "Common": [
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "None",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Energy",
+            "power": 6,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "None",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "damageType": "Fire",
+            "power": 10,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "None",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "damageType": "Shock",
+            "power": 13,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "damageType": "Shock",
+            "power": 13,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Fire",
+            "power": 11,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "damageType": "Fire",
+            "power": 12,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Energy",
+            "power": 12,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "damageType": "Normal",
+            "power": 10,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Energy",
+            "power": 14,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Shock",
+            "power": 13,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "Penetrate"
+            ],
+            "damageType": "Shock",
+            "power": 33,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "Rocket",
+            "projectileModifiers": [
+                "ClusterOnHit"
+            ],
+            "damageType": "Normal",
+            "power": 35,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "damageType": "Normal",
+            "power": 11,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "damageType": "Shock",
+            "power": 20,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "damageType": "Normal",
+            "power": 11,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "damageType": "Fire",
+            "power": 10,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Fire",
+            "power": 11,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Shock",
+            "power": 14,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "damageType": "Shock",
+            "power": 15,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
                 "ExplodeOnHit"
             ],
             "damageType": "Shock",
-            "power": 53,
-            "rarity": "Uncommon"
+            "power": 46,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Fire",
+            "power": 13,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "RampUpFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Shock",
+            "power": 18,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Energy",
+            "power": 14,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "damageType": "Normal",
+            "power": 12,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "damageType": "Fire",
+            "power": 18,
+            "rarity": "Common"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [],
+            "damageType": "Shock",
+            "power": 22,
+            "rarity": "Common"
         }
     ],
     "Rare": [
@@ -678,8 +550,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Energy",
             "power": 78,
@@ -691,24 +563,11 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Fire",
             "power": 81,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
-            ],
-            "damageType": "Shock",
-            "power": 84,
             "rarity": "Rare"
         },
         {
@@ -717,8 +576,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Energy",
             "power": 80,
@@ -730,21 +589,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
-            ],
-            "damageType": "Fire",
-            "power": 83,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 86,
@@ -755,8 +601,8 @@
             "fireModeModifier": "DualSplit",
             "projectileType": "Ballistic",
             "projectileModifiers": [
-                "ExplodeOnHit",
                 "Penetrate",
+                "ExplodeOnHit",
                 "Ricochet"
             ],
             "damageType": "Shock",
@@ -765,24 +611,11 @@
         },
         {
             "fireMode": "SemiAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
-            ],
-            "damageType": "Energy",
-            "power": 84,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "SemiAuto",
             "fireModeModifier": "TrippleSplit",
             "projectileType": "Ballistic",
             "projectileModifiers": [
-                "ExplodeOnHit",
                 "Penetrate",
+                "ExplodeOnHit",
                 "Ricochet"
             ],
             "damageType": "Fire",
@@ -794,8 +627,8 @@
             "fireModeModifier": "TrippleSplit",
             "projectileType": "Ballistic",
             "projectileModifiers": [
-                "ExplodeOnHit",
                 "Penetrate",
+                "ExplodeOnHit",
                 "Ricochet"
             ],
             "damageType": "Shock",
@@ -808,8 +641,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Energy",
             "power": 86,
@@ -821,8 +654,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Energy",
             "power": 79,
@@ -834,8 +667,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Fire",
             "power": 82,
@@ -847,8 +680,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 85,
@@ -860,8 +693,21 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Energy",
+            "power": 81,
+            "rarity": "Rare"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Fire",
             "power": 84,
@@ -872,8 +718,8 @@
             "fireModeModifier": "DualSplit",
             "projectileType": "Ballistic",
             "projectileModifiers": [
-                "ExplodeOnHit",
                 "Penetrate",
+                "ExplodeOnHit",
                 "Ricochet"
             ],
             "damageType": "Shock",
@@ -882,15 +728,15 @@
         },
         {
             "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "EnergyBeam",
             "projectileModifiers": [
-                "ExplodeOnHit",
+                "ClusterOnHit",
                 "Penetrate",
-                "Ricochet"
+                "ExplodeOnHit"
             ],
-            "damageType": "Fire",
-            "power": 77,
+            "damageType": "Energy",
+            "power": 85,
             "rarity": "Rare"
         },
         {
@@ -898,8 +744,8 @@
             "fireModeModifier": "TrippleSplit",
             "projectileType": "Ballistic",
             "projectileModifiers": [
-                "ExplodeOnHit",
                 "Penetrate",
+                "ExplodeOnHit",
                 "Ricochet"
             ],
             "damageType": "Shock",
@@ -924,8 +770,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Energy",
             "power": 80,
@@ -937,21 +783,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
-            ],
-            "damageType": "Fire",
-            "power": 83,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 86,
@@ -963,8 +796,21 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Energy",
+            "power": 82,
+            "rarity": "Rare"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "ClusterFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Fire",
             "power": 85,
@@ -975,8 +821,8 @@
             "fireModeModifier": "RampUpFire",
             "projectileType": "Ballistic",
             "projectileModifiers": [
-                "ExplodeOnHit",
                 "Penetrate",
+                "ExplodeOnHit",
                 "Ricochet"
             ],
             "damageType": "Shock",
@@ -986,37 +832,11 @@
         {
             "fireMode": "FullAuto",
             "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit",
-                "Penetrate",
-                "Ricochet"
-            ],
-            "damageType": "Fire",
-            "power": 76,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit",
-                "Penetrate",
-                "Ricochet"
-            ],
-            "damageType": "Shock",
-            "power": 79,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Energy",
             "power": 86,
@@ -1027,25 +847,12 @@
             "fireModeModifier": "TrippleSplit",
             "projectileType": "Ballistic",
             "projectileModifiers": [
-                "ExplodeOnHit",
                 "Penetrate",
+                "ExplodeOnHit",
                 "Ricochet"
             ],
             "damageType": "Fire",
             "power": 78,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit",
-                "Penetrate",
-                "Ricochet"
-            ],
-            "damageType": "Shock",
-            "power": 81,
             "rarity": "Rare"
         },
         {
@@ -1068,11 +875,50 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 87,
+            "rarity": "Legendary"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 90,
+            "rarity": "Legendary"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 89,
+            "rarity": "Legendary"
+        },
+        {
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Shock",
+            "power": 92,
             "rarity": "Legendary"
         },
         {
@@ -1081,8 +927,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 87,
@@ -1094,8 +940,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Energy",
             "power": 87,
@@ -1107,8 +953,21 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 90,
+            "rarity": "Legendary"
+        },
+        {
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 93,
@@ -1120,8 +979,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 88,
@@ -1133,8 +992,21 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 87,
+            "rarity": "Legendary"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "RampUpFire",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 90,
@@ -1146,8 +1018,21 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
+            ],
+            "damageType": "Fire",
+            "power": 89,
+            "rarity": "Legendary"
+        },
+        {
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "projectileType": "EnergyBeam",
+            "projectileModifiers": [
+                "ClusterOnHit",
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 92,
@@ -1159,8 +1044,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Energy",
             "power": 88,
@@ -1172,8 +1057,8 @@
             "projectileType": "EnergyBeam",
             "projectileModifiers": [
                 "ClusterOnHit",
-                "ExplodeOnHit",
-                "Penetrate"
+                "Penetrate",
+                "ExplodeOnHit"
             ],
             "damageType": "Shock",
             "power": 94,

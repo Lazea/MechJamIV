@@ -98,6 +98,24 @@ public class PlayerWeaponPickup : MonoBehaviour
         return _pickup;
     }
 
+    [ContextMenu("Pickup Weapon")]
+    public void PickupWeapon()
+    {
+        if(pickup == null)
+        {
+            Debug.LogWarning("No weapon in range for pickup.");
+            return;
+        }
+
+        var currData = weapon.Data;
+
+        weapon.Data = pickup.data;
+        weapon.ResetWeaponData();
+
+        pickup.data = currData;
+        pickup.transform.position += Vector3.up * 0.6f;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
