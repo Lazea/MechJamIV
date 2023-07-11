@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
     [Header("Weapon Data")]
     [SerializeField]
     WeaponData data;
-    WeaponData Data
+    public WeaponData Data
     {
         get { return data; }
         set
