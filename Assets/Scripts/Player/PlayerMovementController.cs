@@ -35,6 +35,7 @@ public class PlayerMovementController : MonoBehaviour
     public PhysicMaterial staticMaterial;
     public PhysicMaterial dynamicMaterial;
 
+
     [Header("Events")]
     public SOGESys.Events.FloatGameEvent onVerticalThrustersFuelChange;
     public SOGESys.BaseGameEvent onLateralThrustersReady;
