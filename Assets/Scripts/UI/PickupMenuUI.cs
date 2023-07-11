@@ -58,6 +58,8 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
         groundWeaponProjectileIcon.preserveAspect = true;
         groundWeaponDamageTypeIcon.preserveAspect = true;
         groundWeaponFireModeIcon.preserveAspect = true;
+
+        pickupIndicator.fillAmount = 0f;
     }
 
     private void OnEnable()
@@ -157,5 +159,10 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
             default:
                 return null;
         }
+    }
+
+    public void SetPickupIndicatorFillBar(float value)
+    {
+        pickupIndicator.fillAmount = value;
     }
 }

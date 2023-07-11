@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PlayerWeaponPickup : MonoBehaviour
 {
+    [Header("Player Weapon Class")]
     public Weapon weapon;
-    [SerializeField]
-    WeaponPickup pickup;
+
+    [Header("Pickup")]
     public float pickupRange = 4f;
+    public float pickupHoldTime;
+    float t;
+    bool pickupHold;
+    WeaponPickup pickup;
+
+    [Header("Pickup Masks")]
     public LayerMask pickupMask;
     public LayerMask coverMask;
 
@@ -23,7 +30,23 @@ public class PlayerWeaponPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(pickupHold)
+        {
+            t += Time.deltaTime;
+            PickupMenuUI.Instance.SetPickupIndicatorFillBar(t / pickupHoldTime);
+
+            if(t >= pickupHoldTime)
+            {
+                t = 0f;
+                PickupWeapon();
+                InteractRelease();
+                PickupMenuUI.Instance.enabled = false;
+            }
+        }
+        else
+        {
+            t = 0f;
+        }
     }
 
     private void FixedUpdate()
@@ -59,11 +82,8 @@ public class PlayerWeaponPickup : MonoBehaviour
             origin,
             pickupRange,
             pickupMask);
-        if(colls.Length > 0)
-            Debug.LogFormat("Found {0} pickups", colls.Length);
         foreach(var coll in colls)
         {
-            Debug.LogFormat("Checking if {0} can be picked up", coll.name);
             WeaponPickup newPickup = coll.GetComponentInParent<WeaponPickup>();
             if(newPickup != null)
             {
@@ -76,7 +96,6 @@ public class PlayerWeaponPickup : MonoBehaviour
                     dist,
                     coverMask))
                 {
-                    Debug.LogFormat("{0} can be picked up!", coll.name);
                     if(dist <= distance)
                     {
                         _pickup = newPickup;
@@ -84,15 +103,6 @@ public class PlayerWeaponPickup : MonoBehaviour
                     }
                 }
             }
-            else
-            {
-                Debug.LogFormat("{0} has no pckup data", coll.name);
-            }
-        }
-
-        if(_pickup != null)
-        {
-            Debug.LogFormat("{0} is ideal!", _pickup.gameObject.name);
         }
 
         return _pickup;
@@ -114,6 +124,19 @@ public class PlayerWeaponPickup : MonoBehaviour
 
         pickup.data = currData;
         pickup.transform.position += Vector3.up * 0.6f;
+    }
+
+    public void InteractHold()
+    {
+        Debug.LogFormat("Interact Hold");
+        pickupHold = true;
+    }
+
+    public void InteractRelease()
+    {
+        Debug.Log("Interact Hold released");
+        pickupHold = false;
+        PickupMenuUI.Instance.SetPickupIndicatorFillBar(0f);
     }
 
     private void OnDrawGizmosSelected()

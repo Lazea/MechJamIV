@@ -24,7 +24,7 @@ public class PlayerInputHandler : MonoBehaviour
     public UnityEvent onFire;
     public UnityEvent onFireRelease;
     public UnityEvent onMelee;
-    public UnityEvent onInteractHold;
+    public UnityEvent onInteractStart;
     public UnityEvent onInteractRelease;
     public UnityEvent onAbilityA;
     public UnityEvent onAbilityAHold;
@@ -52,8 +52,7 @@ public class PlayerInputHandler : MonoBehaviour
         controls.Fire.started += ctx => { onFire.Invoke(); };
         controls.Fire.canceled += ctx => { onFireRelease.Invoke(); };
         controls.Melee.started += ctx => { onMelee.Invoke(); };
-        controls.Interact.started += ctx => { onInteractHold.Invoke(); };
-        controls.Interact.performed += ctx => { onInteractHold.Invoke(); };
+        controls.Interact.started += ctx => { onInteractStart.Invoke(); };
         controls.Interact.canceled += ctx => { onInteractRelease.Invoke(); };
 
         controls.AbilityA.started += ctx => { onAbilityA.Invoke(); };
