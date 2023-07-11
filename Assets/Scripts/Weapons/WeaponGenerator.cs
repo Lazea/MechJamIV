@@ -45,6 +45,12 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
             Quaternion.identity).GetComponent<WeaponPickup>().data = weapon;
     }
 
+    public void GenerateWeaponOnNPCDeath(Transform npcTransform)
+    {
+        // TODO: Determine if and what weapon rarity to spawn
+        GenerateWeapon(npcTransform.position + Vector3.up);
+    }
+
     [ContextMenu("Test Generate Weapon")]
     public void TestGenerateWeapon()
     {
