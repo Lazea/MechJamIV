@@ -8,7 +8,27 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
     public TextAsset jsonFile;
     public WeaponsDataset weaponDataset;
 
-    [Header("Weapon Mesh Prefabs")]
+    [Header("Base Weapon Prefab")]
+    public GameObject baseWeaponPickupPrefab;
+
+    [Header("Barrel Prefabs")]
+    public GameObject[] longBallisticBarrelMeshes;
+    public GameObject[] shortBallisticBarrelMeshes;
+    public GameObject[] longPlasmaBarrelMeshes;
+    public GameObject[] shortPlasmaBarrelMeshes;
+    public GameObject[] longRocketBarrelMeshes;
+    public GameObject[] shortRocketBarrelMeshes;
+
+    [Header("Mag Prefabs")]
+    public GameObject[] semiAutoMagMeshes;
+    public GameObject[] burstFireMagMeshes;
+    public GameObject[] fullAutoMagMeshes;
+    
+    [Header("Body Prefabs")]
+    public GameObject[] ballisticBodyMeshes;
+    public GameObject[] plasmaBodyMeshes;
+    public GameObject[] rocketBodyMeshes;
+
     public GameObject[] weaponPrefabs;
 
     // Start is called before the first frame update
@@ -25,24 +45,14 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
 
     public void GenerateWeapon(Vector3 position, Rarity rarity)
     {
-        WeaponData weapon = GetRandomWeapon(rarity);
-
-        int i = Random.Range(0, weaponPrefabs.Length);
-        Instantiate(
-            weaponPrefabs[i],
-            position,
-            Quaternion.identity).GetComponent<WeaponPickup>().data = weapon;
+        WeaponData data = GetRandomWeapon(rarity);
+        GenerateWeapon(position, data);
     }
 
     public void GenerateWeapon(Vector3 position)
     {
-        WeaponData weapon = GetRandomWeapon();
-
-        int i = Random.Range(0, weaponPrefabs.Length);
-        Instantiate(
-            weaponPrefabs[i],
-            position,
-            Quaternion.identity).GetComponent<WeaponPickup>().data = weapon;
+        WeaponData data = GetRandomWeapon();
+        GenerateWeapon(position, data);
     }
 
     public void GenerateWeaponOnNPCDeath(Transform npcTransform)
@@ -53,11 +63,101 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
 
     public void GenerateWeapon(Vector3 position, WeaponData data)
     {
-        int i = Random.Range(0, weaponPrefabs.Length);
-        Instantiate(
-            weaponPrefabs[i],
+        GameObject weaponObject = Instantiate(
+            baseWeaponPickupPrefab,
             position,
-            Quaternion.identity).GetComponent<WeaponPickup>().data = data;
+            Quaternion.identity);
+        weaponObject.GetComponent<WeaponPickup>().data = data;
+
+        ConstructWeaponObject(weaponObject, data);
+    }
+
+    public void ConstructWeaponObject(GameObject weaponObject, WeaponData data)
+    {
+        GameObject body = null;
+        switch(data.projectileType)
+        {
+            case ProjectileType.Ballistic:
+                body = GenerateWeaponBody(weaponObject, ballisticBodyMeshes);
+                GenerateWeaponBarrel(
+                    body,
+                    shortBallisticBarrelMeshes,
+                    longBallisticBarrelMeshes,
+                    data.recoil);
+                break;
+            case ProjectileType.EnergyBeam:
+                body = GenerateWeaponBody(weaponObject, plasmaBodyMeshes);
+                GenerateWeaponBarrel(
+                    body,
+                    shortPlasmaBarrelMeshes,
+                    longPlasmaBarrelMeshes,
+                    data.recoil);
+                break;
+            case ProjectileType.Rocket:
+                body = GenerateWeaponBody(weaponObject, rocketBodyMeshes);
+                GenerateWeaponBarrel(
+                    body,
+                    shortRocketBarrelMeshes,
+                    longRocketBarrelMeshes,
+                    data.recoil);
+                break;
+        }
+
+        switch(data.fireMode)
+        {
+            case FireMode.SemiAuto:
+                GenerateWeaponMag(body, semiAutoMagMeshes);
+                break;
+            case FireMode.BurstFire:
+                GenerateWeaponMag(body, burstFireMagMeshes);
+                break;
+            case FireMode.FullAuto:
+                GenerateWeaponMag(body, fullAutoMagMeshes);
+                break;
+        }
+
+        body.transform.localScale *= 2f;
+    }
+
+    public GameObject GenerateWeaponBody(
+        GameObject weaponObject,
+        GameObject[] meshes)
+    {
+        int i = Random.Range(0, meshes.Length);
+        GameObject body = Instantiate(meshes[i]);
+        body.transform.parent = weaponObject.transform;
+        body.transform.localPosition = Vector3.zero;
+        return body;
+    }
+
+    public GameObject GenerateWeaponBarrel(
+        GameObject weaponBody,
+        GameObject[] shortBarrelMeshes,
+        GameObject[] longBarrelMeshes,
+        float recoil)
+    {
+        float accuracy = 1f - (recoil / 0.08f);
+        var barrels = (accuracy >= 0.5f) ? longBarrelMeshes : shortBarrelMeshes;
+        int i = Random.Range(0, barrels.Length);
+        Vector3 mountPoint = weaponBody.transform.Find("BarrelMountPoint").localPosition;
+
+        GameObject barrel = Instantiate(barrels[i]);
+        barrel.transform.parent = weaponBody.transform;
+        barrel.transform.localPosition = mountPoint;
+        return barrel;
+    }
+
+    public GameObject GenerateWeaponMag(
+        GameObject weaponBody,
+        GameObject[] meshes)
+    {
+        int i = Random.Range(0, meshes.Length);
+        Vector3 mountPoint = weaponBody.transform.Find("MagMountPoint").localPosition;
+
+        GameObject mag = Instantiate(semiAutoMagMeshes[i]);
+        mag.transform.parent = weaponBody.transform;
+        mag.transform.localPosition = mountPoint;
+        return mag;
     }
 
     [ContextMenu("Test Generate Weapon")]

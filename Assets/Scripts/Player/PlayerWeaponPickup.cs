@@ -122,8 +122,10 @@ public class PlayerWeaponPickup : MonoBehaviour
         weapon.Data = pickup.data;
         weapon.ResetWeaponData();
 
-        pickup.data = currData;
-        pickup.transform.position += Vector3.up * 0.6f;
+        Vector3 position = pickup.transform.position;
+        position += Vector3.up * 0.6f;
+        Destroy(pickup.gameObject);
+        WeaponGenerator.Instance.GenerateWeapon(position, currData);
     }
 
     public void InteractHold()
