@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SkillTreeMenu.unity
     guid: 5643f881e061afb4490c7a089c747ae3
   - enabled: 1
+    path: Assets/Scenes/RepairShop.unity
+    guid: 52c5a29dd829c3d49a91f5fd52156e19
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}

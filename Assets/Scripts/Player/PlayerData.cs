@@ -72,6 +72,8 @@ public class PlayerData : ScriptableObject
 
     [Tooltip("The amount of credits the player earned.")]
     public int credits;
+    [Tooltip("The amount of credits the player safely deposited.")]
+    public int creditsSaved;
     [Tooltip("The amount of kills the player earned.")]
     public int kills;
 
