@@ -61,25 +61,37 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         GenerateWeapon(npcTransform.position + Vector3.up);
     }
 
-    public void GenerateWeapon(Vector3 position, WeaponData data)
+    public (GameObject, GameObject, GameObject) GenerateWeapon(
+        Vector3 position,
+        WeaponData data,
+        GameObject weaponParentObject = default,
+        bool addPickup = true)
     {
-        GameObject weaponObject = Instantiate(
-            baseWeaponPickupPrefab,
-            position,
-            Quaternion.identity);
-        weaponObject.GetComponent<WeaponPickup>().data = data;
+        GameObject weaponObject = weaponParentObject;
+        if(weaponParentObject == default)
+        {
+            weaponObject = Instantiate(
+                baseWeaponPickupPrefab,
+                position,
+                Quaternion.identity);
+        }
 
-        ConstructWeaponObject(weaponObject, data);
+        if(addPickup)
+            weaponObject.GetComponent<WeaponPickup>().data = data;
+
+        return ConstructWeaponObject(weaponObject, data);
     }
 
-    public void ConstructWeaponObject(GameObject weaponObject, WeaponData data)
+    public (GameObject, GameObject, GameObject) ConstructWeaponObject(GameObject weaponObject, WeaponData data)
     {
         GameObject body = null;
+        GameObject barrel = null;
+        GameObject mag = null;
         switch(data.projectileType)
         {
             case ProjectileType.Ballistic:
                 body = GenerateWeaponBody(weaponObject, ballisticBodyMeshes);
-                GenerateWeaponBarrel(
+                barrel = GenerateWeaponBarrel(
                     body,
                     shortBallisticBarrelMeshes,
                     longBallisticBarrelMeshes,
@@ -87,7 +99,7 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
                 break;
             case ProjectileType.EnergyBeam:
                 body = GenerateWeaponBody(weaponObject, plasmaBodyMeshes);
-                GenerateWeaponBarrel(
+                barrel = GenerateWeaponBarrel(
                     body,
                     shortPlasmaBarrelMeshes,
                     longPlasmaBarrelMeshes,
@@ -95,7 +107,7 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
                 break;
             case ProjectileType.Rocket:
                 body = GenerateWeaponBody(weaponObject, rocketBodyMeshes);
-                GenerateWeaponBarrel(
+                barrel = GenerateWeaponBarrel(
                     body,
                     shortRocketBarrelMeshes,
                     longRocketBarrelMeshes,
@@ -106,17 +118,18 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         switch(data.fireMode)
         {
             case FireMode.SemiAuto:
-                GenerateWeaponMag(body, semiAutoMagMeshes);
+                mag = GenerateWeaponMag(body, semiAutoMagMeshes);
                 break;
             case FireMode.BurstFire:
-                GenerateWeaponMag(body, burstFireMagMeshes);
+                mag = GenerateWeaponMag(body, burstFireMagMeshes);
                 break;
             case FireMode.FullAuto:
-                GenerateWeaponMag(body, fullAutoMagMeshes);
+                mag = GenerateWeaponMag(body, fullAutoMagMeshes);
                 break;
         }
 
-        body.transform.localScale *= 2f;
+        body.transform.localScale = Vector3.one * 2f;
+        return (body, barrel, mag);
     }
 
     public GameObject GenerateWeaponBody(

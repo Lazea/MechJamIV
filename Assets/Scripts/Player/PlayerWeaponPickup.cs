@@ -6,6 +6,8 @@ public class PlayerWeaponPickup : MonoBehaviour
 {
     [Header("Player Weapon Class")]
     public Weapon weapon;
+    public Transform inHandWeapon;
+    public Transform weaponBody;
 
     [Header("Pickup")]
     public float pickupRange = 4f;
@@ -25,6 +27,16 @@ public class PlayerWeaponPickup : MonoBehaviour
             weapon = GetComponent<Weapon>();
             
         pickup = null;
+
+        var newWeapon = WeaponGenerator.Instance.GenerateWeapon(
+            inHandWeapon.position,
+            weapon.Data,
+            inHandWeapon.gameObject,
+            addPickup:false);
+        weaponBody = newWeapon.Item1.transform;
+        weaponBody.localScale = Vector3.one;
+        weaponBody.rotation = Quaternion.LookRotation(inHandWeapon.forward);
+        weapon.projectileSpawnPoint.transform.position = newWeapon.Item2.transform.Find("ProjectileSpawnMount").position;
     }
 
     // Update is called once per frame
@@ -117,11 +129,24 @@ public class PlayerWeaponPickup : MonoBehaviour
             return;
         }
 
+        // Save current weapon data in hand
         var currData = weapon.Data;
 
+        // Set ground weapon as current weapon and generate mesh in hand
         weapon.Data = pickup.data;
         weapon.ResetWeaponData();
+        Destroy(weaponBody.gameObject);
+        var newWeapon = WeaponGenerator.Instance.GenerateWeapon(
+            inHandWeapon.position,
+            weapon.Data,
+            inHandWeapon.gameObject,
+            addPickup:false);
+        weaponBody = newWeapon.Item1.transform;
+        weaponBody.localScale = Vector3.one;
+        weaponBody.rotation = Quaternion.LookRotation(inHandWeapon.forward);
+        weapon.projectileSpawnPoint.transform.position = newWeapon.Item2.transform.Find("ProjectileSpawnMount").position;
 
+        // Generate a new pickup weapon on the ground using the old in hand weapon data
         Vector3 position = pickup.transform.position;
         position += Vector3.up * 0.6f;
         Destroy(pickup.gameObject);

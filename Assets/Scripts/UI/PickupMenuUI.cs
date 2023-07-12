@@ -17,6 +17,7 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
     public Image carryWeaponProjectileIcon;
     public Image carryWeaponDamageTypeIcon;
     public Image carryWeaponFireModeIcon;
+    public TextMeshProUGUI[] carryWeaponModifierStats;
 
     [Header("Ground Weapon UI Elements")]
     public Image groundWeaponIcon;
@@ -26,6 +27,7 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
     public Image groundWeaponProjectileIcon;
     public Image groundWeaponDamageTypeIcon;
     public Image groundWeaponFireModeIcon;
+    public TextMeshProUGUI[] groundWeaponModifierStats;
 
     [Header("Pickup Indicator")]
     public Image pickupIndicator;
@@ -94,7 +96,17 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
         carryWeaponFireModeIcon.sprite = GetFireModeSprite(data.fireMode);
         carryWeaponDamageTypeIcon.sprite = GetDamageTypeSprite(data.damageType);
 
-        // TODO: Set projectile and fore mode modifiers
+        foreach(var mod in carryWeaponModifierStats)
+        {
+            mod.text = "";
+            mod.gameObject.SetActive(false);
+        }
+
+        int i = 0;
+        if(SetFireModeModifier(data.fireModeModifier, carryWeaponModifierStats[i]))
+            i++;
+
+        SetProjectileModifiers(data.projectileModifiers, carryWeaponModifierStats, i);
     }
 
     public void SetGroundWeapon(WeaponData data)
@@ -111,7 +123,76 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
         groundWeaponFireModeIcon.sprite = GetFireModeSprite(data.fireMode);
         groundWeaponDamageTypeIcon.sprite = GetDamageTypeSprite(data.damageType);
 
-        // TODO: Set projectile and fore mode modifiers
+        foreach(var mod in groundWeaponModifierStats)
+        {
+            mod.text = "";
+            mod.gameObject.SetActive(false);
+        }
+
+        int i = 0;
+        if(SetFireModeModifier(data.fireModeModifier, groundWeaponModifierStats[i]))
+            i++;
+
+        SetProjectileModifiers(data.projectileModifiers, groundWeaponModifierStats, i);
+    }
+
+    public bool SetFireModeModifier(FireModeModifier fireModeModifier, TextMeshProUGUI modifierStat)
+    {
+        switch(fireModeModifier)
+        {
+            case FireModeModifier.DualSplit:
+                modifierStat.gameObject.SetActive(true);
+                modifierStat.text = "Dual Split";
+                return true;
+            case FireModeModifier.TrippleSplit:
+                modifierStat.gameObject.SetActive(true);
+                modifierStat.text = "Triple Split";
+                return true;
+            case FireModeModifier.ClusterFire:
+                modifierStat.gameObject.SetActive(true);
+                modifierStat.text = "Cluster Fire";
+                return true;
+            case FireModeModifier.RampUpFire:
+                modifierStat.gameObject.SetActive(true);
+                modifierStat.text = "Ramp Up";
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public void SetProjectileModifiers(
+        List<ProjectileModifier> modifiers,
+        TextMeshProUGUI[] modifierStats,
+        int modifierStatOffset)
+    {
+        int i = modifierStatOffset;
+        foreach(var projMod in modifiers)
+        {
+            switch(projMod)
+            {
+                case ProjectileModifier.ClusterOnHit:
+                    modifierStats[i].gameObject.SetActive(true);
+                    modifierStats[i].text = "Cluster On Hit";
+                    i++;
+                    break;
+                case ProjectileModifier.ExplodeOnHit:
+                    modifierStats[i].gameObject.SetActive(true);
+                    modifierStats[i].text = "Explode On Hit";
+                    i++;
+                    break;
+                case ProjectileModifier.Penetrate:
+                    modifierStats[i].gameObject.SetActive(true);
+                    modifierStats[i].text = "Penetrate";
+                    i++;
+                    break;
+                case ProjectileModifier.Ricochet:
+                    modifierStats[i].gameObject.SetActive(true);
+                    modifierStats[i].text = "Ricochet";
+                    i++;
+                    break;
+            }
+        }
     }
 
     Sprite GetFireModeSprite(FireMode fireMode)
