@@ -20,3 +20,6 @@ MonoBehaviour:
   maxAttackEventRate: 3.5
   aimAngle: 10
   combatRange: 50
+  chaseRange: 100
+  isElite: 0
+  credits: 25

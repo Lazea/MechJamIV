@@ -72,6 +72,8 @@ public class PlayerData : ScriptableObject
 
     [Tooltip("The amount of credits the player earned.")]
     public int credits;
+    [Tooltip("The amount of kills the player earned.")]
+    public int kills;
 
     [ContextMenu("Reset Base Data")]
     public void ResetData()
@@ -122,5 +124,11 @@ public class PlayerData : ScriptableObject
         parser.Parse(filePath);
 
         credits = parser.GetValue<int>("PlayerData", "credits");
+    }
+
+    [ContextMenu("Reset Kills")]
+    public void ResetKillCount()
+    {
+        kills = 0;
     }
 }

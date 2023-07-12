@@ -54,4 +54,14 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1f;
         onResume.Invoke();
     }
+
+    public void AddCredits(int count)
+    {
+        playerData.credits += count;
+    }
+
+    public void IncrementNPCKillCount()
+    {
+        playerData.kills++;
+    }
 }

@@ -207,7 +207,7 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 2631764933206433636}
   onDeath: {fileID: 11400000, guid: ecbeb6b3ec2cb404c9fbf5daa395cbbb, type: 2}
-  chaseDistance: 0
+  onCreditsDeath: {fileID: 11400000, guid: 0579af660f57cc44eb7e6ec1f68a2c13, type: 2}
   aimBase: {fileID: 8471503811173416797}
   minLookAngle: -45
   maxLookAngle: 45

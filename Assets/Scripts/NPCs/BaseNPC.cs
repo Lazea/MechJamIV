@@ -8,6 +8,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
 {
     [Header("Data")]
     public ActorData data;
+    public ActorData Data { get { return data;} }
     public GameObject GameObject { get { return gameObject; } }
 
     [Header("Health")]
@@ -75,6 +76,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
 
     [Header("Events")]
     public TransformGameEvent onDeath;
+    public IntGameEvent onCreditsDeath;
 
     // Components
     protected Animator anim;
@@ -181,6 +183,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         health = 0;
         // TODO: Set anim state to "Death" and destroy on animation event
         onDeath.Raise(transform);
+        onCreditsDeath.Raise(data.credits);
         Destroy(gameObject);
     }
     #endregion
