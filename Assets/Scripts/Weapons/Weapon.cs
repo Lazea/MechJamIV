@@ -7,11 +7,12 @@ public class Weapon : MonoBehaviour
     [Header("Weapon Data")]
     [SerializeField]
     WeaponData data;
-    WeaponData Data
+    public WeaponData Data
     {
         get { return data; }
         set
         {
+            Debug.Log("Weapon Data set");
             data = value;
             SetProjectilePrefab();
         }
@@ -168,6 +169,9 @@ public class Weapon : MonoBehaviour
     
     void SetProjectilePrefab()
     {
+        Debug.LogFormat(
+            "Setting projectile prefab based on select type {0}",
+            data.projectileType.ToString());
         switch (data.projectileType)
         {
             case ProjectileType.Ballistic:
@@ -187,14 +191,38 @@ public class Weapon : MonoBehaviour
                     laserProjectilePrefabs);
                 break;
         }
+
+        if(projectilePrefab == null)
+        {
+            Debug.LogWarningFormat(
+                "Could not find projectile of type {0} and damage type {1}",
+                data.projectileType.ToString(),
+                data.damageType.ToString());
+        }
+        else
+        {
+            Debug.LogFormat("Projectile prefab set to {0}", projectilePrefab.name);
+        }
     }
 
     GameObject GetProjectileByDamageType(GameObject[] projectilePrefabs)
     {
+        Debug.Log("Checking projectile prefabs for type");
         foreach(GameObject p in projectilePrefabs)
         {
+            Debug.LogFormat(
+                "Checking projectile {0} with damageType {1} if it matches type {2}",
+                p.name,
+                p.GetComponent<Projectile>().damage.damageType.ToString(),
+                data.damageType.ToString());
             if (p.GetComponent<Projectile>().damage.damageType == data.damageType)
+            {
+                Debug.LogFormat(
+                    "Returning projectile {0} cause it matches type {1}",
+                    p.name,
+                    data.damageType);
                 return p;
+            }
         }
 
         return null;

@@ -14,8 +14,7 @@
     "ProjectileType": [
         "Ballistic",
         "EnergyBeam",
-        "Rocket",
-        "Laser"
+        "Rocket"
     ],
     "ProjectileModifier": [
         "None",

@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
                 mask,
                 damage))
             {
-                ProjectileHit(transform.position, -transform.forward);
+                ProjectileHit(hit.point, hit.normal);
             }
         }
         else
@@ -72,11 +72,16 @@ public class Projectile : MonoBehaviour
                 coverMask,
                 damage))
             {
-                Vector3 average = Vector3.zero;
+                Vector3 averagePoint = Vector3.zero;
+                Vector3 averageDir = Vector3.zero;
                 foreach (RaycastHit hit in hits)
-                    average += hit.point;
-                average /= hits.Length;
-                ProjectileHit(average, -transform.forward);
+                {
+                    averagePoint += hit.point;
+                    averageDir += hit.normal;
+                }
+                averagePoint /= hits.Length;
+                averageDir /= hits.Length;
+                ProjectileHit(averagePoint, averageDir);
             }
         }
 
@@ -102,13 +107,11 @@ public class Projectile : MonoBehaviour
     {
         if (hitFX == null)
             return;
-
+            
         hitFX.transform.parent = null;
         hitFX.transform.position = point;
         hitFX.transform.rotation = Quaternion.LookRotation(dir);
         hitFX.gameObject.SetActive(true);
-
-        // GameObject.Instantiate(hitFX, point, Quaternion.LookRotation(dir));
     }
 
     private void OnDrawGizmosSelected()
