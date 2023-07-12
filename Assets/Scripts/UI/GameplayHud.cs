@@ -37,16 +37,16 @@ public class GameplayHud : Singleton<GameplayHud>
     // Start is called before the first frame update
     void Start()
     {
-        SetStageCount();
+        UpdateStageCount();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetCreditsCount();
-        SetKillCount();
+        UpdateCreditsCount();
+        UpdateKillCount();
         tm += Time.deltaTime;
-        SetStageTimeCount();
+        UpdateStageTimeCount();
     }
 
     #region [Health & Shield & Vert Thrusters Setters]
@@ -110,25 +110,44 @@ public class GameplayHud : Singleton<GameplayHud>
     }
     #endregion
 
-    #region [Credits and Stats Setters]
-    public void SetCreditsCount()
+    #region [Credits, Kills, and Stats Setters]
+    public void UpdateCreditsCount()
+    {
+        SetCreditsCount(PlayerData.credits);
+    }
+
+    public void SetCreditsCount(int value)
     {
         creditsText.text = string.Format(
             "Credits: {0}",
-            PlayerData.credits.ToString("D4"));
+            value.ToString("D6"));
     }
 
-    public void SetStageCount()
+    public void UpdateStageCount()
     {
-        // TODO
+        SetStageCount(0);
     }
 
-    public void SetKillCount()
+    public void SetStageCount(int value)
     {
-        // TODO
+        stageCountText.text = string.Format(
+            "Stage: {0}",
+            value.ToString("D3"));
     }
 
-    public void SetStageTimeCount()
+    public void UpdateKillCount()
+    {
+        SetKillCount(GameManager.Instance.playerData.kills);
+    }
+
+    public void SetKillCount(int value)
+    {
+        killCountText.text = string.Format(
+            "Kills: {0}",
+            value.ToString("D4"));
+    }
+
+    public void UpdateStageTimeCount()
     {
         float minutes = Mathf.FloorToInt(tm / 60);
         float seconds = Mathf.FloorToInt(tm % 60);

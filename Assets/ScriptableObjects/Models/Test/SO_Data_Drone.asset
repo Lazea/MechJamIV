@@ -21,3 +21,5 @@ MonoBehaviour:
   aimAngle: 15
   combatRange: 125
   chaseRange: 45
+  isElite: 0
+  credits: 15

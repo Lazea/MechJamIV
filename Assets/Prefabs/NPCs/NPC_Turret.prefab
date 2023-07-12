@@ -397,6 +397,7 @@ MonoBehaviour:
   hasTarget: 0
   targetObscured: 0
   targetInReach: 0
+  targetInCombatRange: 0
   targetInAim: 0
   mask:
     serializedVersion: 2
@@ -409,6 +410,7 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 1190022952242470646}
   onDeath: {fileID: 11400000, guid: ecbeb6b3ec2cb404c9fbf5daa395cbbb, type: 2}
+  onCreditsDeath: {fileID: 11400000, guid: 0579af660f57cc44eb7e6ec1f68a2c13, type: 2}
   aimBase: {fileID: 6223807335687324789}
   minLookAngle: -45
   maxLookAngle: 45
