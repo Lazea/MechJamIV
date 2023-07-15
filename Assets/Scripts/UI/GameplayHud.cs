@@ -13,6 +13,10 @@ public class GameplayHud : Singleton<GameplayHud>
     public TextMeshProUGUI shieldText;
     public Image verticalThrustersFuel;
 
+    [Header("Damage Indicator")]
+    public Transform damageIndicatorParent;
+    public GameObject damageIndicatorPrefab;
+
     [Header("Weapon")]
     public Image weaponIcon;
 
@@ -156,4 +160,14 @@ public class GameplayHud : Singleton<GameplayHud>
             string.Format("{0:00}:{1:00}", minutes, seconds));
     }
     #endregion
+
+    public void SpawnPlayerDamageIndicator(Damage damage)
+    {
+        var dmgIndicator = Instantiate(
+            damageIndicatorPrefab,
+            damageIndicatorParent).GetComponent<PlayerDamageIndicator>();
+        // if(damage.source != null)
+        //     dmgIndicator.target = damage.source.transform;
+        dmgIndicator.target = damage.source.transform;
+    }
 }

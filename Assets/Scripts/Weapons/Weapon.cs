@@ -147,7 +147,7 @@ public class Weapon : MonoBehaviour
     }
 
     void SpawnProjectile(
-        GameObject projectile,
+        GameObject projectilePrefab,
         Transform spawnTransform)
     {
         Vector2 offset = Random.insideUnitCircle * data.spawnOffset;
@@ -161,10 +161,11 @@ public class Weapon : MonoBehaviour
         dir += spawnTransform.up * recoilOffset.y;
         Quaternion rot = Quaternion.LookRotation(dir.normalized);
 
-        Instantiate(
-            projectile,
+        var projectile = Instantiate(
+            projectilePrefab,
             point,
-            rot);
+            rot).GetComponent<Projectile>();
+        projectile.damage.source = gameObject;
     }
     
     void SetProjectilePrefab()

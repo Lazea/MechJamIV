@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using SOGameEventSystem.Events;
+using UnityEngine.Events;
 
 public class BaseNPC : MonoBehaviour, IDamageable, IActor
 {
@@ -75,6 +76,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     public Transform projectileSpawn;
 
     [Header("Events")]
+    public UnityEvent<Damage> onDamage;
     public TransformGameEvent onDeath;
     public IntGameEvent onCreditsDeath;
 
@@ -160,10 +162,16 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         if(health <= 0)
             return;
 
-        CombatUtils.ApplyDamage(damage, this);
+        Damage damageDealt = null;
+        CombatUtils.ApplyDamage(damage, this, out damageDealt);
 
         if (shield <= 0)
             BreakShield();
+
+        if(damageDealt != null)
+        {
+            onDamage.Invoke(damageDealt);
+        }
 
         if (health <= 0)
             Kill();
@@ -218,10 +226,11 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     [ContextMenu("Spawn Projectile")]
     public void SpawnProjectile()
     {
-        Instantiate(
+        var _projectile = Instantiate(
             projectile,
             projectileSpawn.position,
             projectileSpawn.rotation).GetComponent<Projectile>();
+        _projectile.damage.source = gameObject;
     }
 
     // Return angle in range of -180 to 180

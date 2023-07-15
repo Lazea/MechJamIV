@@ -28,6 +28,7 @@ public class Player : MonoBehaviour, IDamageable
     public bool killable;
 
     [Header("Events")]
+    public SOGESys.Events.DamageGameEvent onHit;
     public SOGESys.Events.IntGameEvent onHealthChange;
     public SOGESys.Events.IntGameEvent onShieldChange;
     public SOGESys.BaseGameEvent onDeath;
@@ -64,10 +65,13 @@ public class Player : MonoBehaviour, IDamageable
     /// <param name="damage">The damage to apply.</param>
     public void ApplyDamage(Damage damage)
     {
+        onHit.Raise(damage);
+
         if(invulnerable)
             return;
 
-        CombatUtils.ApplyDamage(damage, this);
+        Damage damageDealt = null;
+        CombatUtils.ApplyDamage(damage, this, out damageDealt);
 
         onHealthChange.Raise(data.health);
         onShieldChange.Raise(data.shield);
