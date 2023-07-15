@@ -55,4 +55,5 @@ public class PauseMenuUI : MonoBehaviour
         optionsMenuPanel.SetActive(false);
         controlsPanel.SetActive(true);
     }
+    
 }

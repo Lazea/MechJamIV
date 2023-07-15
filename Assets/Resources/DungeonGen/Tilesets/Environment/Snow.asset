@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5b82210995bed4195652ccf9ae3e0b, type: 3}
+  m_Name: Snow
+  m_EditorClassIdentifier: 
+  ambient: {fileID: 8300000, guid: 3ead9d9800bb6e94db4b48f0a4a04a56, type: 3}
+  song: {fileID: 0}
+  reverb: 16
+  weather: {fileID: 4099359126124732322, guid: dd58d6e606bc48f4d9a46b5c67d14edd, type: 3}
+  volume: {fileID: 11400000, guid: 441f1b584ebb717439568bfe2ef4c628, type: 2}
+  sky: {fileID: 2100000, guid: 8c6f71d9f1be3994b9c8c6386bbd1d5a, type: 2}
+  fogLevel: 0.015
+  fogColor: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 0}
