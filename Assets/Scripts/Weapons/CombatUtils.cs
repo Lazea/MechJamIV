@@ -14,13 +14,17 @@ public static class CombatUtils
     /// <param name="damageable">The damageable object.</param>
     public static void ApplyDamage(
         Damage damage,
-        IDamageable damageable)
+        IDamageable damageable,
+        out Damage damageDealt)
     {
+        damageDealt = null;
+
         // Check GUID before applying damage
         if (!damageable.CheckGUIDIsInBuffer(damage.guid))
             return;
 
         int shieldDamage = Mathf.RoundToInt(damage.amount * damage.shieldMultiplier);
+        int totalDamage = (shieldDamage >= damageable.Shield) ? shieldDamage : damageable.Shield;
 
         damageable.Shield -= shieldDamage;
         if (damageable.Shield <= 0)
@@ -31,7 +35,12 @@ public static class CombatUtils
             damageable.Health -= healthDamage;
             if (damageable.Health <= 0)
                 damageable.Health = 0;
+
+            totalDamage += healthDamage;
         }
+
+        damageDealt = new Damage(damage);
+        damageDealt.amount = totalDamage;
     }
 
     /// <summary>

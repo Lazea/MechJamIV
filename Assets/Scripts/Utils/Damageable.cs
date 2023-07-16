@@ -37,7 +37,8 @@ public class Damageable : MonoBehaviour, IDamageable
 
     public void ApplyDamage(Damage damage)
     {
-        CombatUtils.ApplyDamage(damage, this);
+        Damage damageDealt = null;
+        CombatUtils.ApplyDamage(damage, this, out damageDealt);
 
         if (health <= 0)
             DestroyDamageable();

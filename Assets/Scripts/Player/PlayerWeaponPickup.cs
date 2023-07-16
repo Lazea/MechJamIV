@@ -36,7 +36,8 @@ public class PlayerWeaponPickup : MonoBehaviour
         weaponBody = newWeapon.Item1.transform;
         weaponBody.localScale = Vector3.one;
         weaponBody.rotation = Quaternion.LookRotation(inHandWeapon.forward);
-        weapon.projectileSpawnPoint.transform.position = newWeapon.Item2.transform.Find("ProjectileSpawnMount").position;
+        weapon.projectileSpawnPoint.transform.position = 
+            newWeapon.Item2.transform.Find("ProjectileSpawnMount").position;
     }
 
     // Update is called once per frame

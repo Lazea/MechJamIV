@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaab2ec01754d2e4c9654c153624b53e, type: 3}
+  m_Name: ActiveCard
+  m_EditorClassIdentifier: 
+  cardName: 
+  tileset: {fileID: 11400000, guid: f88f6abb8e9378348921d9e8440e4e7f, type: 2}
+  env: {fileID: 11400000, guid: 7ea03b208c8f24c45a66295a2e9fe215, type: 2}
+  obscureTileset: 0
+  lengthMod: 0
+  secondaryMod: 0
+  lvlReq: 0
+  hostility: 0
+  richness: 0

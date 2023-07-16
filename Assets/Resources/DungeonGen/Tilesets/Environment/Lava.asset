@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5b82210995bed4195652ccf9ae3e0b, type: 3}
+  m_Name: Lava
+  m_EditorClassIdentifier: 
+  ambient: {fileID: 0}
+  song: {fileID: 0}
+  reverb: 16
+  weather: {fileID: 4099359126124732322, guid: 7543834e71eaeb449bf8e9106a348b03, type: 3}
+  volume: {fileID: 11400000, guid: d0bd66ff7be1eaf4d9c08795ec22e385, type: 2}
+  sky: {fileID: 2100000, guid: 975d10440f9034e4b9a2e12d58ed1563, type: 2}
+  fogLevel: 0.015
+  fogColor: {r: 0.8509804, g: 0.5411765, b: 0.4117647, a: 0}

@@ -12,11 +12,12 @@ public class NPCsManager : Singleton<NPCsManager>
     [Header("Waves")]
     public List<NPCSpawnWave> sceneSpawnWaves;
     int waveIndex = 0;
+    bool combatComplete;
 
     [Header("Spawn Points")]
     public float minSpawnDistance = 20f;
-    public Transform fuzzySpawnPointsParent;
-    public Transform turretSpawnPointsParent;
+    public string fuzzySpawnPointsName = "NPCSpawnPoint";
+    public string turretSpawnPointsName = "TurretSpawnPoint";
     public List<Transform> fuzzySpawnPoints;
     public List<Transform> turretSpawnPoints;
 
@@ -26,28 +27,29 @@ public class NPCsManager : Singleton<NPCsManager>
 
     [Header("Events")]
     public SOGESys.Events.TransformGameEvent NPCSpawned;
-
-    // [Header("Testing")]
-    // [SerializeField]
-    // int npcIndex;
-    // [SerializeField]
-    // int npcSpawnCount;
+    public SOGESys.BaseGameEvent CombatComplete;
 
     // Start is called before the first frame update
     void Start()
     {
         // Grab all fuzzy spawn points
         fuzzySpawnPoints = new List<Transform>();
-        foreach(Transform spawnPoint in fuzzySpawnPointsParent)
+        var spawns = GameObject.FindObjectsOfType<GameObject>()
+            .Where(obj => obj.name == fuzzySpawnPointsName)
+            .ToArray();
+        foreach (GameObject s in spawns)
         {
-            fuzzySpawnPoints.Add(spawnPoint);
+            fuzzySpawnPoints.Add(s.transform);
         }
 
         // Grab all turret spawn points
         turretSpawnPoints = new List<Transform>();
-        foreach(Transform spawnPoint in turretSpawnPointsParent)
+        spawns = GameObject.FindObjectsOfType<GameObject>()
+            .Where(obj => obj.name == turretSpawnPointsName)
+            .ToArray();
+        foreach (GameObject s in spawns)
         {
-            turretSpawnPoints.Add(spawnPoint);
+            turretSpawnPoints.Add(s.transform);
         }
 
         // Pick a wave that has the most turrets in count
@@ -69,7 +71,9 @@ public class NPCsManager : Singleton<NPCsManager>
         for(int i = 0; i < maxTurretCount; i++)
         {
             int j = UnityEngine.Random.Range(0, selectWave.turrets.Length);
-            SpawnNPC(selectWave.turrets[j], shuffledSpawns[i].position, spawnedTurretNPCs);
+            Vector3 playerPosition = GameManager.Instance.Player.transform.position;
+            if (Vector3.Distance(playerPosition, shuffledSpawns[i].position) >= minSpawnDistance * 0.5f)
+                SpawnNPC(selectWave.turrets[j], shuffledSpawns[i].position, spawnedTurretNPCs);
         }
 
         // Spawn initial wave
@@ -94,12 +98,21 @@ public class NPCsManager : Singleton<NPCsManager>
                     SpawnNPCsWave(unitSet.enemyUnit, unitSet.unitCount);
                 }
             }
+            else if(!combatComplete)
+            {
+                Debug.Log("All waves completed. Combat is Done");
+                combatComplete = true;
+                CombatComplete.Raise();
+            }
         }
     }
 
     public GameObject SpawnNPC(GameObject npc)
     {
         List<Vector3> points = SelectSpawnPoints();
+        if (points.Count == 0)
+            return null;
+
         int i = UnityEngine.Random.Range(0, points.Count);
         Vector3 point = GetRandomSpawnPoint(points[i], 8f);
 
@@ -127,6 +140,9 @@ public class NPCsManager : Singleton<NPCsManager>
     public void SpawnNPCsWave(GameObject npc, int count, List<GameObject> spawnedList = default)
     {
         List<Vector3> points = SelectSpawnPoints();
+        if (points.Count == 0)
+            return;
+
         for (int i = 0; i < count; i++)
         {
             int j = UnityEngine.Random.Range(0, points.Count);
@@ -183,17 +199,8 @@ public class NPCsManager : Singleton<NPCsManager>
         spawnedNPCs.Remove(npc.gameObject);
     }
 
-    // #region [Tests]
-    // [ContextMenu("Test NPC Spawn")]
-    // public void TestSpawnNPC()
-    // {
-    //     SpawnNPC(npcPrefabs[npcIndex]);
-    // }
-
-    // [ContextMenu("Test NPC Wave Spawn")]
-    // public void TestSpawnNPCWave()
-    // {
-    //     SpawnNPCsWave(npcPrefabs[npcIndex], npcSpawnCount);
-    // }
-    // #endregion
+    public bool IsCombatCompleted()
+    {
+        return combatComplete;
+    }
 }
