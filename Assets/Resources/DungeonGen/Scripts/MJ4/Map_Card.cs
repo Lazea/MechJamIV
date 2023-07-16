@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Map Card", menuName = "ScriptableObjects/MapCard")]
+[CreateAssetMenu(fileName = "Map Card", menuName = "Scriptable Objects/MapCard")]
 public class Map_Card : ScriptableObject
 {
     [Header("Name of map")]

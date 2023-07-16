@@ -86,12 +86,14 @@ public class Map_Conditions : MonoBehaviour
         startingSecondary = secondaryLength;
 
         BuildMap();
+
+        navSurface.BuildNavMesh();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        navSurface.BuildNavMesh();
+
     }
 
     public float GetNoiseValue(Vector3 sample)

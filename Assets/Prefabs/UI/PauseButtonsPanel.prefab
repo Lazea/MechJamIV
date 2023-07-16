@@ -699,7 +699,7 @@ PrefabInstance:
     - target: {fileID: 3958027473355435505, guid: 26e0758a6ee50744cb9aa1846b673895,
         type: 3}
       propertyPath: m_text
-      value: Puase Menu
+      value: Pause Menu
       objectReference: {fileID: 0}
     - target: {fileID: 3958027473355435505, guid: 26e0758a6ee50744cb9aa1846b673895,
         type: 3}

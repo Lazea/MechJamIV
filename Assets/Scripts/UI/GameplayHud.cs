@@ -166,8 +166,7 @@ public class GameplayHud : Singleton<GameplayHud>
         var dmgIndicator = Instantiate(
             damageIndicatorPrefab,
             damageIndicatorParent).GetComponent<PlayerDamageIndicator>();
-        // if(damage.source != null)
-        //     dmgIndicator.target = damage.source.transform;
-        dmgIndicator.target = damage.source.transform;
+        if (damage.source != null)
+            dmgIndicator.target = damage.source.transform;
     }
 }

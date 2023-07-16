@@ -31,9 +31,10 @@ public class PlayerDamageIndicator : MonoBehaviour
             Vector3 targetPos = target.position;
             targetPos.y = 0f;
             Vector3 dir = (targetPos - playerPos).normalized;
-            float angle = Vector3.Angle(
+            float angle = Vector3.SignedAngle(
                 GameManager.Instance.Player.transform.forward,
-                dir);
+                dir,
+                Vector3.down);
 
             rect.eulerAngles = Vector3.forward * angle;  
         }

@@ -267,12 +267,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
+  m_fontSize: 44.75
   m_fontSizeBase: 48
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 24
+  m_fontSizeMax: 58
   m_fontStyle: 18
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -540,7 +540,6 @@ MonoBehaviour:
   missionName: {fileID: 122665391791901770}
   loc: {fileID: 122665392840345740}
   length: {fileID: 122665391420880915}
-  complex: {fileID: 0}
   conditions: {fileID: 122665392059670086}
   isShowing: 0
   flashColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 0.8352941}

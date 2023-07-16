@@ -1,0 +1,1064 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8282325724133665587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8282325724133665589}
+  - component: {fileID: 8282325724133665590}
+  - component: {fileID: 8282325724133665591}
+  m_Layer: 0
+  m_Name: WeaponsGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8282325724133665589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282325724133665587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8282325724133665590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282325724133665587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f72fc4b7a5a644c97c2598165696a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: e35a8065d1fdd014594ce1e38e2bcb0d, type: 3}
+  weaponDataset:
+    Common:
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 13
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 11
+      rarity: 0
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 3
+      recoil: 0
+      power: 8
+      rarity: 0
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 3
+      recoil: 0
+      power: 14
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 3
+      recoil: 0
+      power: 15
+      rarity: 0
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 3
+      recoil: 0
+      power: 10
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 1
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 0
+      recoil: 0
+      power: 31
+      rarity: 0
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 1
+      recoil: 0
+      power: 14
+      rarity: 0
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 15
+      rarity: 0
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 20
+      rarity: 0
+    - projectileType: 0
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 4
+      recoil: 0
+      power: 35
+      rarity: 0
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 0
+      recoil: 0
+      power: 12
+      rarity: 0
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 15
+      rarity: 0
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 8
+      rarity: 0
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 33
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 18
+      rarity: 0
+    - projectileType: 3
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 11
+      rarity: 0
+    - projectileType: 3
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 17
+      rarity: 0
+    Uncommon:
+    - projectileType: 1
+      projectileModifiers: 0300000001000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 0
+      recoil: 0
+      power: 45
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 0300000001000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 40
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 55
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 38
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 0300000001000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 50
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 3
+      recoil: 0
+      power: 42
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 1
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 4
+      recoil: 0
+      power: 38
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 4
+      recoil: 0
+      power: 41
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 1
+      recoil: 0
+      power: 39
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 0300000001000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 1
+      recoil: 0
+      power: 48
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 0100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 45
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 43
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 4
+      recoil: 0
+      power: 41
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 4
+      recoil: 0
+      power: 45
+      rarity: 1
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 0
+      recoil: 0
+      power: 40
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 48
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 40
+      rarity: 1
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 42
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 38
+      rarity: 1
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 1
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 38
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 3
+      recoil: 0
+      power: 41
+      rarity: 1
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 1
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 3
+      recoil: 0
+      power: 40
+      rarity: 1
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 39
+      rarity: 1
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 1
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 42
+      rarity: 1
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 45
+      rarity: 1
+    - projectileType: 3
+      projectileModifiers: 03000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 48
+      rarity: 1
+    Rare:
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 0
+      recoil: 0
+      power: 62
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 0
+      recoil: 0
+      power: 65
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 58
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 64
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 1
+      recoil: 0
+      power: 67
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 3
+      recoil: 0
+      power: 62
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 3
+      recoil: 0
+      power: 59
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 4
+      recoil: 0
+      power: 64
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 4
+      recoil: 0
+      power: 58
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 4
+      recoil: 0
+      power: 61
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 0
+      recoil: 0
+      power: 57
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 0
+      recoil: 0
+      power: 63
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 0
+      recoil: 0
+      power: 66
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 63
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 57
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 60
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 4
+      recoil: 0
+      power: 65
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 4
+      recoil: 0
+      power: 62
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 0300000001000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 4
+      recoil: 0
+      power: 57
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 0
+      recoil: 0
+      power: 58
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 60
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 57
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 62
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 59
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 3
+      recoil: 0
+      power: 64
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 3
+      recoil: 0
+      power: 58
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 3
+      recoil: 0
+      power: 61
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 0
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 66
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 60
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 0300000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 63
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 0300000001000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 58
+      rarity: 2
+    Legendary:
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 3
+      recoil: 0
+      power: 68
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 4
+      recoil: 0
+      power: 70
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 0
+      fireModeModifier: 4
+      recoil: 0
+      power: 73
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 1
+      recoil: 0
+      power: 68
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 69
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 3
+      recoil: 0
+      power: 72
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 1
+      fireModeModifier: 4
+      recoil: 0
+      power: 71
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 1
+      recoil: 0
+      power: 69
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 68
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 2
+      recoil: 0
+      power: 71
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 2
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 3
+      recoil: 0
+      power: 70
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 030000000100000002000000
+      spawnOffset: 0
+      damageType: 3
+      damageAmount: 0
+      shieldMultiplier: 0
+      fireMode: 2
+      fireModeModifier: 4
+      recoil: 0
+      power: 75
+      rarity: 3
+  baseWeaponPickupPrefab: {fileID: 7435747472242557168, guid: 4d69826cbc4c7864ebc09b9cb5c19987,
+    type: 3}
+  longBallisticBarrelMeshes:
+  - {fileID: 7672302728726896241, guid: 2d690df325d9aef49a671886cc39005c, type: 3}
+  shortBallisticBarrelMeshes:
+  - {fileID: 4107925462199334391, guid: e53e00956ea4334448d4a6b01dfd44d9, type: 3}
+  longPlasmaBarrelMeshes:
+  - {fileID: 8116828655854625355, guid: c97d88a7d0e7959499555be4f2752f24, type: 3}
+  shortPlasmaBarrelMeshes:
+  - {fileID: 2844850783261215860, guid: 4be396a40cec6f8419afb8953e871827, type: 3}
+  longRocketBarrelMeshes:
+  - {fileID: 708845696673117237, guid: 0c46468528070c842883d6970cf898c7, type: 3}
+  shortRocketBarrelMeshes:
+  - {fileID: 8627983566492717683, guid: 6f317c12990620d4b9830b9bc1830383, type: 3}
+  semiAutoMagMeshes:
+  - {fileID: 8613415691309853041, guid: 3990ac3d42707f04e93a81bed84d9fb0, type: 3}
+  burstFireMagMeshes:
+  - {fileID: 9041411339404304159, guid: c94f46f247cc74e46adedb6279e39d0c, type: 3}
+  fullAutoMagMeshes:
+  - {fileID: 1682683283828959233, guid: 2f84507746a66444b80d125137b3c6bf, type: 3}
+  ballisticBodyMeshes:
+  - {fileID: 8170637856055197509, guid: bedbaf62b2aa2574cacfef22e8be67e3, type: 3}
+  plasmaBodyMeshes:
+  - {fileID: 4483609715720864799, guid: 50c65182153266943a7628aa834814d1, type: 3}
+  rocketBodyMeshes:
+  - {fileID: 6736302226151241653, guid: 846a0b0f3ae324a499ea33bd14cb5a72, type: 3}
+--- !u!114 &8282325724133665591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282325724133665587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad06c5e83a8e4f429959aa7a77a4415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ecbeb6b3ec2cb404c9fbf5daa395cbbb, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8282325724133665590}
+        m_TargetAssemblyTypeName: WeaponGenerator, Assembly-CSharp
+        m_MethodName: GenerateWeaponOnNPCDeath
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

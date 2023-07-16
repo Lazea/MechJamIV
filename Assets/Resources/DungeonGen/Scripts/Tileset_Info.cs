@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Tileset", menuName = "ScriptableObjects/Tileset")]
+[CreateAssetMenu(fileName = "Tileset", menuName = "Scriptable Objects/Tileset")]
 public class Tileset_Info : ScriptableObject
 {
     [Header("Collection of meshes to use for map tiles")]

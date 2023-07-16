@@ -8,13 +8,14 @@ public class ExitController : MonoBehaviour
     public Collider col;
     CardHand cards;
 
-
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
         cards = FindObjectOfType<CardHand>();
         col = GetComponent<Collider>();
+
+        enabled = NPCsManager.Instance.IsCombatCompleted();
     }
 
     // Update is called once per frame
@@ -22,9 +23,15 @@ public class ExitController : MonoBehaviour
     {
         if (col.bounds.Contains(player.transform.position) && !cards.isShowing)
         {
-            Debug.Log("ENTER");
+            Debug.Log("[ENTER] Exit bounds");
             cards.isShowing = true;
             StartCoroutine(cards.showCards());
+        }
+        else if(!col.bounds.Contains(player.transform.position) && cards.isShowing)
+        {
+            Debug.Log("[EXIT] Exit bounds");
+            cards.isShowing = false;
+            //StartCoroutine(cards.showCards());
         }
     }
 }

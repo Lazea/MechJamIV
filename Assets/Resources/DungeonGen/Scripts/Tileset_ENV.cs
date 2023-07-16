@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-[CreateAssetMenu(fileName = "Environment", menuName = "ScriptableObjects/Environment")]
+[CreateAssetMenu(fileName = "Environment", menuName = "Scriptable Objects/Environment")]
 
 public class Tileset_ENV : ScriptableObject
 {

@@ -86,8 +86,11 @@ public class Projectile : MonoBehaviour
         }
 
         transform.position = newPosition;
-        Quaternion rot = Quaternion.LookRotation(disp.normalized, Vector3.up);
-        transform.rotation = rot;
+        if (disp.magnitude > 0f)
+        {
+            Quaternion rot = Quaternion.LookRotation(disp.normalized, Vector3.up);
+            transform.rotation = rot;
+        }
     }
 
     public virtual void ProjectileHit(Vector3 point, Vector3 direction)

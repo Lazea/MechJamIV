@@ -29,8 +29,6 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
     public GameObject[] plasmaBodyMeshes;
     public GameObject[] rocketBodyMeshes;
 
-    public GameObject[] weaponPrefabs;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -82,7 +80,9 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         return ConstructWeaponObject(weaponObject, data);
     }
 
-    public (GameObject, GameObject, GameObject) ConstructWeaponObject(GameObject weaponObject, WeaponData data)
+    public (GameObject, GameObject, GameObject) ConstructWeaponObject(
+        GameObject weaponObject,
+        WeaponData data)
     {
         GameObject body = null;
         GameObject barrel = null;
@@ -128,7 +128,7 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
                 break;
         }
 
-        body.transform.localScale = Vector3.one * 2f;
+        body.transform.localScale = Vector3.one * 0.2f;
         return (body, barrel, mag);
     }
 
@@ -152,7 +152,11 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         float accuracy = 1f - (recoil / 0.08f);
         var barrels = (accuracy >= 0.5f) ? longBarrelMeshes : shortBarrelMeshes;
         int i = Random.Range(0, barrels.Length);
-        Vector3 mountPoint = weaponBody.transform.Find("BarrelMountPoint").localPosition;
+
+        Vector3 mountPoint = Vector3.zero;
+        Transform mountPointTransform = weaponBody.transform.Find("BarrelMountPoint");
+        if(mountPointTransform != null)
+            mountPoint = mountPointTransform.localPosition;
 
         GameObject barrel = Instantiate(barrels[i]);
         barrel.transform.parent = weaponBody.transform;
@@ -165,7 +169,11 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         GameObject[] meshes)
     {
         int i = Random.Range(0, meshes.Length);
-        Vector3 mountPoint = weaponBody.transform.Find("MagMountPoint").localPosition;
+
+        Vector3 mountPoint = Vector3.zero;
+        Transform mountPointTransform = weaponBody.transform.Find("MagMountPoint");
+        if(mountPointTransform != null)
+            mountPoint = mountPointTransform.localPosition;
 
         GameObject mag = Instantiate(semiAutoMagMeshes[i]);
         mag.transform.parent = weaponBody.transform;
