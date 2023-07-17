@@ -9,7 +9,11 @@ public class NPCsManager : Singleton<NPCsManager>
 {
     public Transform npcsParent;
 
+    [Header("Waves Pool")]
+    public NPCSpawnWave[] spawnWavesPool;
+
     [Header("Waves")]
+    public int wavesCount = 2;
     public List<NPCSpawnWave> sceneSpawnWaves;
     int waveIndex = 0;
     bool combatComplete;
@@ -51,6 +55,8 @@ public class NPCsManager : Singleton<NPCsManager>
         {
             turretSpawnPoints.Add(s.transform);
         }
+
+        sceneSpawnWaves = SelectSpawnWavesFromPool();
 
         // Pick a wave that has the most turrets in count
         NPCSpawnWave selectWave = null;
@@ -105,6 +111,20 @@ public class NPCsManager : Singleton<NPCsManager>
                 CombatComplete.Raise();
             }
         }
+    }
+
+    public List<NPCSpawnWave> SelectSpawnWavesFromPool()
+    {
+        List<NPCSpawnWave> waves = new List<NPCSpawnWave>();
+
+        // TODO: Control save count and selection based on player stage count
+        for(int i = 0; i < wavesCount; i++)
+        {
+            int j = UnityEngine.Random.Range(0, spawnWavesPool.Length);
+            waves.Add(spawnWavesPool[j]);
+        }
+
+        return waves;
     }
 
     public GameObject SpawnNPC(GameObject npc)
