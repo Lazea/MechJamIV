@@ -16,9 +16,12 @@ public class PlayerInputHandler : MonoBehaviour
     [Header("Movement Events")]
     public UnityEvent<Vector2> onLook;
     public UnityEvent<Vector2> onMove;
+    public UnityEvent onJump;
     public UnityEvent onVerticalThrustHold;
     public UnityEvent onVerticalThrustRelease;
     public UnityEvent onLateralThrust;
+    public UnityEvent onLateralThrustHold;
+    public UnityEvent onLateralThrustRelease;
 
     [Header("Action Events")]
     public UnityEvent onFire;
@@ -45,9 +48,14 @@ public class PlayerInputHandler : MonoBehaviour
         controls.Movement.performed += ctx => { move = ctx.ReadValue<Vector2>(); };
         controls.Movement.canceled += ctx => { move = Vector2.zero; };
 
-        controls.VerticalThrust.started += ctx => { onVerticalThrustHold.Invoke(); };
+        controls.Jump.performed += ctx => { onJump.Invoke(); };
+        controls.VerticalThrust.performed += ctx => { onVerticalThrustHold.Invoke(); };
         controls.VerticalThrust.canceled += ctx => { onVerticalThrustRelease.Invoke(); };
-        controls.LateralThrust.started += ctx => { onLateralThrust.Invoke(); };
+        controls.LateralThrust.started += ctx => {
+            onLateralThrust.Invoke();
+            onLateralThrustHold.Invoke();
+        };
+        controls.LateralThrust.canceled += ctx => { onLateralThrustRelease.Invoke(); };
 
         controls.Fire.started += ctx => { onFire.Invoke(); };
         controls.Fire.canceled += ctx => { onFireRelease.Invoke(); };

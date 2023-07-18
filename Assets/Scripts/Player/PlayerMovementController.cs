@@ -17,6 +17,10 @@ public class PlayerMovementController : MonoBehaviour
 
     // Lateral Thrusters
     float lateralThrustCooldownTime;
+    bool lateralThrustHold;
+
+    // Jump
+    bool jump;
 
     // Vertical Thrusters
     float verticalThrusterFuel;
@@ -73,10 +77,15 @@ public class PlayerMovementController : MonoBehaviour
         HandleColliderMaterial();
 
         // Set speed for the animator
+        float targetSpeed = inputMove.magnitude;
+        if (lateralThrustHold)
+            targetSpeed *= (data.speedScaler + 0.55f);
+        else
+            targetSpeed *= data.speedScaler;
+
         anim.SetFloat(
             "Speed",
-            Mathf.Lerp(anim.GetFloat("Speed"), inputMove.magnitude, moveSmooth)
-        );
+            Mathf.Lerp(anim.GetFloat("Speed"), targetSpeed, moveSmooth));
         Vector2 move = Vector2.Lerp(
             new Vector2(anim.GetFloat("SpeedX"), anim.GetFloat("SpeedY")),
             inputMove,
@@ -85,15 +94,22 @@ public class PlayerMovementController : MonoBehaviour
         anim.SetFloat("SpeedX", move.x);
         anim.SetFloat("SpeedY", move.y);
 
-        // Applies a downward force
-        rb.AddForce(Vector3.down * downForce);
-
         // Handle ground
         isGrounded = GroundCheck();
         anim.SetBool("IsGrounded", isGrounded);
-        anim.SetBool("VertThrust", (verticalThrusting && verticalThrusterFuel > 0f));
 
-        HandleVerticalThrust();
+        if (jump)
+        {
+            jump = false;
+            rb.AddForce(Vector3.up * data.jumpForce, ForceMode.VelocityChange);
+        }
+        else
+        {
+            // Applies a downward force
+            rb.AddForce(Vector3.down * downForce);
+            anim.SetBool("VertThrust", (verticalThrusting && verticalThrusterFuel > 0f));
+            HandleVerticalThrust();
+        }
         HandleLateralThrust();
     }
 
@@ -224,6 +240,14 @@ public class PlayerMovementController : MonoBehaviour
         inputMove = move;
     }
 
+    public void Jump()
+    {
+        if (!isGrounded)
+            return;
+
+        jump = true;
+    }
+
     /// <summary>
     /// Initiates vertical thrusting if not currently locked.
     /// </summary>
@@ -250,6 +274,16 @@ public class PlayerMovementController : MonoBehaviour
 
         anim.SetTrigger("LatThrust");
         lateralThrustCooldownTime = data.lateralThrustCooldown;
+    }
+
+    public void LateralThrustHold()
+    {
+        lateralThrustHold = true;
+    }
+
+    public void LateralThrustRelease()
+    {
+        lateralThrustHold = false;
     }
 
     private void OnDrawGizmos()

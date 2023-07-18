@@ -33,12 +33,21 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "1261bb29-4475-4989-b03f-8628f9bc6e70",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.2)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "VerticalThrust",
                     "type": "Button",
                     "id": "1ed59bdc-988d-46ba-91fc-318f5d41b280",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold(duration=0.21)",
                     "initialStateCheck": false
                 },
                 {
@@ -358,6 +367,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f76407a5-6646-4bec-9584-bd6d7be7cdf6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b05615a7-9afd-457c-a8de-a8114325f98d",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
