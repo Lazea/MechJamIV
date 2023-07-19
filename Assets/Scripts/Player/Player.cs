@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using SOGESys = SOGameEventSystem;
 
 /// <summary>
@@ -24,14 +25,24 @@ public class Player : MonoBehaviour, IDamageable
         set { data.shield = value; }
     }
 
+    [Header("Damage Effects")]
+    public DamageEffect shockDamageEffect;
+    public DamageEffect fireDamageEffect;
+
+    [Header("Vulnerability")]
     public bool invulnerable;
     public bool killable;
 
     [Header("Events")]
+    public UnityEvent onFireDamage;
+    public UnityEvent onShockStart;
+    public UnityEvent onShockEnd;
     public SOGESys.Events.DamageGameEvent onHit;
     public SOGESys.Events.IntGameEvent onHealthChange;
     public SOGESys.Events.IntGameEvent onShieldChange;
     public SOGESys.BaseGameEvent onDeath;
+
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -41,12 +52,69 @@ public class Player : MonoBehaviour, IDamageable
 
         onHealthChange.Raise(data.health);
         onShieldChange.Raise(data.shield);
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        HandleDamageEffects();
+    }
+
+    void HandleDamageEffects()
+    {
+        if (data.health <= 0)
+        {
+            anim.SetBool("Stunned", false);
+            onShockEnd.Invoke();
+            return;
+        }
+
+        if (shockDamageEffect != null)
+        {
+            if (shockDamageEffect.IsEffectComplete())
+            {
+                shockDamageEffect = null;
+                anim.SetBool("Stunned", false);
+                onShockEnd.Invoke();
+            }
+            else
+            {
+                shockDamageEffect.UpdateEffect();
+                anim.SetBool("Stunned", true);
+            }
+        }
+
+        if (fireDamageEffect != null)
+        {
+            if (fireDamageEffect.IsEffectComplete())
+            {
+                fireDamageEffect = null;
+            }
+            else
+            {
+                fireDamageEffect.UpdateEffect();
+                if (fireDamageEffect.CanDealDamage())
+                {
+                    Damage dmg = null;
+                    CombatUtils.ApplyDamage(
+                        fireDamageEffect.damage,
+                        0f,
+                        true,
+                        this,
+                        out dmg);
+
+                    anim.SetTrigger("Hurt");
+                    onFireDamage.Invoke();
+                    onHealthChange.Raise(data.health);
+                    onShieldChange.Raise(data.shield);
+
+                    if (data.health <= 0)
+                        Kill();
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -70,14 +138,44 @@ public class Player : MonoBehaviour, IDamageable
         if(invulnerable)
             return;
 
+        if (data.health <= 0)
+            return;
+
+        anim.SetTrigger("Hurt");
+
         Damage damageDealt = null;
-        CombatUtils.ApplyDamage(damage, this, out damageDealt);
+        CombatUtils.ApplyDamage(damage, false, this, out damageDealt);
+        ApplyDamageEffect(damage);
 
         onHealthChange.Raise(data.health);
         onShieldChange.Raise(data.shield);
 
         if (data.health <= 0)
             Kill();
+    }
+
+    void ApplyDamageEffect(Damage damage)
+    {
+        if (!damage.hasEffect)
+            return;
+
+        switch (damage.damageType)
+        {
+            case DamageType.Fire:
+                if (fireDamageEffect == null)
+                {
+                    fireDamageEffect = damage.damageEffect;
+                    onFireDamage.Invoke();
+                }
+                break;
+            case DamageType.Shock:
+                if (shockDamageEffect == null)
+                {
+                    shockDamageEffect = damage.damageEffect;
+                    onShockStart.Invoke();
+                }
+                break;
+        }
     }
 
     /// <summary>

@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
             SetProjectilePrefab();
         }
     }
+    PlayerData playerData;
 
     [Header("Projectile")]
     GameObject projectilePrefab;
@@ -39,6 +40,7 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerData = GameManager.Instance.playerData;
         ResetWeaponData();
     }
 
@@ -161,11 +163,20 @@ public class Weapon : MonoBehaviour
         dir += spawnTransform.up * recoilOffset.y;
         Quaternion rot = Quaternion.LookRotation(dir.normalized);
 
-        var projectile = Instantiate(
-            projectilePrefab,
+        CombatUtils.SpawnProjectile(
             point,
-            rot).GetComponent<IProjectile>();
-        projectile.Damage.source = gameObject;
+            rot,
+            playerData.damageMultiplier,
+            playerData.shieldEnergyDamageMultiplier,
+            playerData.critChance,
+            playerData.critDamageMultiplier,
+            playerData.fireChance,
+            playerData.fireDamage,
+            playerData.fireDuration,
+            playerData.shockChance,
+            playerData.shockDuration,
+            projectilePrefab,
+            gameObject);
     }
     
     void SetProjectilePrefab()

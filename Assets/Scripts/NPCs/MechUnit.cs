@@ -43,11 +43,20 @@ public class MechUnit : BaseNPC
 
         // Handle animation movement
         HandleMovement();
+
+        // Handle Damage Effects
+        HandleDamageEffects();
+
+        if (isStunned)
+            Stop();
     }
 
     public void HandleAim()
     {
         if (!HasTarget)
+            return;
+
+        if (isStunned || isDead)
             return;
 
         Vector3 _target = GameManager.Instance.PlayerCenter;

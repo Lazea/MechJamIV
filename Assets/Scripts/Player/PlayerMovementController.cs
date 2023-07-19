@@ -77,7 +77,6 @@ public class PlayerMovementController : MonoBehaviour
             if(state.normalizedTime >= 0.05f && !dashed)
             {
                 dashed = true;
-                Debug.Log("DASH!!!");
             }
         }
         else

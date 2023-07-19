@@ -17,6 +17,21 @@ PrefabInstance:
       propertyPath: damage.damageType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1641889509077717160, guid: 7b0c2814c3282894e8af582b46277d8e,
+        type: 3}
+      propertyPath: damage.damageEffect.damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641889509077717160, guid: 7b0c2814c3282894e8af582b46277d8e,
+        type: 3}
+      propertyPath: damage.damageEffect.lifeTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641889509077717160, guid: 7b0c2814c3282894e8af582b46277d8e,
+        type: 3}
+      propertyPath: damage.damageEffect.damageInterval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1641889509077717163, guid: 7b0c2814c3282894e8af582b46277d8e,
         type: 3}
       propertyPath: m_RootOrder

@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   maxShield: 100
-  shield: 100
+  shield: 80
   lateralThrustCooldown: 0.8
   jumpForce: 18
   verticalThrust: 155
@@ -66,6 +66,14 @@ MonoBehaviour:
   verticalThrustCooldown: 0.75
   speedScaler: 1
   damageMultiplier: 1
-  credits: 225
+  critChance: 0.04
+  critDamageMultiplier: 2
+  shieldEnergyDamageMultiplier: 1.5
+  fireChance: 0.15
+  fireDamage: 4
+  fireDuration: 4
+  shockChance: 0.15
+  shockDuration: 2.25
+  credits: 6945
   creditsSaved: 1040
-  kills: 19
+  kills: 440

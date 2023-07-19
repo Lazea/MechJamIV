@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 315089025109042312, guid: e33fc1b46d960934f99757dd850af6f2,
         type: 3}
       propertyPath: m_Name
-      value: Projectile_Player_Rocket_Normal_Shock
+      value: Projectile_Player_Rocket_Shock
       objectReference: {fileID: 0}
     - target: {fileID: 315089025109042313, guid: e33fc1b46d960934f99757dd850af6f2,
         type: 3}
@@ -81,6 +81,11 @@ PrefabInstance:
         type: 3}
       propertyPath: damage.damageType
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607830304260788035, guid: e33fc1b46d960934f99757dd850af6f2,
+        type: 3}
+      propertyPath: damage.damageEffect.lifeTime
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e33fc1b46d960934f99757dd850af6f2, type: 3}

@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: coverMask.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3470776959614934130, guid: 2be508c907d1f2d49b9a971368b4dfbe,
+        type: 3}
+      propertyPath: damage.shieldMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3470776959614934140, guid: 2be508c907d1f2d49b9a971368b4dfbe,
         type: 3}
       propertyPath: m_Name

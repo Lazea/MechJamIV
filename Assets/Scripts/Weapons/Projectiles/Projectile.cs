@@ -35,12 +35,6 @@ public class Projectile : MonoBehaviour, IProjectile
     [Tooltip("Effect to spawn on hit.")]
     public Transform hitFX;
 
-    // Start is called before the first frame update
-    protected virtual void Start()
-    {
-        damage = damage.Clone();
-    }
-
     // Update is called once per frame
     protected virtual void Update()
     {
