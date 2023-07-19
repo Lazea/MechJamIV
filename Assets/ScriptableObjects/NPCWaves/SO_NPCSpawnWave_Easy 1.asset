@@ -16,6 +16,6 @@ MonoBehaviour:
   turrets:
   - {fileID: 8313568275865629066, guid: cf8937c7156408545be994215c48810d, type: 3}
   enemyUnitSets:
-  - enemyUnit: {fileID: 6506259642236595216, guid: 6a285e2ad9a26314c89b71723aea7e20,
+  - enemyUnit: {fileID: 7104470882609142439, guid: 7fc15a7262ab0c044a01ce5e69fdf1d1,
       type: 3}
     unitCount: 3

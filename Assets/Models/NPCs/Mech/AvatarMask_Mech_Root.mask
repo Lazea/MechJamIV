@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AvatarMask_Mech_Root
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Root
+    m_Weight: 1
+  - m_Path: Root/Hips
+    m_Weight: 0
+  - m_Path: Root/Hips/Body
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.L
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.L/Forearm.L
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.L/Forearm.L/Hand.L
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.L/Forearm.L/Hand.L/NPC_Mech_ForeArms.003
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.L/Forearm.L/NPC_Mech_ForeArms
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.L/NPC_Mech_BIceps
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.L/NPC_Mech_Pauldron
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/Forearm.R
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/Forearm.R/Hand.R
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/Forearm.R/Hand.R/NPC_Mech_ForeArms.002
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/Forearm.R/Hand.R/NPC_Mech_ForeArms.002/Gun_Ballistic_Body
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/Forearm.R/Hand.R/NPC_Mech_ForeArms.002/Gun_Ballistic_Body/Gun_Ballistic_BarrelLong
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/Forearm.R/Hand.R/NPC_Mech_ForeArms.002/Gun_Ballistic_Body/Gun_Ballistic_BarrelShort
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/Forearm.R/Hand.R/NPC_Mech_ForeArms.002/Gun_Ballistic_Body/Mag_Full
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/Forearm.R/NPC_Mech_ForeArms.001
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/NPC_Mech_BIceps.002
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Bicep.R/NPC_Mech_Pauldron.002
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Head
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/Head/NPC_Mech_Head1
+    m_Weight: 0
+  - m_Path: Root/Hips/Body/NPC_Mech_Body
+    m_Weight: 0
+  - m_Path: Root/Hips/NPC_Mech_Hips
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.L
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.L/NPC_Mech_Thigh
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.L/Shin.L
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.L/Shin.L/Foot.L
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.L/Shin.L/Foot.L/NPC_Mech_Foot
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.L/Shin.L/NPC_Mech_Shins
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.R
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.R/NPC_Mech_Thigh.002
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.R/Shin.R
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.R/Shin.R/Foot.R
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.R/Shin.R/Foot.R/NPC_Mech_Foot.001
+    m_Weight: 0
+  - m_Path: Root/Hips/Thigh.R/Shin.R/NPC_Mech_Shins.001
+    m_Weight: 0

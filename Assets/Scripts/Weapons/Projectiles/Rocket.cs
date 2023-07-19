@@ -6,18 +6,6 @@ public class Rocket : Projectile
 {
     public float blastRadius;
     public AnimationCurve damageFalloff;
-    
-    // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
 
     public override void ProjectileHit(Vector3 point, Vector3 direction)
     {

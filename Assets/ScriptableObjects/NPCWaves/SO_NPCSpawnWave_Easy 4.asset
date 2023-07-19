@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563f807bfda85bb41b0f2aedf60e2664, type: 3}
   m_Name: SO_NPCSpawnWave_Easy 4
   m_EditorClassIdentifier: 
-  turretCount: 1
-  turrets:
-  - {fileID: 8313568275865629066, guid: cf8937c7156408545be994215c48810d, type: 3}
+  turretCount: 0
+  turrets: []
   enemyUnitSets:
-  - enemyUnit: {fileID: 6506259642236595216, guid: 6a285e2ad9a26314c89b71723aea7e20,
+  - enemyUnit: {fileID: 7104470882609142439, guid: 7fc15a7262ab0c044a01ce5e69fdf1d1,
       type: 3}
-    unitCount: 8
+    unitCount: 4
+  - enemyUnit: {fileID: 3672568342726280645, guid: 98faf2fbf89a8234eb282f39001cfe7a,
+      type: 3}
+    unitCount: 1
+  - enemyUnit: {fileID: 8902664786216819013, guid: 065a84d8f6b78584680bfc86a11f1b39,
+      type: 3}
+    unitCount: 2

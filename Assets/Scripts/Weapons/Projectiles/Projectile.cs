@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, IProjectile
 {
     [Header("Damage")]
-    public Damage damage;
+    [SerializeField]
+    protected Damage damage;
+    public Damage Damage
+    {
+        get { return damage; }
+        set { damage = value; }
+    }
 
     [Header("Hit Check & Travel")]
     public float radius = 1f;
@@ -98,6 +104,7 @@ public class Projectile : MonoBehaviour
         foreach (Transform e in effects)
             e.parent = null;
         SpawnHitFX(point, direction);
+        DrawPoint(point);
         Destroy(gameObject);
     }
 
@@ -117,8 +124,26 @@ public class Projectile : MonoBehaviour
         hitFX.gameObject.SetActive(true);
     }
 
+    void DrawPoint(Vector3 point)
+    {
+        Debug.DrawLine(point, point + Vector3.forward);
+        Debug.DrawLine(point, point - Vector3.forward);
+        Debug.DrawLine(point, point + Vector3.right);
+        Debug.DrawLine(point, point - Vector3.right);
+        Debug.DrawLine(point, point + Vector3.up);
+        Debug.DrawLine(point, point - Vector3.up);
+    }
+
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(
+            transform.position + transform.forward * maxDistance,
+            radius);
+        Gizmos.DrawLine(
+            transform.position,
+            transform.position + transform.forward * maxDistance);
+
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
         Gizmos.DrawLine(

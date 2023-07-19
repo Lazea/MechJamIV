@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class RadarUI : MonoBehaviour
 {
@@ -94,8 +95,15 @@ public class RadarUI : MonoBehaviour
 
     public void RemoveEnemyMarker(Transform npc)
     {
-        Marker marker = markers.Single(m => m.markedNPC.Equals(npc.gameObject));
-        markers.Remove(marker);
-        Destroy(marker.marker.gameObject);
+        try
+        {
+            Marker marker = markers.Single(m => m.markedNPC.Equals(npc.gameObject));
+            markers.Remove(marker);
+            Destroy(marker.marker.gameObject);
+        }
+        catch (InvalidOperationException e)
+        {
+            Debug.LogWarning(e);
+        }
     }
 }
