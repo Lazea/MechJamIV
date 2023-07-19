@@ -32,6 +32,9 @@ public class Map_Conditions : MonoBehaviour
     [HideInInspector]
     public Tileset_Info tileset;
 
+    [Header("Light source for map")]
+    public Light sun;
+
     [Header("default weather if none is provided. Leave blank to leave clear")]
     public GameObject weather;
 
@@ -166,7 +169,7 @@ public class Map_Conditions : MonoBehaviour
             weather = Instantiate(env.weather, cam.transform);
         }
 
-        
+        sun.colorTemperature = env.lightTemp;
 
         seedLength += activeCard.lengthMod;
         secondaryLength += activeCard.secondaryMod;

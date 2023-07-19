@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0f5d5e8e727994ebe65cbd4518b4c1, type: 3}
   m_Name: Lava
   m_EditorClassIdentifier: 
-  tileMaster: {fileID: 6828068702428868239, guid: 489301b47ca80cd4aab6a2358e9afdf7,
+  tileMaster: {fileID: 5340122218815378483, guid: 234dd46e2275a1e4699644c42e9c9490,
     type: 3}
   env:
   - {fileID: 11400000, guid: d9ecf5b8bb002e5488b2f758884cbf9c, type: 2}

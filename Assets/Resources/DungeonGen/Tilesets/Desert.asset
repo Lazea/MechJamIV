@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0f5d5e8e727994ebe65cbd4518b4c1, type: 3}
   m_Name: Desert
   m_EditorClassIdentifier: 
-  tileMaster: {fileID: 6828068702428868239, guid: a3234442a3f6a884383093b98b87ef84,
+  tileMaster: {fileID: 5340122218815378483, guid: af7e98df5666734458fc9e741f55b507,
     type: 3}
   env:
   - {fileID: 11400000, guid: 7ea03b208c8f24c45a66295a2e9fe215, type: 2}
