@@ -371,7 +371,17 @@ PrefabInstance:
     - target: {fileID: 3356548026805588132, guid: 3f2441c32d33c8e4bbded4118ff807aa,
         type: 3}
       propertyPath: startDelay.scalar
-      value: 0.1
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356548026805588132, guid: 3f2441c32d33c8e4bbded4118ff807aa,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356548026805588132, guid: 3f2441c32d33c8e4bbded4118ff807aa,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3356548026805588132, guid: 3f2441c32d33c8e4bbded4118ff807aa,
         type: 3}
