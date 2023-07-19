@@ -1,15 +1,17 @@
+using SOGameEventSystem.Events;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using SOGameEventSystem.Events;
 using UnityEngine.Events;
 
 public class BaseNPC : MonoBehaviour, IDamageable, IActor
 {
     [Header("Data")]
-    public ActorData data;
-    public ActorData Data { get { return data;} }
+    [SerializeField]
+    protected ActorData data;
+    public ActorData Data { get { return data; } }
     public GameObject GameObject { get { return gameObject; } }
 
     [Header("Health")]
@@ -28,57 +30,71 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         set { shield = value; }
     }
     Queue<Guid> guidBuffer = new Queue<Guid>(GameSettings.guidBufferCapacity);
-    
-    [Header("NPC State")]
-    public NPCMovementState moveState;
-    public NPCFireState fireState;
-    public enum NPCMovementState
-    {
-        Idle,
-        Moving,
-        Chasing
-    }
-    public enum NPCFireState
-    {
-        Idle,
-        Firing
-    }
-    
-    [SerializeField]
-    protected bool isDead;
-    [SerializeField]
-    protected bool isStunned;
-    [SerializeField]
-    protected bool hasTarget;
-    [SerializeField]
-    protected bool targetObscured;
-    [SerializeField]
-    protected bool targetInReach;
-    [SerializeField]
-    protected bool targetInCombatRange;
-    [SerializeField]
-    protected bool targetInAim;
-    public LayerMask mask;
-
-    // Target position
-    [SerializeField]
-    protected float targetDistance;
-    [SerializeField]
-    protected float targetAngle;
-    [SerializeField]
-    protected Vector3 targetDir;
-
-    [Header("Aim")]
-    public Transform aim;
 
     [Header("Projectile")]
     public GameObject projectile;
-    public Transform projectileSpawn;
+    public Transform[] projectileSpawns;
+
+    [Header("NPC State")]
+    [SerializeField]
+    protected bool isKillable;
+    public bool IsKillable
+    {
+        get { return isKillable; }
+        set { isKillable = value; }
+    }
+    [SerializeField]
+    protected bool isInvincible;
+    public bool IsInvincible
+    {
+        get { return isInvincible; }
+        set { isInvincible = value; }
+    }
+    protected bool isDead;
+    public bool IsDead { get { return isDead; } }
+    protected bool tookDamage;
+    protected bool isStunned;
+    public bool IsStunned { get { return isStunned; } }
+    protected bool hasTarget;
+    public bool HasTarget { get { return hasTarget; } }
+    protected bool targetObscured;
+    public bool TargetObscured { get { return targetObscured; } }
+    protected bool targetInReach;
+    public bool TargetInReach { get { return targetInReach; } }
+    protected bool targetInCombatRange;
+    public bool TargetInCombatRange { get { return targetInCombatRange; } }
+    protected bool targetInAim;
+    public bool TargetInAim { get { return targetInAim; } }
+    public LayerMask coverMask;
+
+    // Target position
+    protected float targetDistance;
+    public float TargetDistance { get { return targetDistance; } }
+    protected float targetAngle;
+    public float TargetAngle { get { return targetAngle; } }
+    protected Vector3 targetDir;
+    public Vector3 TargetDir { get { return targetDir; } }
+
+    [Header("Effects On Kill")]
+    public GameObject[] effects;
+    public GameObject[] debris;
 
     [Header("Events")]
-    public UnityEvent<Damage> onDamage;
-    public TransformGameEvent onDeath;
-    public IntGameEvent onCreditsDeath;
+    [SerializeField]
+    protected UnityEvent onShotFired;
+    public UnityEvent OnShotFired { get { return onShotFired; } }
+    [SerializeField]
+    protected UnityEvent<Damage> onDamage;
+    public UnityEvent<Damage> OnDamage { get { return onDamage; } }
+    [SerializeField]
+    protected UnityEvent onKilled;
+    public UnityEvent OnKilled { get { return onKilled; } }
+    [SerializeField]
+    protected TransformGameEvent onDeath;
+    public TransformGameEvent OnDeath { get { return onDeath; } }
+    [SerializeField]
+    protected IntGameEvent onCreditsDeath;
+    public IntGameEvent OnCreditsDeath { get { return onCreditsDeath; } }
 
     // Components
     protected Animator anim;
@@ -92,33 +108,32 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
 
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        if(agent != null)
-        {
-            agent.avoidancePriority = UnityEngine.Random.Range(0, 75);
-        }
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        CalculateTargetPosition();
-        
+        CalculateTargetPosition(transform.position, transform.forward);
+
         hasTarget = (GameManager.Instance.Player != null);
-        targetObscured = IsTargetObscured();
-        targetInReach = IsTargetInReach(data.chaseRange);
+        targetObscured = IsTargetObscured(transform.position, coverMask);
+        if (tookDamage)
+            targetInReach = true;
+        else
+            targetInReach = IsTargetInReach(data.chaseRange);
         targetInCombatRange = IsTargetInReach(data.combatRange);
         targetInAim = IsTargetInAim();
     }
 
     #region [Target States]
-    protected virtual void CalculateTargetPosition()
+    protected virtual void CalculateTargetPosition(Vector3 point, Vector3 forward)
     {
-        if(GameManager.Instance.Player != null)
+        if (GameManager.Instance.Player != null)
         {
-            Vector3 disp = GameManager.Instance.PlayerCenter - aim.position;
+            Vector3 disp = GameManager.Instance.PlayerCenter - point;
             targetDistance = disp.magnitude;
             targetDir = disp.normalized;
-            targetAngle = Vector3.Angle(targetDir, aim.forward);
+            targetAngle = Vector3.Angle(targetDir, forward);
         }
         else
         {
@@ -128,23 +143,23 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         }
     }
 
-    public virtual bool IsTargetObscured()
+    public virtual bool IsTargetObscured(Vector3 point, LayerMask mask)
     {
-        Ray ray = new Ray(aim.position + Vector3.up, targetDir);
+        Ray ray = new Ray(point + Vector3.up, targetDir);
         return Physics.Raycast(ray, targetDistance, mask);
     }
 
     public virtual bool IsTargetInReach(float range)
     {
-        if(targetDistance > range)
+        if (targetDistance > range)
             return false;
-            
+
         return !targetObscured;
     }
 
     public virtual bool IsTargetInAim()
     {
-        if(targetAngle > data.aimAngle)
+        if (targetAngle > data.aimAngle)
             return false;
 
         return !targetObscured;
@@ -152,15 +167,23 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     #endregion
 
     #region [Health & Shield Handlers]
-    public bool CheckGUIDIsInBuffer(Guid guid)
+    public virtual bool CheckGUIDIsInBuffer(Guid guid)
     {
         return CombatUtils.CheckGUIDIsInBuffer(guidBuffer, guid);
     }
 
-    public void ApplyDamage(Damage damage)
+    public virtual void ApplyDamage(Damage damage)
     {
-        if(health <= 0)
+        tookDamage = true;
+
+        if (isInvincible)
             return;
+
+        if (health <= 0)
+            return;
+
+        if(anim != null)
+            anim.SetTrigger("Hurt");
 
         Damage damageDealt = null;
         CombatUtils.ApplyDamage(damage, this, out damageDealt);
@@ -168,7 +191,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         if (shield <= 0)
             BreakShield();
 
-        if(damageDealt != null)
+        if (damageDealt != null)
         {
             onDamage.Invoke(damageDealt);
         }
@@ -178,7 +201,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     }
 
     [ContextMenu("Break Shield")]
-    public void BreakShield()
+    public virtual void BreakShield()
     {
         shield = 0;
 
@@ -186,29 +209,87 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     }
 
     [ContextMenu("Kill Unit")]
-    public void Kill()
+    public virtual void Kill()
     {
+        if (!isKillable)
+            return;
+
         health = 0;
-        // TODO: Set anim state to "Death" and destroy on animation event
+
+        if (anim != null)
+            anim.SetBool("Dead", true);
+
+        onKilled.Invoke();
         onDeath.Raise(transform);
         onCreditsDeath.Raise(data.credits);
+    }
+
+    public virtual void DestroyUnit()
+    {
+        foreach(var e in effects)
+        {
+            e.transform.parent = null;
+            e.SetActive(true);
+        }
+
+        foreach(var d in debris)
+        {
+            d.transform.parent = null;
+            d.SetActive(true);
+        }
+
         Destroy(gameObject);
     }
     #endregion
 
     #region [Movement]
-    public void GoToTarget()
+    public void SetPlayerAsDestination(Vector3 offset)
     {
-        agent.SetDestination(GameManager.Instance.Player.transform.position);
-        agent.isStopped = false;
+        if(hasTarget)
+        {
+            agent.SetDestination(
+                GameManager.Instance.Player.transform.position + offset);
+        }
+        else
+        {
+            Stop();
+        }
     }
 
-    public Vector3 GetStrafePosition()
+    public void SetStrafePosition(float minRange, float maxRange)
     {
-        Vector3 strafePosition = transform.right * UnityEngine.Random.Range(7f, 25f);
-        strafePosition *= (float)UnityEngine.Random.Range(-1, 2);
-        strafePosition += transform.forward * UnityEngine.Random.Range(-2f, 2f);
-        return strafePosition;
+        float range = UnityEngine.Random.Range(minRange, maxRange);
+        float dir = UnityEngine.Random.Range(0f, 1f);
+        range *= (dir >= 0.5f) ? 1 : -1;
+        float absRange = Mathf.Abs(range);
+
+        Vector3 right = new Vector3(targetDir.z, targetDir.y, -targetDir.x);
+        Vector3 position = transform.position;
+        position += right * range;
+        position += targetDir * absRange * 0.5f;
+
+        Vector3 destination = transform.position;
+        int tries = 0;
+        while(true)
+        {
+            NavMeshHit hit;
+            if(NavMesh.SamplePosition(position, out hit, absRange * 2f, agent.areaMask))
+            {
+                destination = hit.position;
+                break;
+            }
+
+            tries++;
+            if (tries >= 5)
+                break;
+        }
+
+        agent.SetDestination(destination);
+    }
+
+    public void GoToDestination()
+    {
+        agent.isStopped = false;
     }
 
     public void Stop()
@@ -221,36 +302,54 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         float dist = Vector3.Distance(agent.destination, transform.position);
         return (dist <= agent.stoppingDistance);
     }
+
+    public bool HasPath()
+    {
+        return agent.hasPath;
+    }
     #endregion
 
-    [ContextMenu("Spawn Projectile")]
-    public void SpawnProjectile()
+    [ContextMenu("Spawn Projectiles")]
+    public virtual void SpawnProjectiles()
+    {
+        foreach (var p in projectileSpawns)
+            SpawnProjectile(p.position, p.rotation);
+        anim.SetTrigger("Fire");
+        onShotFired.Invoke();
+    }
+
+    public virtual void SpawnProjectile(Vector3 point, Quaternion orientation)
     {
         var _projectile = Instantiate(
             projectile,
-            projectileSpawn.position,
-            projectileSpawn.rotation).GetComponent<Projectile>();
-        _projectile.damage.source = gameObject;
+            point,
+            orientation).GetComponent<IProjectile>();
+        _projectile.Damage.source = gameObject;
     }
 
     // Return angle in range of -180 to 180
-    protected float NormalizeAngle(float a)
+    public static float NormalizeAngle(float a)
     {
         return (a > 180f) ? a - 360f : a;
     }
 
-    protected virtual void HandleAim(Transform gunBase, Transform gunBarrel, float minLookAngle, float maxLookAngle)
+    public static void HandleAim(
+        Transform gunBase,
+        Transform gunBarrel,
+        float minLookAngle,
+        float maxLookAngle,
+        float aimSpeed)
     {
         Vector3 aimDir = GameManager.Instance.PlayerCenter - gunBase.position;
         var rot = Quaternion.LookRotation(aimDir.normalized);
 
-        gunBase.rotation = Quaternion.Lerp(gunBase.rotation, rot, data.aimSpeed * Time.deltaTime);
+        gunBase.rotation = Quaternion.Lerp(gunBase.rotation, rot, aimSpeed * Time.deltaTime);
         Vector3 topEulerAngles = gunBase.rotation.eulerAngles;
         topEulerAngles.x = 0f;
         topEulerAngles.z = 0f;
         gunBase.rotation = Quaternion.Euler(topEulerAngles);
 
-        gunBarrel.rotation = Quaternion.Lerp(gunBarrel.rotation, rot, data.aimSpeed * Time.deltaTime);
+        gunBarrel.rotation = Quaternion.Lerp(gunBarrel.rotation, rot, aimSpeed * Time.deltaTime);
         Vector3 gunEulerAngles = gunBarrel.localRotation.eulerAngles;
         gunEulerAngles.y = 0f;
         gunEulerAngles.z = 0f;
@@ -266,7 +365,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, data.combatRange);
 
-        if(agent != null && agent.hasPath)
+        if (agent != null && agent.hasPath)
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(agent.destination, 1f);

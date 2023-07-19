@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   shield: 35
-  aimSpeed: 1
+  aimSpeed: 20
   attackInterval: 0.2
   minAttackEventRate: 2
   maxAttackEventRate: 3.5
-  aimAngle: 15
-  combatRange: 125
-  chaseRange: 45
+  aimAngle: 18
+  combatRange: 50
+  chaseRange: 125
   isElite: 0
   credits: 15

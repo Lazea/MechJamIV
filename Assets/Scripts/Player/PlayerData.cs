@@ -49,7 +49,9 @@ public class PlayerData : ScriptableObject
     public float lateralThrustCooldown = 1.5f;
 
     [Header("Vertical Thrusters")]
-    [Tooltip("The vertical thrust force for jumping and flying.")]
+    [Tooltip("The vertical force for jumping.")]
+    public float jumpForce = 8f;
+    [Tooltip("The vertical thrust force for flying.")]
     public float verticalThrust = 15f;
     [Tooltip("The max vertical thrust speed curve based on thruster fuel.")]
     public AnimationCurve maxVerticalSpeedFuelFalloff;
@@ -62,7 +64,7 @@ public class PlayerData : ScriptableObject
 
     [Header("Ground Speed")]
     [Tooltip(
-        "A normalzied value [0,1] which interpolates between the fastest" +
+        "A value [1,~] which interpolates between the fastest" +
         "and slowest animation movement speeds")]
     public float speedScaler = 1f;
 
@@ -70,6 +72,7 @@ public class PlayerData : ScriptableObject
     [Tooltip("The base damage multiplier applied to all damage the player deals.")]
     public float damageMultiplier = 1f;
 
+    [Header("Player Stat Tracking")]
     [Tooltip("The amount of credits the player earned.")]
     public int credits;
     [Tooltip("The amount of credits the player safely deposited.")]

@@ -55,12 +55,21 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""1261bb29-4475-4989-b03f-8628f9bc6e70"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.2)"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""VerticalThrust"",
                     ""type"": ""Button"",
                     ""id"": ""1ed59bdc-988d-46ba-91fc-318f5d41b280"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=0.21)"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -382,6 +391,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f76407a5-6646-4bec-9584-bd6d7be7cdf6"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b05615a7-9afd-457c-a8de-a8114325f98d"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -432,6 +463,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_LateralThrust = m_Gameplay.FindAction("LateralThrust", throwIfNotFound: true);
+        m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_VerticalThrust = m_Gameplay.FindAction("VerticalThrust", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Melee = m_Gameplay.FindAction("Melee", throwIfNotFound: true);
@@ -506,6 +538,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Movement;
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_LateralThrust;
+    private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_VerticalThrust;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Melee;
@@ -520,6 +553,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @LateralThrust => m_Wrapper.m_Gameplay_LateralThrust;
+        public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @VerticalThrust => m_Wrapper.m_Gameplay_VerticalThrust;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Melee => m_Wrapper.m_Gameplay_Melee;
@@ -545,6 +579,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @LateralThrust.started += instance.OnLateralThrust;
             @LateralThrust.performed += instance.OnLateralThrust;
             @LateralThrust.canceled += instance.OnLateralThrust;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
             @VerticalThrust.started += instance.OnVerticalThrust;
             @VerticalThrust.performed += instance.OnVerticalThrust;
             @VerticalThrust.canceled += instance.OnVerticalThrust;
@@ -579,6 +616,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @LateralThrust.started -= instance.OnLateralThrust;
             @LateralThrust.performed -= instance.OnLateralThrust;
             @LateralThrust.canceled -= instance.OnLateralThrust;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
             @VerticalThrust.started -= instance.OnVerticalThrust;
             @VerticalThrust.performed -= instance.OnVerticalThrust;
             @VerticalThrust.canceled -= instance.OnVerticalThrust;
@@ -668,6 +708,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnLateralThrust(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
         void OnVerticalThrust(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class TurretUnit : BaseNPC
 {
-    [HeaderAttribute("Aim Base")]
+    [Header("Aim Transforms")]
+    public Transform aim;
     public Transform aimBase;
     public float minLookAngle;
     public float maxLookAngle;
@@ -15,23 +16,33 @@ public class TurretUnit : BaseNPC
     float nextAttackTime;
     float nextAttackEventTime;
 
+    Quaternion aimRot;
+    Quaternion aimBaseRot;
+
     // Update is called once per frame
     protected override void Update()
     {
-        base.Update();
+        CalculateTargetPosition(aim.position, aim.forward);
 
-        if(hasTarget)
+        hasTarget = (GameManager.Instance.Player != null);
+        targetObscured = IsTargetObscured(aim.position, coverMask);
+        if (tookDamage)
+            targetInReach = true;
+        else
+            targetInReach = IsTargetInReach(data.chaseRange);
+        targetInCombatRange = IsTargetInReach(data.combatRange);
+        targetInAim = IsTargetInAim();
+
+        if (HasTarget)
         {
-            HandleAim(aimBase, aim, minLookAngle, maxLookAngle);
-            
-            if(targetInCombatRange && targetInAim)
+            if(TargetInCombatRange && TargetInAim)
             {
                 float t = Time.time;
                 if(t >= nextAttackEventTime)
                 {
                     if(t >= nextAttackTime)
                     {
-                        SpawnProjectile();
+                        SpawnProjectiles();
 
                         shotCount++;
                         if(shotCount >= maxShotCount)
@@ -57,6 +68,18 @@ public class TurretUnit : BaseNPC
             float dt = UnityEngine.Random.Range(data.minAttackEventRate, data.maxAttackEventRate);
             nextAttackEventTime = Time.time + dt;
             nextAttackTime = nextAttackEventTime;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (HasTarget)
+        {
+            aimBase.rotation = aimRot;
+            aim.rotation = aimBaseRot;
+            BaseNPC.HandleAim(aimBase, aim, minLookAngle, maxLookAngle, data.aimSpeed);
+            aimRot = aimBase.rotation;
+            aimBaseRot = aim.rotation;
         }
     }
 }

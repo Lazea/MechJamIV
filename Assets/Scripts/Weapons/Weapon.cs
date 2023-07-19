@@ -164,8 +164,8 @@ public class Weapon : MonoBehaviour
         var projectile = Instantiate(
             projectilePrefab,
             point,
-            rot).GetComponent<Projectile>();
-        projectile.damage.source = gameObject;
+            rot).GetComponent<IProjectile>();
+        projectile.Damage.source = gameObject;
     }
     
     void SetProjectilePrefab()
@@ -214,9 +214,9 @@ public class Weapon : MonoBehaviour
             Debug.LogFormat(
                 "Checking projectile {0} with damageType {1} if it matches type {2}",
                 p.name,
-                p.GetComponent<Projectile>().damage.damageType.ToString(),
+                p.GetComponent<IProjectile>().Damage.damageType.ToString(),
                 data.damageType.ToString());
-            if (p.GetComponent<Projectile>().damage.damageType == data.damageType)
+            if (p.GetComponent<IProjectile>().Damage.damageType == data.damageType)
             {
                 Debug.LogFormat(
                     "Returning projectile {0} cause it matches type {1}",
