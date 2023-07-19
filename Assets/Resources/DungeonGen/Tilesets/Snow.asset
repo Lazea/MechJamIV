@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0f5d5e8e727994ebe65cbd4518b4c1, type: 3}
   m_Name: Snow
   m_EditorClassIdentifier: 
-  tileMaster: {fileID: 6828068702428868239, guid: bbb2d86cebfbbf94c81d17c9f364253f,
+  tileMaster: {fileID: 5340122218815378483, guid: 7ddbfd03ba76e3247b1a664efeb4e0a1,
     type: 3}
   env:
   - {fileID: 11400000, guid: 5cbcb4f7ddc6a1140a13587d0ad5d97d, type: 2}
-  tileSize: 18
+  tileSize: 20
   res: 5
   secondaryChance: 0.66
   interconnectedness: 0.294
