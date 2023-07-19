@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ActiveCard
   m_EditorClassIdentifier: 
   cardName: 
-  tileset: {fileID: 11400000, guid: f88f6abb8e9378348921d9e8440e4e7f, type: 2}
-  env: {fileID: 11400000, guid: 7ea03b208c8f24c45a66295a2e9fe215, type: 2}
+  tileset: {fileID: 11400000, guid: 8c50c1ba9c75915498e4c845e49bf27c, type: 2}
+  env: {fileID: 11400000, guid: 5cbcb4f7ddc6a1140a13587d0ad5d97d, type: 2}
   obscureTileset: 0
   lengthMod: 0
   secondaryMod: 0
