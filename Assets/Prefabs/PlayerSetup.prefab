@@ -457,6 +457,11 @@ PrefabInstance:
       propertyPath: onLateralThrustRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 624773537261392129, guid: 7a26cbf8b9031f546908563993f48635,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f92410ebd69bc44109619f5bfac03e95, type: 3}
     - target: {fileID: 836713102927618655, guid: 7a26cbf8b9031f546908563993f48635,
         type: 3}
       propertyPath: m_Name
@@ -467,6 +472,21 @@ PrefabInstance:
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 4686328506284627608}
+    - target: {fileID: 8417738859645024826, guid: 7a26cbf8b9031f546908563993f48635,
+        type: 3}
+      propertyPath: dashSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d55faadf3bde74820a807bf84869c544, type: 3}
+    - target: {fileID: 8417738859645024826, guid: 7a26cbf8b9031f546908563993f48635,
+        type: 3}
+      propertyPath: jumpSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ddc226872a07b43bbb5def5de1d5803e, type: 3}
+    - target: {fileID: 8417738859645024826, guid: 7a26cbf8b9031f546908563993f48635,
+        type: 3}
+      propertyPath: landingSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9139a4937642049a2adc6b6bd5bcc578, type: 3}
     - target: {fileID: 8649104831271754092, guid: 7a26cbf8b9031f546908563993f48635,
         type: 3}
       propertyPath: m_Enabled

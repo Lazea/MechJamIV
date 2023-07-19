@@ -49,6 +49,8 @@ public class PlayerMovementController : MonoBehaviour
     CapsuleCollider coll;
     Animator anim;
 
+    bool dashed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,19 @@ public class PlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        var state = anim.GetCurrentAnimatorStateInfo(0);
+        if (state.IsName("Dash Blend Tree"))
+        {
+            if(state.normalizedTime >= 0.05f && !dashed)
+            {
+                dashed = true;
+                Debug.Log("DASH!!!");
+            }
+        }
+        else
+        {
+            dashed = false;
+        }
     }
 
     private void FixedUpdate()
