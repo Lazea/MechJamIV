@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ArcticCLiff
+  m_Name: ArcticCliff
   m_Shader: {fileID: -6465566751694194690, guid: 7290a689b8379bb4983e0ddf4eb7da4c,
     type: 3}
   m_ValidKeywords: []

@@ -24,4 +24,6 @@ public class Tileset_ENV : ScriptableObject
     public float fogLevel = .01f;
     public Color fogColor;
 
+    public float lightTemp;
+
 }

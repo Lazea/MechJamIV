@@ -20,3 +20,4 @@ MonoBehaviour:
   sky: {fileID: 2100000, guid: c21ee02cffe12b24f84c2c221b14a51d, type: 2}
   fogLevel: 0.007
   fogColor: {r: 1, g: 0.92941177, b: 0.72156864, a: 0}
+  lightTemp: 4927
