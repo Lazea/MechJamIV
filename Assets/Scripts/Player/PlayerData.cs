@@ -68,6 +68,9 @@ public class PlayerData : ScriptableObject
         "and slowest animation movement speeds")]
     public float speedScaler = 1f;
 
+    [Header("Weapon Data")]
+    public WeaponData weaponData;
+
     [Header("Damage Scale")]
     [Tooltip("The base damage multiplier applied to all damage the player deals.")]
     public float damageMultiplier = 1f;

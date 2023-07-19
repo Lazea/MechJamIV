@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [Header("Weapon Data")]
-    [SerializeField]
-    WeaponData data;
     public WeaponData Data
     {
-        get { return data; }
+        get
+        {
+            return playerData.weaponData;
+        }
         set
         {
-            Debug.Log("Weapon Data set");
-            data = value;
+            playerData.weaponData = value;
             SetProjectilePrefab();
         }
     }
@@ -37,8 +36,7 @@ public class Weapon : MonoBehaviour
     bool canFire;
     int burstCount;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         playerData = GameManager.Instance.playerData;
         ResetWeaponData();
@@ -49,7 +47,7 @@ public class Weapon : MonoBehaviour
     {
         if (isFiring && Time.time >= nextFireTime)
         {
-            switch (data.fireMode)
+            switch (playerData.weaponData.fireMode)
             {
                 case FireMode.SemiAuto:
                     FireSemiAuto();
@@ -79,7 +77,7 @@ public class Weapon : MonoBehaviour
 
     public void FireRelease()
     {
-        if(isFiring && data.fireMode != FireMode.BurstFire)
+        if(isFiring && playerData.weaponData.fireMode != FireMode.BurstFire)
         {
             isFiring = false;
             canFire = false;
@@ -128,7 +126,7 @@ public class Weapon : MonoBehaviour
     [ContextMenu("Fire Projectile")]
     public void FireProjectile()
     {
-        switch(data.fireModeModifier)
+        switch(playerData.weaponData.fireModeModifier)
         {
             case FireModeModifier.ClusterFire:
                 for(int i = 0; i < 6; i++)
@@ -152,12 +150,12 @@ public class Weapon : MonoBehaviour
         GameObject projectilePrefab,
         Transform spawnTransform)
     {
-        Vector2 offset = Random.insideUnitCircle * data.spawnOffset;
+        Vector2 offset = Random.insideUnitCircle * playerData.weaponData.spawnOffset;
         Vector3 point = projectileSpawnPoint.position;
         point += projectileSpawnPoint.right * offset.x;
         point += projectileSpawnPoint.up * offset.y;
 
-        Vector2 recoilOffset = Random.insideUnitCircle * data.recoil;
+        Vector2 recoilOffset = Random.insideUnitCircle * playerData.weaponData.recoil;
         Vector3 dir = spawnTransform.forward;
         dir += spawnTransform.right * recoilOffset.x;
         dir += spawnTransform.up * recoilOffset.y;
@@ -183,8 +181,8 @@ public class Weapon : MonoBehaviour
     {
         Debug.LogFormat(
             "Setting projectile prefab based on select type {0}",
-            data.projectileType.ToString());
-        switch (data.projectileType)
+            playerData.weaponData.projectileType.ToString());
+        switch (playerData.weaponData.projectileType)
         {
             case ProjectileType.Ballistic:
                 projectilePrefab = GetProjectileByDamageType(
@@ -208,8 +206,8 @@ public class Weapon : MonoBehaviour
         {
             Debug.LogWarningFormat(
                 "Could not find projectile of type {0} and damage type {1}",
-                data.projectileType.ToString(),
-                data.damageType.ToString());
+                playerData.weaponData.projectileType.ToString(),
+                playerData.weaponData.damageType.ToString());
         }
         else
         {
@@ -226,13 +224,13 @@ public class Weapon : MonoBehaviour
                 "Checking projectile {0} with damageType {1} if it matches type {2}",
                 p.name,
                 p.GetComponent<IProjectile>().Damage.damageType.ToString(),
-                data.damageType.ToString());
-            if (p.GetComponent<IProjectile>().Damage.damageType == data.damageType)
+                playerData.weaponData.damageType.ToString());
+            if (p.GetComponent<IProjectile>().Damage.damageType == playerData.weaponData.damageType)
             {
                 Debug.LogFormat(
                     "Returning projectile {0} cause it matches type {1}",
                     p.name,
-                    data.damageType);
+                    playerData.weaponData.damageType);
                 return p;
             }
         }
@@ -243,6 +241,6 @@ public class Weapon : MonoBehaviour
     [ContextMenu("Reset Weapon Data")]
     public void ResetWeaponData()
     {
-        Data = data;
+        Data = playerData.weaponData;
     }
 }

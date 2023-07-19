@@ -65,6 +65,18 @@ MonoBehaviour:
   verticalThrusterFuleRate: 125
   verticalThrustCooldown: 0.75
   speedScaler: 1
+  weaponData:
+    projectileType: 0
+    projectileModifiers: 
+    spawnOffset: 0
+    damageType: 0
+    damageAmount: 0
+    shieldMultiplier: 0
+    fireMode: 0
+    fireModeModifier: 0
+    recoil: 0.02
+    power: 0
+    rarity: 0
   damageMultiplier: 1
   critChance: 0.04
   critDamageMultiplier: 2
