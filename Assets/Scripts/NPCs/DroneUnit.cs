@@ -28,17 +28,27 @@ public class DroneUnit : BaseNPC
             targetInReach = IsTargetInReach(data.chaseRange);
         targetInCombatRange = IsTargetInReach(data.combatRange);
         targetInAim = IsTargetInAim();
+
+        HandleDamageEffects();
+
+        if (isStunned)
+            Stop();
     }
 
     private void LateUpdate()
     {
-        if (HasTarget)
+        if (HasTarget && !isStunned && !isDead)
         {
             aimBase.rotation = aimRot;
             aim.rotation = aimBaseRot;
             BaseNPC.HandleAim(aimBase, aim, minLookAngle, maxLookAngle, data.aimSpeed);
             aimRot = aimBase.rotation;
             aimBaseRot = aim.rotation;
+        }
+        else
+        {
+            aimBase.rotation = aimRot;
+            aim.rotation = aimBaseRot;
         }
     }
 }

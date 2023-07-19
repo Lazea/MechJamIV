@@ -88,6 +88,9 @@ public class DamageIndicatorText : MonoBehaviour
             }
         }
 
+        Debug.LogFormat("{0} hit with Damage {1}",
+            (damage.source != null) ? damage.source.name : "NAN",
+            damage.amount);
         textMesh.text = damage.amount.ToString();
     }
 }

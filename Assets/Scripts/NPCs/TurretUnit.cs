@@ -33,7 +33,7 @@ public class TurretUnit : BaseNPC
         targetInCombatRange = IsTargetInReach(data.combatRange);
         targetInAim = IsTargetInAim();
 
-        if (HasTarget)
+        if (HasTarget && !isStunned && !isDead)
         {
             if(TargetInCombatRange && TargetInAim)
             {
@@ -69,17 +69,24 @@ public class TurretUnit : BaseNPC
             nextAttackEventTime = Time.time + dt;
             nextAttackTime = nextAttackEventTime;
         }
+
+        HandleDamageEffects();
     }
 
     private void LateUpdate()
     {
-        if (HasTarget)
+        if (HasTarget && !isStunned && !isDead)
         {
             aimBase.rotation = aimRot;
             aim.rotation = aimBaseRot;
             BaseNPC.HandleAim(aimBase, aim, minLookAngle, maxLookAngle, data.aimSpeed);
             aimRot = aimBase.rotation;
             aimBaseRot = aim.rotation;
+        }
+        else
+        {
+            aimBase.rotation = aimRot;
+            aim.rotation = aimBaseRot;
         }
     }
 }

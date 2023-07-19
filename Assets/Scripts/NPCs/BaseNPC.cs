@@ -31,11 +31,15 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     }
     Queue<Guid> guidBuffer = new Queue<Guid>(GameSettings.guidBufferCapacity);
 
+    [Header("Damage Effects")]
+    public DamageEffect shockDamageEffect;
+    public DamageEffect fireDamageEffect;
+
     [Header("Projectile")]
     public GameObject projectile;
     public Transform[] projectileSpawns;
 
-    [Header("NPC State")]
+    [Header("Vulnerability")]
     [SerializeField]
     protected bool isKillable;
     public bool IsKillable
@@ -50,6 +54,8 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         get { return isInvincible; }
         set { isInvincible = value; }
     }
+
+    [Header("NPC State")]
     protected bool isDead;
     public bool IsDead { get { return isDead; } }
     protected bool tookDamage;
@@ -87,6 +93,12 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     protected UnityEvent<Damage> onDamage;
     public UnityEvent<Damage> OnDamage { get { return onDamage; } }
     [SerializeField]
+    protected UnityEvent onFireDamage;
+    [SerializeField]
+    protected UnityEvent onShockStart;
+    [SerializeField]
+    protected UnityEvent onShockEnd;
+    [SerializeField]
     protected UnityEvent onKilled;
     public UnityEvent OnKilled { get { return onKilled; } }
     [SerializeField]
@@ -123,6 +135,11 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
             targetInReach = IsTargetInReach(data.chaseRange);
         targetInCombatRange = IsTargetInReach(data.combatRange);
         targetInAim = IsTargetInAim();
+
+        HandleDamageEffects();
+
+        if (isStunned)
+            Stop();
     }
 
     #region [Target States]
@@ -182,11 +199,15 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         if (health <= 0)
             return;
 
+        if (isDead)
+            return;
+
         if(anim != null)
             anim.SetTrigger("Hurt");
 
         Damage damageDealt = null;
-        CombatUtils.ApplyDamage(damage, this, out damageDealt);
+        CombatUtils.ApplyDamage(damage, false, this, out damageDealt);
+        ApplyDamageEffect(damage);
 
         if (shield <= 0)
             BreakShield();
@@ -198,6 +219,99 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
 
         if (health <= 0)
             Kill();
+    }
+
+    protected void HandleDamageEffects()
+    {
+        if (isDead)
+        {
+            if (anim != null)
+                anim.SetBool("Stunned", false);
+            isStunned = false;
+            onShockEnd.Invoke();
+            return;
+        }
+
+        if (shockDamageEffect != null)
+        {
+            if (shockDamageEffect.IsEffectComplete())
+            {
+                shockDamageEffect = null;
+                if (anim != null)
+                    anim.SetBool("Stunned", false);
+                isStunned = false;
+                onShockEnd.Invoke();
+            }
+            else
+            {
+                shockDamageEffect.UpdateEffect();
+                if (anim != null)
+                    anim.SetBool("Stunned", true);
+                isStunned = true;
+            }
+        }
+
+        Damage damageDealt = null;
+        if (fireDamageEffect != null)
+        {
+            if (fireDamageEffect.IsEffectComplete())
+            {
+                fireDamageEffect = null;
+            }
+            else
+            {
+                fireDamageEffect.UpdateEffect();
+                if (fireDamageEffect.CanDealDamage())
+                {
+                    CombatUtils.ApplyDamage(
+                        fireDamageEffect.damage,
+                        0f,
+                        true,
+                        this,
+                        out damageDealt);
+
+                    if (anim != null)
+                        anim.SetTrigger("Hurt");
+
+                    onFireDamage.Invoke();
+
+                    if (shield <= 0)
+                        BreakShield();
+
+                    if (damageDealt != null)
+                    {
+                        onDamage.Invoke(damageDealt);
+                    }
+
+                    if (health <= 0)
+                        Kill();
+                }
+            }
+        }
+    }
+
+    protected void ApplyDamageEffect(Damage damage)
+    {
+        if (!damage.hasEffect)
+            return;
+
+        switch (damage.damageType)
+        {
+            case DamageType.Fire:
+                if (fireDamageEffect == null)
+                {
+                    fireDamageEffect = damage.damageEffect;
+                    onFireDamage.Invoke();
+                }
+                break;
+            case DamageType.Shock:
+                if (shockDamageEffect == null)
+                {
+                    shockDamageEffect = damage.damageEffect;
+                    onShockStart.Invoke();
+                }
+                break;
+        }
     }
 
     [ContextMenu("Break Shield")]
@@ -218,6 +332,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
 
         if (anim != null)
             anim.SetBool("Dead", true);
+        isDead = true;
 
         onKilled.Invoke();
         onDeath.Raise(transform);
@@ -289,12 +404,14 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
 
     public void GoToDestination()
     {
-        agent.isStopped = false;
+        if (agent != null)
+            agent.isStopped = false;
     }
 
     public void Stop()
     {
-        agent.isStopped = true;
+        if(agent != null)
+            agent.isStopped = true;
     }
 
     public bool IsAtDestination()
@@ -312,6 +429,9 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     [ContextMenu("Spawn Projectiles")]
     public virtual void SpawnProjectiles()
     {
+        if (isStunned)
+            return;
+
         foreach (var p in projectileSpawns)
             SpawnProjectile(p.position, p.rotation);
         anim.SetTrigger("Fire");
@@ -320,11 +440,14 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
 
     public virtual void SpawnProjectile(Vector3 point, Quaternion orientation)
     {
-        var _projectile = Instantiate(
-            projectile,
+        if (isStunned)
+            return;
+
+        CombatUtils.SpawnProjectile(
             point,
-            orientation).GetComponent<IProjectile>();
-        _projectile.Damage.source = gameObject;
+            orientation,
+            projectile,
+            gameObject);
     }
 
     // Return angle in range of -180 to 180

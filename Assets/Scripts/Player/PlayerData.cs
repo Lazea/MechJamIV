@@ -68,9 +68,39 @@ public class PlayerData : ScriptableObject
         "and slowest animation movement speeds")]
     public float speedScaler = 1f;
 
-    [Header("Damage")]
+    [Header("Weapon Data")]
+    public WeaponData weaponData;
+
+    [Header("Damage Scale")]
     [Tooltip("The base damage multiplier applied to all damage the player deals.")]
     public float damageMultiplier = 1f;
+
+    [Header("Crit Damage")]
+    [Range(0f, 1f)]
+    [Tooltip("The critical hit chance between (0.0, 1.0]. The higher the number the higher the chance.")]
+    public float critChance = 0.15f;
+    [Tooltip("The amount base damage is scaled by when a crit hit happens.")]
+    public float critDamageMultiplier = 2f;
+
+    [Header("Energy Damage")]
+    [Tooltip("The multiplier placed on shield damage.")]
+    public float shieldEnergyDamageMultiplier = 2f;
+
+    [Header("Fire Damage")]
+    [Range(0f, 1f)]
+    [Tooltip("The chance of applying fire damage set between (0.0, 1.0]. The higher the number the higher the chance.")]
+    public float fireChance = 0.15f;
+    [Tooltip("The amount of damage the fire effect deals.")]
+    public int fireDamage = 2;
+    [Tooltip("The amount of time the fire effect lasts.")]
+    public float fireDuration = 2f;
+
+    [Header("Shock Damage")]
+    [Range(0f, 1f)]
+    [Tooltip("The chance of applying shock damage set between (0.0, 1.0]. The higher the number the higher the chance.")]
+    public float shockChance = 0.15f;
+    [Tooltip("The amount of time the shock effect lasts.")]
+    public float shockDuration = 2f;
 
     [Header("Player Stat Tracking")]
     [Tooltip("The amount of credits the player earned.")]
@@ -83,7 +113,7 @@ public class PlayerData : ScriptableObject
     [ContextMenu("Reset Base Data")]
     public void ResetData()
     {
-        Debug.LogFormat("Player Data {0} Reset", this.name);
+        Debug.Log("Player Data Reset");
 
         IniParser parser = new IniParser();
         string filePath = Path.Combine(Application.dataPath, "settings", "GameConfig.ini");
@@ -110,6 +140,16 @@ public class PlayerData : ScriptableObject
         speedScaler = parser.GetValue<float>(section, "speedScaler");
 
         damageMultiplier = parser.GetValue<float>(section, "damageMultiplier");
+        critChance = parser.GetValue<float>(section, "critChance");
+        critDamageMultiplier = parser.GetValue<float>(section, "critDamageMultiplier");
+        shieldEnergyDamageMultiplier = parser.GetValue<float>(section, "shieldEnergyDamageMultiplier");
+        
+        fireChance = parser.GetValue<float>(section, "fireChance");
+        fireDamage = parser.GetValue<int>(section, "fireDamage");
+        fireDuration = parser.GetValue<float>(section, "fireDuration");
+
+        shockChance = parser.GetValue<float>(section, "shockChance");
+        shockDuration = parser.GetValue<float>(section, "shockDuration");
     }
 
     [ContextMenu("Reset In Run Modifiers")]

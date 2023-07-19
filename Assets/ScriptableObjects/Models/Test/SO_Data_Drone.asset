@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84d9e0cfb514ac429ba00bc34c29b41, type: 3}
   m_Name: SO_Data_Drone
   m_EditorClassIdentifier: 
-  health: 100
-  shield: 35
+  health: 75
+  shield: 100
   aimSpeed: 20
   attackInterval: 0.2
   minAttackEventRate: 2

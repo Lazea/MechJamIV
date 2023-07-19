@@ -19,8 +19,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3470776959614934130, guid: 2be508c907d1f2d49b9a971368b4dfbe,
         type: 3}
+      propertyPath: damage.hasEffect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470776959614934130, guid: 2be508c907d1f2d49b9a971368b4dfbe,
+        type: 3}
       propertyPath: damage.damageType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470776959614934130, guid: 2be508c907d1f2d49b9a971368b4dfbe,
+        type: 3}
+      propertyPath: damage.damageEffect.damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470776959614934130, guid: 2be508c907d1f2d49b9a971368b4dfbe,
+        type: 3}
+      propertyPath: damage.damageEffect.lifeTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470776959614934130, guid: 2be508c907d1f2d49b9a971368b4dfbe,
+        type: 3}
+      propertyPath: damage.damageEffect.damageInterval
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3470776959614934140, guid: 2be508c907d1f2d49b9a971368b4dfbe,
         type: 3}
