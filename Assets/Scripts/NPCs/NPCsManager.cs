@@ -166,8 +166,12 @@ public class NPCsManager : Singleton<NPCsManager>
     public void SpawnNPCsWave(GameObject npc, int count, List<GameObject> spawnedList = default)
     {
         List<Vector3> points = SelectSpawnPoints();
+
         if (points.Count == 0)
+        {
+            Debug.LogWarningFormat("No spawn points found for {0}", npc.name);
             return;
+        }
 
         for (int i = 0; i < count; i++)
         {
@@ -200,7 +204,10 @@ public class NPCsManager : Singleton<NPCsManager>
             {
                 tries--;
                 if (tries < 0)
+                {
+                    Debug.LogWarning("No spawn point could be found on the navMesh");
                     break;
+                }
             }
         }
 

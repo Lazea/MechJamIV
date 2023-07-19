@@ -142,31 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onLook:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CameraTarget, Assembly-CSharp
-        m_MethodName: SetLook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CameraTarget, Assembly-CSharp
-        m_MethodName: SetLook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onMove:
     m_PersistentCalls:
       m_Calls:
@@ -184,7 +160,19 @@ MonoBehaviour:
         m_CallState: 2
   onJump:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 60599097301285091}
+        m_TargetAssemblyTypeName: PlayerMovementController, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onVerticalThrustHold:
     m_PersistentCalls:
       m_Calls:
@@ -232,16 +220,52 @@ MonoBehaviour:
         m_CallState: 2
   onLateralThrustHold:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 60599097301285091}
+        m_TargetAssemblyTypeName: PlayerMovementController, Assembly-CSharp
+        m_MethodName: LateralThrustHold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onLateralThrustRelease:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 60599097301285091}
+        m_TargetAssemblyTypeName: PlayerMovementController, Assembly-CSharp
+        m_MethodName: LateralThrustRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onFire:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 60599097301285090}
         m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
         m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 60599097301285091}
+        m_TargetAssemblyTypeName: PlayerMovementController, Assembly-CSharp
+        m_MethodName: LateralThrustRelease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2110,9 +2134,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oneShotSource: {fileID: 1245876194913360408}
   thrusterSource: {fileID: 624773537261392129}
-  dashSoundClip: {fileID: 0}
-  jumpSoundClip: {fileID: 0}
-  landingSoundClip: {fileID: 0}
+  dashSoundClip: {fileID: 8300000, guid: d55faadf3bde74820a807bf84869c544, type: 3}
+  jumpSoundClip: {fileID: 8300000, guid: ddc226872a07b43bbb5def5de1d5803e, type: 3}
+  landingSoundClip: {fileID: 8300000, guid: 9139a4937642049a2adc6b6bd5bcc578, type: 3}
 --- !u!1 &6102680686475953352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,8 +2827,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: f92410ebd69bc44109619f5bfac03e95, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
