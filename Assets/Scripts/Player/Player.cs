@@ -33,6 +33,10 @@ public class Player : MonoBehaviour, IDamageable
     public bool invulnerable;
     public bool killable;
 
+    [Header("Effects On Kill")]
+    public GameObject[] effects;
+    public GameObject[] debris;
+
     [Header("Events")]
     public UnityEvent onFireDamage;
     public UnityEvent onShockStart;
@@ -40,6 +44,7 @@ public class Player : MonoBehaviour, IDamageable
     public SOGESys.Events.DamageGameEvent onHit;
     public SOGESys.Events.IntGameEvent onHealthChange;
     public SOGESys.Events.IntGameEvent onShieldChange;
+    public UnityEvent onDeathEvent;
     public SOGESys.BaseGameEvent onDeath;
 
     Animator anim;
@@ -47,7 +52,11 @@ public class Player : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
-        data.health = data.MaxHealth;
+        if(data.resetHealthOnStart)
+        {
+            data.health = data.MaxHealth;
+            data.resetHealthOnStart = false;
+        }
         data.shield = data.MaxShield;
 
         onHealthChange.Raise(data.health);
@@ -135,7 +144,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         onHit.Raise(damage);
 
-        if(invulnerable)
+        if (invulnerable)
             return;
 
         if (data.health <= 0)
@@ -189,9 +198,26 @@ public class Player : MonoBehaviour, IDamageable
 
         data.health = 0;
 
-        onDeath.Raise();
+        anim.SetBool("Dead", true);
+    }
 
-        // TODO: Set anim state to "Death" and destroy on animation event
+    public void PlayerDeath()
+    {
+        foreach (var e in effects)
+        {
+            e.transform.parent = null;
+            e.SetActive(true);
+        }
+
+        foreach (var d in debris)
+        {
+            d.transform.parent = null;
+            d.SetActive(true);
+        }
+
+        onDeath.Raise();
+        onDeathEvent.Invoke();
+
         Destroy(gameObject);
     }
 }

@@ -27,6 +27,7 @@ public class CardReader : BaseCardReader
     protected override void SelectCard()
     {
         //swap tilesets from selected card, to held card
+        map.activeCard.cardName = card.cardName;
         map.activeCard.tileset = card.tileset;
         map.activeCard.env = env;
 

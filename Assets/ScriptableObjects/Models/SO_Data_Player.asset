@@ -15,10 +15,11 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   maxShield: 100
-  shield: 80
+  shield: 100
+  resetHealthOnStart: 1
   lateralThrustCooldown: 0.8
   jumpForce: 18
-  verticalThrust: 155
+  verticalThrust: 150
   maxVerticalSpeedFuelFalloff:
     serializedVersion: 2
     m_Curve:
@@ -61,10 +62,22 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxVerticalThrusterFuel: 120
+  maxVerticalThrusterFuel: 100
   verticalThrusterFuleRate: 125
   verticalThrustCooldown: 0.75
   speedScaler: 1
+  defaultStartingWeaponData:
+    projectileType: 0
+    projectileModifiers: 
+    spawnOffset: 0
+    damageType: 0
+    damageAmount: 0
+    shieldMultiplier: 0
+    fireMode: 0
+    fireModeModifier: 0
+    recoil: 0.03
+    power: 0
+    rarity: 0
   weaponData:
     projectileType: 0
     projectileModifiers: 
@@ -74,7 +87,7 @@ MonoBehaviour:
     shieldMultiplier: 0
     fireMode: 0
     fireModeModifier: 0
-    recoil: 0.02
+    recoil: 0.03
     power: 0
     rarity: 0
   damageMultiplier: 1
@@ -86,6 +99,7 @@ MonoBehaviour:
   fireDuration: 4
   shockChance: 0.15
   shockDuration: 2.25
-  credits: 6945
-  creditsSaved: 1040
-  kills: 440
+  credits: 0
+  creditsSaved: 0
+  kills: 0
+  stageCount: 0

@@ -22,7 +22,11 @@ public static class CombatUtils
 
         // Check GUID before applying damage
         if (!damageable.CheckGUIDIsInBuffer(damage.guid))
+        {
+            Debug.LogFormat("Damage of GUID {0} already dealt", damage.guid);
             return;
+        }
+        Debug.LogFormat("Damage of GUID {0} has not been dealt!!!", damage.guid);
 
         int shieldDamage = 0;
         int totalDamage = 0;
@@ -313,6 +317,7 @@ public static class CombatUtils
             point,
             orientation).GetComponent<IProjectile>();
         _projectile.Damage.source = source;
+        _projectile.Damage = _projectile.Damage.Clone();
     }
 
     public static void SpawnProjectile(

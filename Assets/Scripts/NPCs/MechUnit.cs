@@ -27,9 +27,6 @@ public class MechUnit : BaseNPC
     // Update is called once per frame
     protected override void Update()
     {
-        // Handle aiming
-        HandleAim();
-
         CalculateTargetPosition(aim.position, aim.forward);
 
         hasTarget = (GameManager.Instance.Player != null);
@@ -40,6 +37,9 @@ public class MechUnit : BaseNPC
             targetInReach = IsTargetInReach(data.chaseRange);
         targetInCombatRange = IsTargetInReach(data.combatRange);
         targetInAim = IsTargetInAim();
+
+        // Handle aiming
+        HandleAim();
 
         // Handle animation movement
         HandleMovement();
