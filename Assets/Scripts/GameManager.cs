@@ -11,6 +11,9 @@ public class GameManager : Singleton<GameManager>
     public GameObject Player { get { return player; } }
     public Vector3 PlayerCenter { get { return player.transform.position + Vector3.up * 1f; } }
 
+    bool playerIsDead;
+    public bool PlayerIsDead { get { return playerIsDead; } }
+
     public bool IsPaused
     {
         get { return (Time.timeScale == 0f); }
@@ -63,5 +66,10 @@ public class GameManager : Singleton<GameManager>
     public void IncrementNPCKillCount()
     {
         playerData.kills++;
+    }
+
+    public void PlayerDied()
+    {
+        playerIsDead = true;
     }
 }

@@ -45,6 +45,9 @@ public class RadarUI : MonoBehaviour
 
     void UpdateMarkers()
     {
+        if (GameManager.Instance.Player == null)
+            return;
+
         Transform playerT = GameManager.Instance.Player.transform;
         Vector3 forward = playerT.forward;
         forward.y = 0f;

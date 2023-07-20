@@ -43,6 +43,7 @@ public class PlayerData : ScriptableObject
         }
     }
     public int shield;
+    public bool resetHealthOnStart = true;
 
     [Header("Lateral Thrusters")]
     [Tooltip("The lateral dash ability cooldown.")]
@@ -69,6 +70,8 @@ public class PlayerData : ScriptableObject
     public float speedScaler = 1f;
 
     [Header("Weapon Data")]
+    [SerializeField]
+    WeaponData defaultStartingWeaponData;
     public WeaponData weaponData;
 
     [Header("Damage Scale")]
@@ -109,6 +112,8 @@ public class PlayerData : ScriptableObject
     public int creditsSaved;
     [Tooltip("The amount of kills the player earned.")]
     public int kills;
+    [Tooltip("The amount of completed stages.")]
+    public int stageCount;
 
     [ContextMenu("Reset Base Data")]
     public void ResetData()
@@ -150,6 +155,8 @@ public class PlayerData : ScriptableObject
 
         shockChance = parser.GetValue<float>(section, "shockChance");
         shockDuration = parser.GetValue<float>(section, "shockDuration");
+
+        resetHealthOnStart = true;
     }
 
     [ContextMenu("Reset In Run Modifiers")]
@@ -159,21 +166,32 @@ public class PlayerData : ScriptableObject
         throw new NotImplementedException();
     }
 
+    [ContextMenu("Reset In Run Modifiers")]
+    public void ResetWeaponData()
+    {
+        Debug.LogFormat("Player Weapon Data Reset");
+        weaponData = defaultStartingWeaponData;
+    }
+
     [ContextMenu("Reset Credits")]
     public void ResetCredits()
     {
-        Debug.LogFormat("Player Credits {0} Reset", this.name);
-
-        IniParser parser = new IniParser();
-        string filePath = Path.Combine(Application.dataPath, "settings", "GameConfig.ini");
-        parser.Parse(filePath);
-
-        credits = parser.GetValue<int>("PlayerData", "credits");
+        Debug.LogFormat("Player Credits set to {0}", creditsSaved);
+        credits = creditsSaved;
+        creditsSaved = 0;
     }
 
     [ContextMenu("Reset Kills")]
     public void ResetKillCount()
     {
+        Debug.LogFormat("Player Kill Count Reset");
         kills = 0;
+    }
+
+    [ContextMenu("Reset Stage Count")]
+    public void ResetStageCount()
+    {
+        Debug.LogFormat("Player Stage Count Reset");
+        stageCount = 0;
     }
 }
