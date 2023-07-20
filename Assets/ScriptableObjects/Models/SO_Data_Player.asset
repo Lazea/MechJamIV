@@ -18,6 +18,7 @@ MonoBehaviour:
   shield: 100
   resetHealthOnStart: 1
   lateralThrustCooldown: 0.8
+  lateralSpeedBoostScaler: 1.125
   jumpForce: 18
   verticalThrust: 150
   maxVerticalSpeedFuelFalloff:

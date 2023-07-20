@@ -237,7 +237,7 @@ public class Map_Conditions : Singleton<Map_Conditions>
 
                         if (chunks.Count == 0 && player)
                         {
-                            Vector3 pY = Vector3.up * player.position.y;
+                            Vector3 pY = Vector3.up * (player.position.y + 7);
                             
                             player.position = (new Vector3(seedPos.x, 0, seedPos.y) * tileset.res * tileset.tileSize) + pY;
                         }
