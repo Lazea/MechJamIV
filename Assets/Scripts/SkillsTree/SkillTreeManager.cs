@@ -79,12 +79,12 @@ public class SkillTreeManager : MonoBehaviour
                 skillNodeBtn.onSelect.AddListener(SelectSkill);
                 skillNodeBtn.onSelect.AddListener(UpdateSkillInfo);
 
-                skillNode.skill.id = k;
+                skillNode.skill.skillData.id = k;
                 if (!skillNode.skill.unlocked)
                 {
                     skillNode.node.GetComponent<Image>().color = lockedNodeColor;
                     Image iconImg = skillNode.node.Find("Icon").GetComponent<Image>();
-                    iconImg.sprite = skillNode.skill.icon;
+                    iconImg.sprite = skillNode.skill.skillData.icon;
                     iconImg.color = lockedNodeColor;
                 }
 
@@ -217,10 +217,10 @@ public class SkillTreeManager : MonoBehaviour
         if (!IsSkillUnlockable(skill))
             return false;
 
-        if (playerData.credits < skill.cost)
+        if (playerData.credits < skill.skillData.cost)
             return false;
 
-        playerData.credits -= skill.cost;
+        playerData.credits -= skill.skillData.cost;
         skill.unlocked = true;
 
         ApplySkill(skill);
@@ -230,27 +230,50 @@ public class SkillTreeManager : MonoBehaviour
 
     public void ApplySkill(Skill skill)
     {
-        if(skill.statBoostType != Skill.StatBoostType.None)
+        foreach(var skillBoost in skill.skillData.statBoosts)
         {
-            switch (skill.statBoostType)
+            switch (skillBoost.statBoostType)
             {
-                case Skill.StatBoostType.Health:
-                    playerData.MaxHealth += (int)skill.statBoostValue;
+                case SkillStatBoost.StatBoostType.Health:
+                    playerData.MaxHealth += (int)skillBoost.value;
                     break;
-                case Skill.StatBoostType.Shield:
-                    playerData.MaxShield += (int)skill.statBoostValue;
+                case SkillStatBoost.StatBoostType.Shield:
+                    playerData.MaxShield += (int)skillBoost.value;
                     break;
-                case Skill.StatBoostType.Damage:
-                    playerData.damageMultiplier = skill.statBoostValue;
+                case SkillStatBoost.StatBoostType.Speed:
+                    playerData.speedScaler += skillBoost.value;
                     break;
-                case Skill.StatBoostType.Speed:
-                    playerData.speedScaler = skill.statBoostValue;
+                case SkillStatBoost.StatBoostType.BaseDamage:
+                    playerData.damageMultiplier += skillBoost.value;
                     break;
+                case SkillStatBoost.StatBoostType.CritChance:
+                    playerData.critChance += skillBoost.value;
+                    break;
+                case SkillStatBoost.StatBoostType.CritDamage:
+                    playerData.critDamageMultiplier += skillBoost.value;
+                    break;
+                case SkillStatBoost.StatBoostType.FireChance:
+                    playerData.fireChance += skillBoost.value;
+                    break;
+                case SkillStatBoost.StatBoostType.FireDamage:
+                    playerData.fireDamage += (int)skillBoost.value;
+                    break;
+                case SkillStatBoost.StatBoostType.FireDuration:
+                    playerData.fireDuration += skillBoost.value;
+                    break;
+                case SkillStatBoost.StatBoostType.ShockChance:
+                    playerData.shockChance += skillBoost.value;
+                    break;
+                case SkillStatBoost.StatBoostType.ShockDuration:
+                    playerData.shockDuration += skillBoost.value;
+                    break;
+                case SkillStatBoost.StatBoostType.ShieldDamage:
+                    playerData.shieldEnergyDamageMultiplier += skillBoost.value;
+                    break;
+                //case SkillStatBoost.StatBoostType.RareWeaponChance:
+                //    playerData.rareWeaponChance += skillBoost.value;
+                //    break;
             }
-        }
-        else
-        {
-            // TODO: Implement ability
         }
     }
 
@@ -284,22 +307,72 @@ public class SkillTreeManager : MonoBehaviour
 
     public void UpdateSkillInfo(Skill skill)
     {
-        skillIcon.sprite = skill.icon;
+        skillIcon.sprite = skill.skillData.icon;
         skillIcon.enabled = true;
-        skillTitleText.text = skill.name;
+        skillTitleText.text = skill.skillData.name;
 
-        skillDescriptionText.text = string.Format(
-            skill.description,
-            skill.statBoostValue);
+        float value0;
+        float value1;
+        float value2;
+        float value3;
+        switch (skill.skillData.statBoosts.Length)
+        {
+            case 1:
+                value0 = skill.skillData.statBoosts[0].value;
+                if (skill.skillData.statBoosts[0].isPercentage)
+                    value0 *= 100f;
+                skillDescriptionText.text = string.Format(
+                    skill.skillData.description, value0);
+                break;
+            case 2:
+                value0 = skill.skillData.statBoosts[0].value;
+                if (skill.skillData.statBoosts[0].isPercentage)
+                    value0 *= 100f;
+                value1 = skill.skillData.statBoosts[1].value;
+                if (skill.skillData.statBoosts[1].isPercentage)
+                    value1 *= 100f;
+                skillDescriptionText.text = string.Format(
+                    skill.skillData.description, value0, value1);
+                break;
+            case 3:
+                value0 = skill.skillData.statBoosts[0].value;
+                if (skill.skillData.statBoosts[0].isPercentage)
+                    value0 *= 100f;
+                value1 = skill.skillData.statBoosts[1].value;
+                if (skill.skillData.statBoosts[1].isPercentage)
+                    value1 *= 100f;
+                value2 = skill.skillData.statBoosts[2].value;
+                if (skill.skillData.statBoosts[2].isPercentage)
+                    value2 *= 100f;
+                skillDescriptionText.text = string.Format(
+                    skill.skillData.description, value0, value1, value2);
+                break;
+            case 4:
+                value0 = skill.skillData.statBoosts[0].value;
+                if (skill.skillData.statBoosts[0].isPercentage)
+                    value0 *= 100f;
+                value1 = skill.skillData.statBoosts[1].value;
+                if (skill.skillData.statBoosts[1].isPercentage)
+                    value1 *= 100f;
+                value2 = skill.skillData.statBoosts[2].value;
+                if (skill.skillData.statBoosts[2].isPercentage)
+                    value2 *= 100f;
+                value3 = skill.skillData.statBoosts[3].value;
+                if (skill.skillData.statBoosts[3].isPercentage)
+                    value3 *= 100f;
+                skillDescriptionText.text = string.Format(
+                    skill.skillData.description, value0, value1, value2, value3);
+                break;
+        }
 
-        string colorText = (playerData.credits < skill.cost) ? "red" : "green";
+        string colorText = (playerData.credits < skill.skillData.cost) ? "red" : "green";
         skillCostText.text = string.Format(
             "Credits Cost: <color={0}>{1}</color>/{2}",
             colorText,
             playerData.credits,
-            skill.cost);
+            skill.skillData.cost);
 
-        unlockButton.interactable = !(playerData.credits < skill.cost ||
+        unlockButton.interactable = !(playerData.credits < skill.skillData.cost ||
             skill.unlocked ||
             !IsSkillUnlockable(skill));
         string unlockText = (skill.unlocked) ? "Unlocked" : "Unlock";

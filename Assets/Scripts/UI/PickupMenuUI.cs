@@ -66,13 +66,13 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
 
     private void OnEnable()
     {
-        crosshair.SetActive(false);
+        //crosshair.SetActive(false);
         pickupInfoParent.SetActive(true);
     }
 
     private void OnDisable()
     {
-        crosshair.SetActive(true);
+        //crosshair.SetActive(true);
         pickupInfoParent.SetActive(false);
     }
 

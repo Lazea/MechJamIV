@@ -136,12 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill:
-    name: 
-    id: 0
-    icon: {fileID: 0}
-    description: 
-    skillType: 0
-    cost: 10
+    skillData: {fileID: 0}
     unlocked: 0
     skillTreeLayer: 0
     childrenInNextLayer: 

@@ -166,7 +166,7 @@ public class PlayerData : ScriptableObject
         throw new NotImplementedException();
     }
 
-    [ContextMenu("Reset In Run Modifiers")]
+    [ContextMenu("Reset Weapon Data")]
     public void ResetWeaponData()
     {
         Debug.LogFormat("Player Weapon Data Reset");

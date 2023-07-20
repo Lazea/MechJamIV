@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CardHand : MonoBehaviour
 {
     Map_Conditions map;
     public bool isShowing;
+    bool _isShowing;
 
     public GameObject hand;
 
@@ -16,6 +18,10 @@ public class CardHand : MonoBehaviour
     [Header("Card Positions")]
     public float height = 10f;
     public float width = 600f;
+
+    [Header("Events")]
+    public UnityEvent onCardsShowing;
+    public UnityEvent onCardsHiding;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +34,25 @@ public class CardHand : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            isShowing = !isShowing;
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+        //    isShowing = !isShowing;
 
-            if (isShowing)
-                StartCoroutine(showCards());
+        //    if (isShowing)
+        //        StartCoroutine(showCards());
+        //}
+
+        if(isShowing != _isShowing)
+        {
+            _isShowing = isShowing;
+            if(_isShowing)
+            {
+                onCardsShowing.Invoke();
+            }
+            else
+            {
+                onCardsHiding.Invoke();
+            }
         }
 
         int cardsToShow = 0;

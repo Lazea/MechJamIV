@@ -49,7 +49,9 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
 
     public void GenerateWeapon(Vector3 position)
     {
-        WeaponData data = GetRandomWeapon();
+        // TODO: Uncomment this once better selection logic is made
+        //WeaponData data = GetRandomWeapon();
+        WeaponData data = GetRandomWeapon(Rarity.Common);
         GenerateWeapon(position, data);
     }
 

@@ -92,7 +92,7 @@ public class PlayerMovementController : MonoBehaviour
         // Set speed for the animator
         float targetSpeed = inputMove.magnitude;
         if (lateralThrustHold)
-            targetSpeed *= (data.speedScaler + 0.55f);
+            targetSpeed *= (data.speedScaler + 0.65f);
         else
             targetSpeed *= data.speedScaler;
 
