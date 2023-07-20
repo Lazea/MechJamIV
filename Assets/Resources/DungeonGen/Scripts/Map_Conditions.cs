@@ -12,7 +12,7 @@ using UnityEditor;
 
 
 [ExecuteInEditMode]
-public class Map_Conditions : MonoBehaviour
+public class Map_Conditions : Singleton<Map_Conditions>
 {
     NavMeshSurface navSurface;
     [Header("Transform to hold chunks")]
@@ -76,8 +76,10 @@ public class Map_Conditions : MonoBehaviour
 
     
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         chunks = new Dictionary<Vector2Int, ChunkInfo>();
         secondaryChunks = new Dictionary<Vector2Int, ChunkInfo>();
         navSurface = GetComponent<NavMeshSurface>();

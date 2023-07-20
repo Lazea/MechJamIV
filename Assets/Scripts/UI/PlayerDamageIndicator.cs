@@ -9,6 +9,8 @@ public class PlayerDamageIndicator : MonoBehaviour
     public AnimationCurve scaleCurve;
 
     public Transform target;
+    Vector3 playerPos;
+    Vector3 playerForward;
 
     RectTransform rect;
 
@@ -26,13 +28,17 @@ public class PlayerDamageIndicator : MonoBehaviour
 
         if(target != null)
         {
-            Vector3 playerPos = GameManager.Instance.PlayerCenter;
+            if (GameManager.Instance.Player != null)
+            {
+                playerPos = GameManager.Instance.PlayerCenter;
+                playerForward = GameManager.Instance.Player.transform.forward;
+            }
             playerPos.y = 0f;
             Vector3 targetPos = target.position;
             targetPos.y = 0f;
             Vector3 dir = (targetPos - playerPos).normalized;
             float angle = Vector3.SignedAngle(
-                GameManager.Instance.Player.transform.forward,
+                playerForward,
                 dir,
                 Vector3.down);
 
