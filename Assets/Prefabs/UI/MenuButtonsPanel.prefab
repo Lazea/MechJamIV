@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyOnStandalone: 0
-  destroyOnEditor: 0
+  destroyOnEditor: 1
   destroyOnWebGL: 1
 --- !u!1001 &5434181643703040380
 PrefabInstance:

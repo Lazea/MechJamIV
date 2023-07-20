@@ -171,7 +171,7 @@ public class Map_Conditions : Singleton<Map_Conditions>
             weather = Instantiate(env.weather, cam.transform);
         }
 
-        sun.colorTemperature = env.lightTemp;
+        //sun.colorTemperature = env.lightTemp;
 
         seedLength += activeCard.lengthMod;
         secondaryLength += activeCard.secondaryMod;

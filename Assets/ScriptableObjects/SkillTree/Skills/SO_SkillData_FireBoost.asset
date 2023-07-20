@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fire Damage Boost
   id: 9
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a88617c5d403b4e4085a8322fb11d9a7, type: 3}
   description: +{0} to Fire Damage
   cost: 800
   statBoosts:

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Damage Boost
   id: 2
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7a64882c38c0d114abfa8ccad0a464ae, type: 3}
   description: +{0}% to Base Damage
   cost: 400
   statBoosts:

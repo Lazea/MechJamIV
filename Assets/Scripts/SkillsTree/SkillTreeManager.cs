@@ -72,6 +72,8 @@ public class SkillTreeManager : MonoBehaviour
                     skillNodePrefab,
                     skillTreeParent).GetComponent<RectTransform>();
                 skillNode.skill = data.layers[i].skills[j];
+                Image skillIconImg = skillNode.node.Find("Icon").GetComponent<Image>();
+                skillIconImg.sprite = skillNode.skill.skillData.icon;
 
                 SkillTreeNodeButton skillNodeBtn = skillNode.node.
                     GetComponent<SkillTreeNodeButton>();

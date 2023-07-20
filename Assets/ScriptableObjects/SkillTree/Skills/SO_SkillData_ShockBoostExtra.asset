@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Shock Stun Boost ++
   id: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: fb47553896c05c942bddecc6ff49c88b, type: 3}
   description: '+{0}% to Shock Stun Chance
 
     +{0} to Shock Stun Duration'

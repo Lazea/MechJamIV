@@ -82,20 +82,24 @@ public class CardHand : MonoBehaviour
 
     IEnumerator pickCards()
     {
-        int r = Random.Range(0, (int)(cardPool.Length / 2));
-        int rKeep = Random.Range(0, (int)(cardPool.Length / 2));
+        
 
         for (int i = 0; i < cards.Length; i++)
         {
-            CardReader card = cards[i].GetComponent<CardReader>();
+            int r = Random.Range(0, cardPool.Length);
+
+            ICardReader card = cards[i].GetComponent<ICardReader>();
+
+            card.ReadCard(cardPool[r]);
+/*
             if (card == null)
                 continue;
 
-            r = rKeep + r;
-            r = r % cardPool.Length;
+            //r = Random.Range(0, (int)(cardPool.Length));
 
-            card.ReadCard(cardPool[r]);
+            
 
+            
             if (!containsCard(cardPool[r]))
             {
                 rKeep = r;
@@ -110,7 +114,7 @@ public class CardHand : MonoBehaviour
 
                     yield return null;
                 }
-            }
+            }*/
         }
 
         yield return null;

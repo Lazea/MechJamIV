@@ -79,7 +79,16 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         if(addPickup)
             weaponObject.GetComponent<WeaponPickup>().data = data;
 
-        return ConstructWeaponObject(weaponObject, data);
+        try
+        {
+            return ConstructWeaponObject(
+                weaponObject.transform.Find("CentralHolder").gameObject,
+                data);
+        }
+        catch
+        {
+            return ConstructWeaponObject(weaponObject, data);
+        }
     }
 
     public (GameObject, GameObject, GameObject) ConstructWeaponObject(

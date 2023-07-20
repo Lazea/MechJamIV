@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaab2ec01754d2e4c9654c153624b53e, type: 3}
   m_Name: SnowShorter 1
   m_EditorClassIdentifier: 
-  cardName: shortens level
+  cardName: Aurora
   tileset: {fileID: 11400000, guid: 8c50c1ba9c75915498e4c845e49bf27c, type: 2}
-  env: {fileID: 0}
+  env: {fileID: 11400000, guid: 5cbcb4f7ddc6a1140a13587d0ad5d97d, type: 2}
   obscureTileset: 0
   lengthMod: -1
   secondaryMod: -1

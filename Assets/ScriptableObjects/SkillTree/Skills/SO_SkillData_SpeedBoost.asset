@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Speed Boost
   id: 13
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ac14469b5865e3b41a37d02b4e844967, type: 3}
   description: +{0}% to Movement Speed
   cost: 500
   statBoosts:

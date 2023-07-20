@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaab2ec01754d2e4c9654c153624b53e, type: 3}
   m_Name: LavaTest
   m_EditorClassIdentifier: 
-  cardName: lava no second
+  cardName: Pyre
   tileset: {fileID: 11400000, guid: d7cdca113c3161c4d96510de1445ce9c, type: 2}
-  env: {fileID: 0}
+  env: {fileID: 11400000, guid: d9ecf5b8bb002e5488b2f758884cbf9c, type: 2}
   obscureTileset: 0
   lengthMod: 1
   secondaryMod: 0
