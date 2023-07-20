@@ -32,7 +32,7 @@ public class PlayerSoundFXController : MonoBehaviour
             if (!dashed)
             {
                 oneShotSource.pitch = Random.Range(0.95f, 1.06f);
-                oneShotSource.PlayOneShot(dashSoundClip, 0.8f);
+                oneShotSource.PlayOneShot(dashSoundClip, 1.0f);
                 dashed = true;
             }
         }
@@ -47,7 +47,7 @@ public class PlayerSoundFXController : MonoBehaviour
             if (!landed)
             {
                 oneShotSource.pitch = Random.Range(0.95f, 1.06f);
-                oneShotSource.PlayOneShot(landingSoundClip, 0.5f);
+                oneShotSource.PlayOneShot(landingSoundClip, 0.45f);
                 landed = true;
             }
         }
@@ -61,7 +61,7 @@ public class PlayerSoundFXController : MonoBehaviour
             anim.GetFloat("SpeedY"));
         if(anim.GetBool("VertThrust") || moveSpeed.magnitude > 0.1f)
         {
-            thrusterSource.volume = Mathf.Lerp(thrusterSource.volume, 0.35f, 1.5f * Time.deltaTime);
+            thrusterSource.volume = Mathf.Lerp(thrusterSource.volume, 0.25f, 1.5f * Time.deltaTime);
             thrusterSource.pitch = Mathf.Lerp(thrusterSource.pitch, 1.6f, 1.5f * Time.deltaTime);
         }
         else
