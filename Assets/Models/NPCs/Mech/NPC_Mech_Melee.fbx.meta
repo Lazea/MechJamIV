@@ -270,7 +270,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.3323537
+      - time: 0.33507112
         functionName: SpawnProjectiles
         data: 
         objectReferenceParameter: {instanceID: 0}
