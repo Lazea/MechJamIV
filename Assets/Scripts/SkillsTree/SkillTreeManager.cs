@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SOGameEventSystem.Events;
+using UnityEngine.EventSystems;
 
 public class SkillTreeManager : MonoBehaviour
 {
@@ -37,6 +38,13 @@ public class SkillTreeManager : MonoBehaviour
     public TMPro.TextMeshProUGUI skillDescriptionText;
     public TMPro.TextMeshProUGUI skillCostText;
     public Button unlockButton;
+    public Button disabledUnlockButton;
+
+    [Header("Audio")]
+    public AudioClip unlockClip;
+    public AudioClip unlockFailClip;
+    public AudioClip nodeClick;
+    public AudioClip nodeEnter;
 
     void Awake()
     {
@@ -80,6 +88,13 @@ public class SkillTreeManager : MonoBehaviour
                 skillNodeBtn.skill = skillNode.skill;
                 skillNodeBtn.onSelect.AddListener(SelectSkill);
                 skillNodeBtn.onSelect.AddListener(UpdateSkillInfo);
+                skillNodeBtn.onSelect.AddListener(
+                    (skill) => { PlayNodeClickAudioClip(); });
+                EventTrigger trigger = skillNodeBtn.GetComponent<EventTrigger>();
+                EventTrigger.Entry entry = new EventTrigger.Entry();
+                entry.eventID = EventTriggerType.PointerEnter;
+                entry.callback.AddListener(
+                    (eventData) => { PlayNodeEnterAudioClip(); });
 
                 skillNode.skill.skillData.id = k;
                 if (!skillNode.skill.unlocked)
@@ -203,7 +218,9 @@ public class SkillTreeManager : MonoBehaviour
                 foreach (SkillNode parentSkillNode in skillNode.parentNodes)
                 {
                     if (!parentSkillNode.skill.unlocked)
+                    {
                         return false;
+                    }
                 }
             }
         }
@@ -217,15 +234,23 @@ public class SkillTreeManager : MonoBehaviour
             return false;
 
         if (!IsSkillUnlockable(skill))
+        {
+            PlayUnlockFailAudioClip();
             return false;
+        }
 
         if (playerData.credits < skill.skillData.cost)
+        {
+            PlayUnlockFailAudioClip();
             return false;
+        }
 
         playerData.credits -= skill.skillData.cost;
         skill.unlocked = true;
 
         ApplySkill(skill);
+
+        PlayUnlockAudioClip();
 
         return true;
     }
@@ -303,8 +328,10 @@ public class SkillTreeManager : MonoBehaviour
         skillDescriptionText.text = "";
         skillCostText.text = "Credits Cost: ----/----";
 
-        unlockButton.interactable = false;
+        unlockButton.gameObject.SetActive(false);
+        disabledUnlockButton.gameObject.SetActive(true);
         unlockButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Unlock";
+        disabledUnlockButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Unlock";
     }
 
     public void UpdateSkillInfo(Skill skill)
@@ -374,11 +401,44 @@ public class SkillTreeManager : MonoBehaviour
             playerData.credits,
             skill.skillData.cost);
 
-        unlockButton.interactable = !(playerData.credits < skill.skillData.cost ||
+        if(playerData.credits < skill.skillData.cost ||
             skill.unlocked ||
-            !IsSkillUnlockable(skill));
+            !IsSkillUnlockable(skill))
+        {
+            unlockButton.gameObject.SetActive(false);
+            disabledUnlockButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            unlockButton.gameObject.SetActive(true);
+            disabledUnlockButton.gameObject.SetActive(false);
+        }
+
         string unlockText = (skill.unlocked) ? "Unlocked" : "Unlock";
         unlockButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = unlockText;
+        disabledUnlockButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = unlockText;
+    }
+    #endregion
+
+    #region [Audio]
+    public void PlayUnlockAudioClip()
+    {
+        UIAudioManager.Instance.AudioSource.PlayOneShot(unlockClip);
+    }
+
+    public void PlayUnlockFailAudioClip()
+    {
+        UIAudioManager.Instance.AudioSource.PlayOneShot(unlockFailClip);
+    }
+
+    public void PlayNodeClickAudioClip()
+    {
+        UIAudioManager.Instance.AudioSource.PlayOneShot(nodeClick);
+    }
+
+    public void PlayNodeEnterAudioClip()
+    {
+        UIAudioManager.Instance.AudioSource.PlayOneShot(nodeEnter);
     }
     #endregion
 }

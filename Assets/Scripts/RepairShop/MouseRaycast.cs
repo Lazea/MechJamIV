@@ -25,7 +25,6 @@ public class MouseRaycast : MonoBehaviour
             if(hoverObject == null)
             {
                 hoverObject = hitInfo.transform.GetComponent<MeshClickOn>();
-                Debug.Log("Raycast hit object " + hoverObject.transform.name);
                 hoverObject.onEnter.Invoke();
             }
         }

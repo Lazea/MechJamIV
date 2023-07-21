@@ -60,6 +60,9 @@ public class GameManager : Singleton<GameManager>
         if (cardHand.isShowing)
             return;
 
+        AudioSettingsManager.Instance.SetVolume("MusicVolumeParam", 0.45f);
+        AudioSettingsManager.Instance.SetVolume("EffectsVolumeParam", 0f);
+
         Time.timeScale = 0f;
         onPause.Invoke();
     }
@@ -67,6 +70,10 @@ public class GameManager : Singleton<GameManager>
     public void ResumeGame() 
     {
         Time.timeScale = 1f;
+
+        AudioSettingsManager.Instance.SetVolume("MusicVolumeParam", 1f);
+        AudioSettingsManager.Instance.SetVolume("EffectsVolumeParam", 1f);
+
         onResume.Invoke();
     }
 
