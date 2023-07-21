@@ -48,6 +48,17 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
     public Sprite shockDmgIcon;
     public Sprite energyDmgIcon;
 
+    [Header("Audio Settings")]
+    public AudioSource audioSource;
+    public AudioClip displayClip;
+    public AudioClip interactTickClip;
+    public int totalTickCount;
+    int tickCount;
+    public float minTickPitch;
+    public float maxTickPitch;
+    bool excludeFirstEnable = true;
+    bool excludeFirstDisable = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,14 +77,30 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
 
     private void OnEnable()
     {
-        crosshair.SetActive(false);
+        if(excludeFirstEnable)
+        {
+            excludeFirstEnable = false;
+            return;
+        }
+
+        //crosshair.SetActive(false);
         pickupInfoParent.SetActive(true);
+        audioSource.pitch = 1f;
+        audioSource.PlayOneShot(displayClip);
     }
 
     private void OnDisable()
     {
-        crosshair.SetActive(true);
+        if (excludeFirstDisable)
+        {
+            excludeFirstDisable = false;
+            return;
+        }
+
+        //crosshair.SetActive(true);
         pickupInfoParent.SetActive(false);
+        audioSource.pitch = 0.8f;
+        audioSource.PlayOneShot(displayClip);
     }
 
     // Update is called once per frame
@@ -244,6 +271,26 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
 
     public void SetPickupIndicatorFillBar(float value)
     {
+        audioSource.pitch = Mathf.Lerp(
+            minTickPitch,
+            maxTickPitch,
+            value);
+
+        if(value >= 1f)
+        {
+            audioSource.PlayOneShot(interactTickClip);
+            tickCount = 0;
+        }
+        else
+        {
+            float tickInterval = 1f / totalTickCount;
+            if (value >= tickInterval * tickCount)
+            {
+                audioSource.PlayOneShot(interactTickClip);
+                tickCount++;
+            }
+        }
+
         pickupIndicator.fillAmount = value;
     }
 }

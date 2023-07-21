@@ -63,7 +63,7 @@ public class GameplayHud : Singleton<GameplayHud>
 
     public void SetShield(int shield)
     {
-        float amount = shield / (float)PlayerData.MaxHealth;
+        float amount = shield / (float)PlayerData.MaxShield;
         shieldBar.fillAmount = amount;
         shieldText.text = shield.ToString("D4");
     }
@@ -129,7 +129,7 @@ public class GameplayHud : Singleton<GameplayHud>
 
     public void UpdateStageCount()
     {
-        SetStageCount(0);
+        SetStageCount(PlayerData.stageCount);
     }
 
     public void SetStageCount(int value)

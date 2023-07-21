@@ -8,8 +8,6 @@ using UnityEngine;
 public class CameraTarget : MonoBehaviour
 {
     Vector2 look;
-    public float xSensitivity;
-    public float ySensitivity;
     public bool invertedY;
     public float maxVerticalAngle = 340f;
     public float minVerticalAngle = 60f;
@@ -24,9 +22,9 @@ public class CameraTarget : MonoBehaviour
     void Update()
     {
         transform.rotation *= Quaternion.AngleAxis(
-            look.x * xSensitivity * Time.deltaTime, Vector3.up);
+            look.x * GameSettings.xMouseSensitivity * Time.deltaTime, Vector3.up);
 
-        float yLook = look.y * ySensitivity * Time.deltaTime;
+        float yLook = look.y * GameSettings.yMouseSensitivity * Time.deltaTime;
         if (!invertedY)
             yLook *= -1f;
         transform.rotation *= Quaternion.AngleAxis(yLook, Vector3.right);

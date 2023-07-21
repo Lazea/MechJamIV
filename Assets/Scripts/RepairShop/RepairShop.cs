@@ -24,6 +24,10 @@ public class RepairShop : MonoBehaviour
     string creditsDepositTextFormat;
     public TextMeshProUGUI creditsDepositText;
 
+    [Header("Audio Clips")]
+    public AudioClip repairConfirmClip;
+    public AudioClip depositConfirmClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,6 +112,7 @@ public class RepairShop : MonoBehaviour
         UpdateCreditsDepositText();
         UpdateCreditsText();
         UpdateMechHPText();
+        PlayClip(repairConfirmClip);
     }
 
     public void DepositCredits()
@@ -127,5 +132,11 @@ public class RepairShop : MonoBehaviour
 
         UpdateCreditsText();
         UpdateCreditsDepositText();
+        PlayClip(depositConfirmClip);
+    }
+
+    public void PlayClip(AudioClip clip)
+    {
+        UIAudioManager.Instance.AudioSource.PlayOneShot(clip);
     }
 }

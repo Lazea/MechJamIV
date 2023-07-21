@@ -31,27 +31,33 @@ public class AudioSettingsManager : Singleton<AudioSettingsManager>
 
     public void SetMasterVolume(float amount)
     {
+        Debug.LogFormat("Setting Master Vol to {0}", amount);
         SetVolume("MasterVolumeParam", amount);
     }
 
     public void SetMusicVolume(float amount)
     {
-        SetVolume("MusicVolumeParam", amount);
+        Debug.LogFormat("Setting Master Music Vol to {0}", amount);
+        SetVolume("MusicMasterVolumeParam", amount);
     }
 
     public void SetEffectsVolume(float amount)
     {
-        SetVolume("EffectsVolumeParam", amount);
+        Debug.LogFormat("Setting Effects Master Vol to {0}", amount);
+        SetVolume("EffectsMasterVolumeParam", amount);
     }
 
     public void SetUIVolume(float amount)
     {
+        Debug.LogFormat("Setting UI Vol to {0}", amount);
         SetVolume("UIVolumeParam", amount);
     }
 
     public void SetVolume(string parameter, float amount)
     {
-        float vol = GetDBVolume(amount);
+        float v;
+        mixer.GetFloat(parameter, out v);
+        float vol = GetDBVolume(Mathf.Max(amount, 0.009f));
         mixer.SetFloat(parameter, vol);
     }
 }

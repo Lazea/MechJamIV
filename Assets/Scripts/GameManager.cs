@@ -19,6 +19,11 @@ public class GameManager : Singleton<GameManager>
         get { return (Time.timeScale == 0f); }
     }
 
+    // TODO: This is a dumb fix for now. Find a better way to halt pausing if cards are visible
+    [Header("REMOVE THIS WHEN POSSIBLE")]
+    [SerializeField]
+    CardHand cardHand;
+
     [Header("Events")]
     public UnityEvent onPause;
     public UnityEvent onResume;
@@ -26,6 +31,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         player = GameObject.Find("Player");
+        IncrementStageCount();
     }
 
     // Update is called once per frame
@@ -36,6 +42,9 @@ public class GameManager : Singleton<GameManager>
 
     public void TogglePause()
     {
+        if (cardHand.isShowing)
+            return;
+
         if(IsPaused)
         {
             ResumeGame();
@@ -48,6 +57,12 @@ public class GameManager : Singleton<GameManager>
 
     public void PauseGame()
     {
+        if (cardHand.isShowing)
+            return;
+
+        AudioSettingsManager.Instance.SetVolume("MusicVolumeParam", 0.45f);
+        AudioSettingsManager.Instance.SetVolume("EffectsVolumeParam", 0f);
+
         Time.timeScale = 0f;
         onPause.Invoke();
     }
@@ -55,6 +70,10 @@ public class GameManager : Singleton<GameManager>
     public void ResumeGame() 
     {
         Time.timeScale = 1f;
+
+        AudioSettingsManager.Instance.SetVolume("MusicVolumeParam", 1f);
+        AudioSettingsManager.Instance.SetVolume("EffectsVolumeParam", 1f);
+
         onResume.Invoke();
     }
 
@@ -66,6 +85,11 @@ public class GameManager : Singleton<GameManager>
     public void IncrementNPCKillCount()
     {
         playerData.kills++;
+    }
+
+    public void IncrementStageCount()
+    {
+        playerData.stageCount++;
     }
 
     public void PlayerDied()

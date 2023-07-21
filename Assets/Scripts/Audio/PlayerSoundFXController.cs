@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class PlayerSoundFXController : MonoBehaviour
 {
+    [Header("Audio Sources")]
     public AudioSource oneShotSource;
     public AudioSource thrusterSource;
 
+    [Header("Movement Clips")]
     public AudioClip dashSoundClip;
     public AudioClip jumpSoundClip;
     public AudioClip landingSoundClip;
+
+    public float thrusterMaxVolume;
+    public float thrusterFadeInTime;
+    public float thrusterFadeOutTime;
+
+    [Header("Weapon Clips")]
+    public AudioClip[] ballisticFireClips;
+    public AudioClip[] plasmaFireClips;
+    public AudioClip[] rocketFireClips;
+
+    [Header("Weapon Pickup Clips")]
+    public AudioClip weaponPickupClip;
 
     bool dashed;
     bool landed;
@@ -32,7 +46,7 @@ public class PlayerSoundFXController : MonoBehaviour
             if (!dashed)
             {
                 oneShotSource.pitch = Random.Range(0.95f, 1.06f);
-                oneShotSource.PlayOneShot(dashSoundClip, 0.8f);
+                oneShotSource.PlayOneShot(dashSoundClip, 1.0f);
                 dashed = true;
             }
         }
@@ -47,7 +61,7 @@ public class PlayerSoundFXController : MonoBehaviour
             if (!landed)
             {
                 oneShotSource.pitch = Random.Range(0.95f, 1.06f);
-                oneShotSource.PlayOneShot(landingSoundClip, 0.5f);
+                oneShotSource.PlayOneShot(landingSoundClip, 0.45f);
                 landed = true;
             }
         }
@@ -61,13 +75,55 @@ public class PlayerSoundFXController : MonoBehaviour
             anim.GetFloat("SpeedY"));
         if(anim.GetBool("VertThrust") || moveSpeed.magnitude > 0.1f)
         {
-            thrusterSource.volume = Mathf.Lerp(thrusterSource.volume, 0.35f, 1.5f * Time.deltaTime);
-            thrusterSource.pitch = Mathf.Lerp(thrusterSource.pitch, 1.6f, 1.5f * Time.deltaTime);
+            thrusterSource.volume = Mathf.Lerp(
+                thrusterSource.volume,
+                thrusterMaxVolume,
+                thrusterFadeOutTime * Time.deltaTime);
+            thrusterSource.pitch = Mathf.Lerp(
+                thrusterSource.pitch,
+                1.6f,
+                thrusterFadeInTime * 3f * Time.deltaTime);
         }
         else
         {
-            thrusterSource.volume = Mathf.Lerp(thrusterSource.volume, 0.0f, 3f * Time.deltaTime);
-            thrusterSource.pitch = Mathf.Lerp(thrusterSource.pitch, 1.0f, 3f * Time.deltaTime);
+            thrusterSource.volume = Mathf.Lerp(
+                thrusterSource.volume,
+                0.0f,
+                thrusterFadeOutTime * Time.deltaTime);
+            thrusterSource.pitch = Mathf.Lerp(
+                thrusterSource.pitch,
+                1.0f,
+                thrusterFadeOutTime * Time.deltaTime);
         }
+    }
+
+    public void PlayWeaponFireClip(WeaponData data)
+    {
+        switch(data.projectileType)
+        {
+            case ProjectileType.Ballistic:
+                PlayRandomClip(ballisticFireClips, 0.95f, 1.1f);
+                break;
+            case ProjectileType.EnergyBeam:
+                PlayRandomClip(plasmaFireClips, 0.95f, 1.1f);
+                break;
+            case ProjectileType.Rocket:
+                PlayRandomClip(rocketFireClips, 0.95f, 1.1f);
+                break;
+        }
+    }
+
+    public void PlayRandomClip(AudioClip[] clips, float minPitch, float maxPitch)
+    {
+        int i = Random.Range(0, clips.Length);
+        oneShotSource.pitch = minPitch;
+        if (minPitch < maxPitch)
+            oneShotSource.pitch = Random.Range(minPitch, maxPitch);
+        oneShotSource.PlayOneShot(clips[i]);
+    }
+
+    public void PlayWeaponPickupSound()
+    {
+        UIAudioManager.Instance.AudioSource.PlayOneShot(weaponPickupClip);
     }
 }

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardReader : BaseCardReader
+public class CardReader : BaseCardReader, ICardReader
 {
     protected Map_Conditions map;
     public Map_Card card;
@@ -12,7 +12,7 @@ public class CardReader : BaseCardReader
 
     public TextMeshProUGUI missionName;
     public TextMeshProUGUI loc;
-    public TextMeshProUGUI length;
+   // public TextMeshProUGUI length;
     public TextMeshProUGUI conditions;
 
     protected override void Awake()
@@ -62,8 +62,8 @@ public class CardReader : BaseCardReader
         string locText = card.obscureTileset ? "unknown" : card.tileset.name;
         loc.text = $"Location: {locText}";
 
-        string lSign = card.lengthMod + card.secondaryMod >= 0 ? "+" : "";
-        length.text = $"Length: {lSign}{card.lengthMod + card.secondaryMod}";
+        //string lSign = card.lengthMod + card.secondaryMod >= 0 ? "+" : "";
+       // length.text = $"Length: {lSign}{card.lengthMod + card.secondaryMod}";
 
         string weather = "clear";
 

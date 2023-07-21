@@ -23,6 +23,7 @@ public class MusicManager : MonoBehaviour
     private bool passedStageMusic_2;
     private bool staged_1;
     private bool staged_2;
+    private int Reset;
 
     public float fadeDuration = 1f; //time it takes for all the music fade
     private float timer; //timer for fade
@@ -78,6 +79,7 @@ public class MusicManager : MonoBehaviour
         passedStageMusic_2 = false;
         playerDead = false;
         timer = 0.0f;
+        Reset = 0;
     }
 
     // Update is called once per frame
@@ -120,6 +122,7 @@ public class MusicManager : MonoBehaviour
                 playerDead = false;
                 endStage = false;
                 musicIntensity = 0;
+                Reset = 0;
                 break;
 
 
@@ -191,7 +194,7 @@ public class MusicManager : MonoBehaviour
                     inCombatMusic.volume = targetVolumeFadeIn;
                 }
 
-                if(musicIntensity == 1 || passedStageMusic_1 == true)
+                if(musicIntensity == 1 || passedStageMusic_1 == true && musicIntensity != 0)
                 {
                     passedStageMusic_1 = true;
                     timer = 0.0f;
@@ -205,7 +208,7 @@ public class MusicManager : MonoBehaviour
                     }
                 }
 
-                if(musicIntensity == 2 || passedStageMusic_2 == true)
+                if(musicIntensity == 2 || passedStageMusic_2 == true && musicIntensity != 0)
                 {
                     passedStageMusic_2 = true;
                     timer = 0.0f;
@@ -308,6 +311,18 @@ public class MusicManager : MonoBehaviour
     public void EndStage()
     {
         endStage = true;
+    }
+
+    public void StageEnded()
+    {
+        Reset += 1;
+
+        endStage = false;
+
+        if(Reset >= 1)
+        {
+            stinger_1.PlayOneShot(stinger_1.clip);
+        }
     }
 
     public void PlayerDied()

@@ -475,6 +475,21 @@ MonoBehaviour:
   - {fileID: 8649104829927314976}
   fireRate: 0.12
   rampUpRate: 0
+  onWeaponFire:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8417738859645024826}
+        m_TargetAssemblyTypeName: PlayerSoundFXController, Assembly-CSharp
+        m_MethodName: PlayWeaponFireClip
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &60599097301285112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +513,21 @@ MonoBehaviour:
   coverMask:
     serializedVersion: 2
     m_Bits: 1
+  onPickup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8417738859645024826}
+        m_TargetAssemblyTypeName: PlayerSoundFXController, Assembly-CSharp
+        m_MethodName: PlayWeaponPickupSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &60599097301285114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2416,7 +2446,8 @@ AudioSource:
   m_GameObject: {fileID: 5861803205427001688}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3574121669873527210, guid: b64419f576ade2e40bc170ca8b861c42,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2554,6 +2585,19 @@ MonoBehaviour:
   dashSoundClip: {fileID: 8300000, guid: d55faadf3bde74820a807bf84869c544, type: 3}
   jumpSoundClip: {fileID: 8300000, guid: ddc226872a07b43bbb5def5de1d5803e, type: 3}
   landingSoundClip: {fileID: 8300000, guid: 9139a4937642049a2adc6b6bd5bcc578, type: 3}
+  thrusterMaxVolume: 0.4
+  thrusterFadeInTime: 8
+  thrusterFadeOutTime: 3
+  ballisticFireClips:
+  - {fileID: 8300000, guid: 4ccd156af1b55482294945a360566714, type: 3}
+  - {fileID: 8300000, guid: 49393d11740184c4a8f9c4c6d9f65b2c, type: 3}
+  - {fileID: 8300000, guid: e3fb92993a6b347bda46e04e4d46b97a, type: 3}
+  plasmaFireClips:
+  - {fileID: 8300000, guid: af836071c69db42ecb4bc7ae7d392015, type: 3}
+  - {fileID: 8300000, guid: 06b17e7a97ddf42a48babadc85cbc461, type: 3}
+  rocketFireClips:
+  - {fileID: 8300000, guid: 249abfa2262fec44c917f2f01f04ef2e, type: 3}
+  weaponPickupClip: {fileID: 8300000, guid: 941f5df84c23b48b9b5cc917f8c3864e, type: 3}
 --- !u!1 &6102680686475953352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,7 +3553,8 @@ AudioSource:
   m_GameObject: {fileID: 8081797239057066477}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3574121669873527210, guid: b64419f576ade2e40bc170ca8b861c42,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f92410ebd69bc44109619f5bfac03e95, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4241,7 +4286,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8649104830751333052}
-  m_LocalRotation: {x: 0.08584201, y: -0.018861022, z: -0.9928281, w: 0.081042275}
+  m_LocalRotation: {x: 0.085835405, y: -0.018890982, z: -0.9927996, w: 0.08139098}
   m_LocalPosition: {x: 0.017, y: 0.011, z: 1.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

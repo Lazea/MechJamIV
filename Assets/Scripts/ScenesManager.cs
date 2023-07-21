@@ -40,6 +40,8 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         Debug.Log("Loading Scene: " + i);
         Time.timeScale = 1f;
+        AudioSettingsManager.Instance.SetVolume("MusicVolumeParam", 1f);
+        AudioSettingsManager.Instance.SetVolume("EffectsVolumeParam", 1f);
         SceneManager.LoadScene(i);
     }
 

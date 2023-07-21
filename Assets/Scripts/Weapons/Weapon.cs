@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
@@ -35,6 +36,9 @@ public class Weapon : MonoBehaviour
     bool isFiring;
     bool canFire;
     int burstCount;
+
+    [Header("Events")]
+    public UnityEvent<WeaponData> onWeaponFire = new UnityEvent<WeaponData>();
 
     private void Awake()
     {
@@ -144,6 +148,8 @@ public class Weapon : MonoBehaviour
                 SpawnProjectile(projectilePrefab, projectileSpawnPoint);
                 break;
         }
+
+        onWeaponFire.Invoke(playerData.weaponData);
     }
 
     void SpawnProjectile(

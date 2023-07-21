@@ -48,6 +48,8 @@ public class PlayerData : ScriptableObject
     [Header("Lateral Thrusters")]
     [Tooltip("The lateral dash ability cooldown.")]
     public float lateralThrustCooldown = 1.5f;
+    [Tooltip("The lateral speed scaler used when sprint boosting.")]
+    public float lateralSpeedBoostScaler = 0.9f;
 
     [Header("Vertical Thrusters")]
     [Tooltip("The vertical force for jumping.")]
@@ -166,7 +168,7 @@ public class PlayerData : ScriptableObject
         throw new NotImplementedException();
     }
 
-    [ContextMenu("Reset In Run Modifiers")]
+    [ContextMenu("Reset Weapon Data")]
     public void ResetWeaponData()
     {
         Debug.LogFormat("Player Weapon Data Reset");

@@ -49,7 +49,9 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
 
     public void GenerateWeapon(Vector3 position)
     {
-        WeaponData data = GetRandomWeapon();
+        // TODO: Uncomment this once better selection logic is made
+        //WeaponData data = GetRandomWeapon();
+        WeaponData data = GetRandomWeapon(Rarity.Common);
         GenerateWeapon(position, data);
     }
 
@@ -77,7 +79,16 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         if(addPickup)
             weaponObject.GetComponent<WeaponPickup>().data = data;
 
-        return ConstructWeaponObject(weaponObject, data);
+        try
+        {
+            return ConstructWeaponObject(
+                weaponObject.transform.Find("CentralHolder").gameObject,
+                data);
+        }
+        catch
+        {
+            return ConstructWeaponObject(weaponObject, data);
+        }
     }
 
     public (GameObject, GameObject, GameObject) ConstructWeaponObject(

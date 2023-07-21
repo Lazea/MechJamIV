@@ -27,7 +27,7 @@ public class SkillTreeNodeButton : MonoBehaviour,
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        onSelect.Invoke(skill);
+        //onSelect.Invoke(skill);
     }
 
     public void OnSelect(BaseEventData eventData)

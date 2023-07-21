@@ -82,5 +82,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile_Player_Plasma_Shock
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7106681460720935358, guid: 7b0c2814c3282894e8af582b46277d8e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b0c2814c3282894e8af582b46277d8e, type: 3}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerWeaponPickup : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class PlayerWeaponPickup : MonoBehaviour
     [Header("Pickup Masks")]
     public LayerMask pickupMask;
     public LayerMask coverMask;
+
+    [Header("Events")]
+    public UnityEvent onPickup;
 
     // Start is called before the first frame update
     void Start()
@@ -152,6 +156,8 @@ public class PlayerWeaponPickup : MonoBehaviour
         position += Vector3.up * 0.6f;
         Destroy(pickup.gameObject);
         WeaponGenerator.Instance.GenerateWeapon(position, currData);
+
+        onPickup.Invoke();
     }
 
     public void InteractHold()
