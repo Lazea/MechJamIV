@@ -62,8 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolParameter: Firing
   boolParameterValue: 1
-  minCooldownTime: 1
-  maxCooldownTime: 6
+  minCooldownTime: 0.65
+  maxCooldownTime: 3
   animLayer: 0
   checkAnimStates: []
 --- !u!1102 &-8956324275902020182
@@ -1968,8 +1968,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minShotCount: 4
-  maxShotCount: 8
-  shotIntervalTime: 0.25
+  maxShotCount: 9
+  shotIntervalTime: 0.2
   exitStateParam: Firing
   exitStateParamValue: 0
 --- !u!1102 &8540265993064498384

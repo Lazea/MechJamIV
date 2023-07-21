@@ -766,10 +766,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolParameter: InCombat
   boolParameterValue: 0
-  minStrafeCount: 3
-  maxStrafeCount: 6
-  minStrafeRange: 5
-  maxStrafeRange: 12
+  minStrafeCount: 2
+  maxStrafeCount: 3
+  minStrafeRange: 3
+  maxStrafeRange: 5
   strafeEndBoolParameter: Attacking
   strafeEndBoolParameterValue: 1
 --- !u!1101 &-1842059490995362547
