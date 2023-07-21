@@ -79,7 +79,9 @@ public class NPCsManager : Singleton<NPCsManager>
         for(int i = 0; i < maxTurretCount; i++)
         {
             int j = UnityEngine.Random.Range(0, selectedTurretSpawnWave.turrets.Length);
-            Vector3 playerPosition = GameManager.Instance.Player.transform.position;
+            Vector3 playerPosition = Vector3.zero;
+            if(GameManager.Instance.Player != null)
+                playerPosition = GameManager.Instance.Player.transform.position;
             if (Vector3.Distance(playerPosition, shuffledSpawns[i].position) >= minSpawnDistance * 0.5f)
                 SpawnNPC(
                     selectedTurretSpawnWave.turrets[j],
@@ -217,6 +219,9 @@ public class NPCsManager : Singleton<NPCsManager>
     public List<Vector3> SelectSpawnPoints()
     {
         List<Vector3> spawnPoints = new List<Vector3>();
+        if (GameManager.Instance.Player == null)
+            return spawnPoints;
+
         Vector3 playerPosition = GameManager.Instance.Player.transform.position;
         foreach(Transform s in fuzzySpawnPoints)
         {
