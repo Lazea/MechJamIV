@@ -21,6 +21,9 @@ public class ExitController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+            return;
+
         if (col.bounds.Contains(player.transform.position) && !cards.isShowing)
         {
             Debug.Log("[ENTER] Exit bounds");

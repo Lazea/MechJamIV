@@ -79,7 +79,10 @@ public class RepairShop : MonoBehaviour
     {
         if(depositLocked)
         {
-            creditsDepositText.text = "LOCKED";
+            creditsDepositText.text = string.Format(
+                "<size=70%>Credits in Deposit: {0}</size>\n{1}",
+                playerData.creditsSaved.ToString("D6"),
+                "LOCKED");
         }
         else
         {
@@ -100,6 +103,9 @@ public class RepairShop : MonoBehaviour
             return;
 
         if((playerData.credits - repairCost) < 0)
+            return;
+
+        if (playerData.health >= playerData.MaxHealth)
             return;
 
         playerData.health = Mathf.Min(
@@ -133,6 +139,12 @@ public class RepairShop : MonoBehaviour
         UpdateCreditsText();
         UpdateCreditsDepositText();
         PlayClip(depositConfirmClip);
+    }
+
+    public void SaveRemainingCredits()
+    {
+        playerData.creditsSaved += playerData.credits;
+        playerData.credits = 0;
     }
 
     public void PlayClip(AudioClip clip)

@@ -69,6 +69,11 @@ public class Player : MonoBehaviour, IDamageable
     void Update()
     {
         HandleDamageEffects();
+
+        if (data.health <= 0)
+        {
+            Kill();
+        }
     }
 
     void HandleDamageEffects()

@@ -100,7 +100,7 @@ MonoBehaviour:
   fireDuration: 4
   shockChance: 0.15
   shockDuration: 2.25
-  credits: 0
+  credits: 80
   creditsSaved: 0
   kills: 0
   stageCount: 0

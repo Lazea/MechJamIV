@@ -60,6 +60,9 @@ public class GameManager : Singleton<GameManager>
         if (cardHand.isShowing)
             return;
 
+        if (playerData.health <= 0)
+            return;
+
         AudioSettingsManager.Instance.SetVolume("MusicVolumeParam", 0.45f);
         AudioSettingsManager.Instance.SetVolume("EffectsVolumeParam", 0f);
 
