@@ -10,16 +10,16 @@ public class WeaponData
     public List<ProjectileModifier> projectileModifiers;
     public float spawnOffset;
     public DamageType damageType;
-    public float damageAmount;
-    public float shieldMultiplier;
+    public float baseDamage;
+    public float shieldMultiplier = 1f;
 
     [Header("Fire Mode")]
     public FireMode fireMode;
     public FireModeModifier fireModeModifier;
-    public float recoil;
+    public float baseAccuracy;
+    public float baseFireRate;
 
-    [Header("Weapon Score")]
-    public int power;
+    [Header("Weapon Rarity")]
     public Rarity rarity;
 }
 
@@ -33,7 +33,7 @@ public enum FireMode
 public enum FireModeModifier
 {
     None,
-    ClusterFire,
+    Cluster,
     RampUpFire,
     DualSplit,
     TrippleSplit
@@ -42,7 +42,7 @@ public enum FireModeModifier
 public enum ProjectileType
 {
     Ballistic,
-    EnergyBeam,
+    Plasma,
     Rocket,
     Laser
 }

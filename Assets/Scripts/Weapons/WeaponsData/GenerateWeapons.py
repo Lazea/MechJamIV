@@ -1,6 +1,7 @@
 import itertools
 import json
 
+
 # Load weapon properties from the JSON file
 with open("weapon_properties.json", "r") as file:
     weapon_props = json.load(file)
@@ -47,49 +48,51 @@ dict = []
 for wpn in weapons:
     # Create a dictionary to represent weapon data
     weapon_data = {
-        "fireMode": wpn[0],
-        "fireModeModifier": wpn[1],
         "projectileType": wpn[2],
         "projectileModifiers": list(wpn[3]),
+        "fireMode": wpn[0],
+        "fireModeModifier": wpn[1],
         "damageType": wpn[4]
     }
 
-    # Skip certain invalid combinations
-    if weapon_data["fireMode"] == "SemiAuto":
-        if weapon_data["fireModeModifier"] == "RampUpFire":
-            continue
+    # Get base accuracy
+    for accuracy in weapon_props["BaseAccuracy"]:
+        if accuracy["FireMode"].lower() == weapon_data["fireMode"].lower():
+            weapon_data["baseAccuracy"] = accuracy["BaseAccuracy"]
 
-    if weapon_data["fireMode"] == "BurstFire":
-        if weapon_data["projectileType"] == "Laser":
-            continue
-        if weapon_data["fireModeModifier"] == "RampUpFire":
-            continue
+            if weapon_data["projectileType"] == "Plasma":
+                weapon_data["baseAccuracy"] = round(weapon_data["baseAccuracy"] * 0.25, 3)
+            break
 
-    skip = False
-    for mod in weapon_data["projectileModifiers"]:
-        if mod == "Ricochet":
-            if weapon_data["projectileType"] in ["EnergyBeam", "Rocket", "Laser"]:
-                skip = True
+    # Get base accuracy
+    for rate in weapon_props["BaseFireRate"]:
+        if rate["FireMode"].lower() == weapon_data["fireMode"].lower():
+            if rate["ProjectileType"].lower() == weapon_data["projectileType"].lower():
+                weapon_data["baseFireRate"] = rate["BaseFireRate"]
                 break
-        if mod == "ExplodeOnHit":
-            if weapon_data["projectileType"] == "Laser":
-                skip = True
+    if weapon_data["fireModeModifier"] == "Cluster":
+        weapon_data["baseFireRate"] = weapon_data["baseFireRate"] * 4.25
+
+    # Get base accuracy
+    for damage in weapon_props["BaseDamage"]:
+        if damage["FireMode"].lower() == weapon_data["fireMode"].lower():
+            if damage["ProjectileType"].lower() == weapon_data["projectileType"].lower():
+                weapon_data["baseDamage"] = damage["BaseDamage"]
+
+                if weapon_data["damageType"] == "Normal":
+                    weapon_data["baseDamage"] += 4
                 break
-        if mod == "ClusterOnHit":
-            if weapon_data["projectileType"] in ["Ballistic", "Laser"]:
-                skip = True
-                break
-        if mod == "Penetrate":
-            if weapon_data["projectileType"] in ["Rocket", "Laser"]:
-                skip = True
-                break
-    if skip:
+
+    if weapon_data["projectileType"] == "Rocket" and weapon_data["fireModeModifier"]  in ["TrippleSplit", "Cluster"]:
         continue
 
-    if weapon_data["damageType"] == "Normal" and weapon_data["projectileType"] in ["EnergyBeam", "Laser"]:
+    if weapon_data["damageType"] == "Normal" and weapon_data["projectileType"] in ["Plasma", "Laser"]:
         continue
 
     if weapon_data["damageType"] == "Energy" and weapon_data["projectileType"] in ["Ballistic", "Rocket"]:
+        continue
+
+    if weapon_data["damageType"] == "Shock" and weapon_data["projectileType"] in ["Ballistic", "Rocket"]:
         continue
 
     # Append valid weapon data to the list

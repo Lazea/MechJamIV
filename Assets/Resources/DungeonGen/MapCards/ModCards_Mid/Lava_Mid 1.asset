@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaab2ec01754d2e4c9654c153624b53e, type: 3}
+  m_Name: Lava_Mid 1
+  m_EditorClassIdentifier: 
+  cardName: Molten Depths
+  tileset: {fileID: 11400000, guid: d7cdca113c3161c4d96510de1445ce9c, type: 2}
+  env: {fileID: 11400000, guid: d9ecf5b8bb002e5488b2f758884cbf9c, type: 2}
+  obscureTileset: 0
+  lengthMod: 3
+  secondaryMod: 2
+  enemyWaveCount: 2
+  npcWavePool:
+  - {fileID: 11400000, guid: a1631d36874a2fb4a85fa1459d6a616b, type: 2}
+  - {fileID: 11400000, guid: 26905748e89c60149893d7a9b8948e1d, type: 2}
+  - {fileID: 11400000, guid: ee0d33c0560c558499a1342472952fb7, type: 2}
+  - {fileID: 11400000, guid: 07e9d4b4bab67ad47b23cd38af344883, type: 2}
+  - {fileID: 11400000, guid: dd2744299e5926245b8903c54362be8e, type: 2}
+  maxRarity: 1
+  lootDropChance: 0.25

@@ -4,24 +4,127 @@
         "BurstFire",
         "FullAuto"
     ],
+    "BaseAccuracy": [
+        {
+            "FireMode": "SemiAuto",
+            "BaseAccuracy": 0.032
+        },
+        {
+            "FireMode": "BurstFire",
+            "BaseAccuracy": 0.0465
+        },
+        {
+            "FireMode": "FullAuto",
+            "BaseAccuracy": 0.0725
+        }
+    ],
+    "BaseFireRate": [
+        {
+            "ProjectileType": "Ballistic",
+            "FireMode": "SemiAuto",
+            "BaseFireRate": 0.13
+        },
+        {
+            "ProjectileType": "Ballistic",
+            "FireMode": "BurstFire",
+            "BaseFireRate": 0.85
+        },
+        {
+            "ProjectileType": "Ballistic",
+            "FireMode": "FullAuto",
+            "BaseFireRate": 0.08
+        },
+        {
+            "ProjectileType": "Plasma",
+            "FireMode": "SemiAuto",
+            "BaseFireRate": 0.17
+        },
+        {
+            "ProjectileType": "Plasma",
+            "FireMode": "BurstFire",
+            "BaseFireRate": 0.95
+        },
+        {
+            "ProjectileType": "Plasma",
+            "FireMode": "FullAuto",
+            "BaseFireRate": 0.13
+        },
+        {
+            "ProjectileType": "Rocket",
+            "FireMode": "SemiAuto",
+            "BaseFireRate": 1.67
+        },
+        {
+            "ProjectileType": "Rocket",
+            "FireMode": "BurstFire",
+            "BaseFireRate": 3.0
+        },
+        {
+            "ProjectileType": "Rocket",
+            "FireMode": "FullAuto",
+            "BaseFireRate": 1.33
+        }
+    ],
     "FireModeModifier": [
         "None",
-        "ClusterFire",
-        "RampUpFire",
         "DualSplit",
-        "TrippleSplit"
+        "TrippleSplit",
+        "Cluster"
     ],
     "ProjectileType": [
         "Ballistic",
-        "EnergyBeam",
+        "Plasma",
         "Rocket"
     ],
+    "BaseDamage": [
+        {
+            "ProjectileType": "Ballistic",
+            "FireMode": "SemiAuto",
+            "BaseDamage": 14
+        },
+        {
+            "ProjectileType": "Ballistic",
+            "FireMode": "BurstFire",
+            "BaseDamage": 18
+        },
+        {
+            "ProjectileType": "Ballistic",
+            "FireMode": "FullAuto",
+            "BaseDamage": 10
+        },
+        {
+            "ProjectileType": "Plasma",
+            "FireMode": "SemiAuto",
+            "BaseDamage": 14
+        },
+        {
+            "ProjectileType": "Plasma",
+            "FireMode": "BurstFire",
+            "BaseDamage": 18
+        },
+        {
+            "ProjectileType": "Plasma",
+            "FireMode": "FullAuto",
+            "BaseDamage": 10
+        },
+        {
+            "ProjectileType": "Rocket",
+            "FireMode": "SemiAuto",
+            "BaseDamage": 200
+        },
+        {
+            "ProjectileType": "Rocket",
+            "FireMode": "BurstFire",
+            "BaseDamage": 180
+        },
+        {
+            "ProjectileType": "Rocket",
+            "FireMode": "FullAuto",
+            "BaseDamage": 175
+        }
+    ],
     "ProjectileModifier": [
-        "None",
-        "Ricochet",
-        "Penetrate",
-        "ClusterOnHit",
-        "ExplodeOnHit"
+        "None"
     ],
     "DamageType": [
         "Normal",

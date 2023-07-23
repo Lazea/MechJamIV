@@ -12,6 +12,8 @@ public class PlayerSoundFXController : MonoBehaviour
     public AudioClip dashSoundClip;
     public AudioClip jumpSoundClip;
     public AudioClip landingSoundClip;
+    public AudioClip thrusterStartClip;
+    public AudioClip thrusterEndClip;
 
     public float thrusterMaxVolume;
     public float thrusterFadeInTime;
@@ -27,6 +29,8 @@ public class PlayerSoundFXController : MonoBehaviour
 
     bool dashed;
     bool landed;
+    bool thrustersOn;
+    float prevMoveSpeed;
 
     Animator anim;
 
@@ -46,7 +50,7 @@ public class PlayerSoundFXController : MonoBehaviour
             if (!dashed)
             {
                 oneShotSource.pitch = Random.Range(0.95f, 1.06f);
-                oneShotSource.PlayOneShot(dashSoundClip, 1.0f);
+                oneShotSource.PlayOneShot(dashSoundClip, 0.8f);
                 dashed = true;
             }
         }
@@ -61,7 +65,7 @@ public class PlayerSoundFXController : MonoBehaviour
             if (!landed)
             {
                 oneShotSource.pitch = Random.Range(0.95f, 1.06f);
-                oneShotSource.PlayOneShot(landingSoundClip, 0.45f);
+                oneShotSource.PlayOneShot(landingSoundClip, 0.6f);
                 landed = true;
             }
         }
@@ -70,10 +74,11 @@ public class PlayerSoundFXController : MonoBehaviour
             landed = false;
         }
 
-        Vector2 moveSpeed = new Vector2(
+        Vector2 moveVelocity = new Vector2(
             anim.GetFloat("SpeedX"),
             anim.GetFloat("SpeedY"));
-        if(anim.GetBool("VertThrust") || moveSpeed.magnitude > 0.1f)
+        float moveSpeed = moveVelocity.magnitude;
+        if (anim.GetBool("VertThrust") || moveSpeed > 0.1f)
         {
             thrusterSource.volume = Mathf.Lerp(
                 thrusterSource.volume,
@@ -95,6 +100,19 @@ public class PlayerSoundFXController : MonoBehaviour
                 1.0f,
                 thrusterFadeOutTime * Time.deltaTime);
         }
+        
+        if(prevMoveSpeed < moveSpeed && moveSpeed > 0.1f && !thrustersOn)
+        {
+            thrustersOn = true;
+            oneShotSource.PlayOneShot(thrusterStartClip);
+        }
+        else if(prevMoveSpeed > moveSpeed && moveSpeed < 0.5f && thrustersOn)
+        {
+            thrustersOn = false;
+            oneShotSource.PlayOneShot(thrusterEndClip);
+        }
+
+        prevMoveSpeed = moveSpeed;
     }
 
     public void PlayWeaponFireClip(WeaponData data)
@@ -104,7 +122,7 @@ public class PlayerSoundFXController : MonoBehaviour
             case ProjectileType.Ballistic:
                 PlayRandomClip(ballisticFireClips, 0.95f, 1.1f);
                 break;
-            case ProjectileType.EnergyBeam:
+            case ProjectileType.Plasma:
                 PlayRandomClip(plasmaFireClips, 0.95f, 1.1f);
                 break;
             case ProjectileType.Rocket:
@@ -119,7 +137,7 @@ public class PlayerSoundFXController : MonoBehaviour
         oneShotSource.pitch = minPitch;
         if (minPitch < maxPitch)
             oneShotSource.pitch = Random.Range(minPitch, maxPitch);
-        oneShotSource.PlayOneShot(clips[i]);
+        oneShotSource.PlayOneShot(clips[i], 0.8f);
     }
 
     public void PlayWeaponPickupSound()

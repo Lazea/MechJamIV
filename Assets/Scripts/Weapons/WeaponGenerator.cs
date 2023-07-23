@@ -7,6 +7,11 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
     [Header("Dataset")]
     public TextAsset jsonFile;
     public WeaponsDataset weaponDataset;
+    public Rarity maxDropRarity;
+
+    [Header("Debug")]
+    public bool onlySpawnPreferredRarity;
+    public Rarity preferredRarity;
 
     [Header("Base Weapon Prefab")]
     public GameObject baseWeaponPickupPrefab;
@@ -43,22 +48,29 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
 
     public void GenerateWeapon(Vector3 position, Rarity rarity)
     {
+        Debug.LogFormat("Generating weapon of {0} rarity", rarity);
         WeaponData data = GetRandomWeapon(rarity);
+        Debug.LogFormat("Generated weapon of {0} rarity", data.rarity);
         GenerateWeapon(position, data);
     }
 
     public void GenerateWeapon(Vector3 position)
     {
-        // TODO: Uncomment this once better selection logic is made
-        //WeaponData data = GetRandomWeapon();
-        WeaponData data = GetRandomWeapon(Rarity.Common);
-        GenerateWeapon(position, data);
+        if (onlySpawnPreferredRarity)
+        {
+            GenerateWeapon(position, preferredRarity);
+        }
+        else
+        {
+            WeaponData data = GetRandomWeapon();
+            GenerateWeapon(position, data);
+        }
     }
 
     public void GenerateWeaponOnNPCDeath(Transform npcTransform)
     {
         // TODO: Determine if and what weapon rarity to spawn
-        GenerateWeapon(npcTransform.position + Vector3.up);
+        GenerateWeapon(npcTransform.position + Vector3.up * 2f);
     }
 
     public (GameObject, GameObject, GameObject) GenerateWeapon(
@@ -77,7 +89,7 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
         }
 
         if(addPickup)
-            weaponObject.GetComponent<WeaponPickup>().data = data;
+            weaponObject.GetComponent<WeaponPickup>().Data = data;
 
         try
         {
@@ -106,15 +118,15 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
                     body,
                     shortBallisticBarrelMeshes,
                     longBallisticBarrelMeshes,
-                    data.recoil);
+                    data.baseAccuracy);
                 break;
-            case ProjectileType.EnergyBeam:
+            case ProjectileType.Plasma:
                 body = GenerateWeaponBody(weaponObject, plasmaBodyMeshes);
                 barrel = GenerateWeaponBarrel(
                     body,
                     shortPlasmaBarrelMeshes,
                     longPlasmaBarrelMeshes,
-                    data.recoil);
+                    data.baseAccuracy);
                 break;
             case ProjectileType.Rocket:
                 body = GenerateWeaponBody(weaponObject, rocketBodyMeshes);
@@ -122,7 +134,7 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
                     body,
                     shortRocketBarrelMeshes,
                     longRocketBarrelMeshes,
-                    data.recoil);
+                    data.baseAccuracy);
                 break;
         }
 
@@ -200,29 +212,15 @@ public class WeaponGenerator : Singleton<WeaponGenerator>
 
     public WeaponData GetRandomWeapon()
     {
-        WeaponData weaponData = null;
-        int i = 0;
-        switch (Random.Range(0, 4))
-        {
-            case 0:
-                i = Random.Range(0, weaponDataset.Common.Count);
-                weaponData = weaponDataset.Common[i];
-                break;
-            case 1:
-                i = Random.Range(0, weaponDataset.Uncommon.Count);
-                weaponData = weaponDataset.Uncommon[i];
-                break;
-            case 2:
-                i = Random.Range(0, weaponDataset.Rare.Count);
-                weaponData = weaponDataset.Rare[i];
-                break;
-            case 3:
-                i = Random.Range(0, weaponDataset.Legendary.Count);
-                weaponData = weaponDataset.Legendary[i];
-                break;
-        }
-
-        return weaponData;
+        float chance = Random.Range(0f, 1f);
+        if (chance <= GameManager.Instance.playerData.legendaryDropChance)
+            return GetRandomWeapon(Rarity.Legendary);
+        else if(chance <= weaponDataset.baseRareChance && maxDropRarity == Rarity.Rare)
+            return GetRandomWeapon(Rarity.Rare);
+        else if (chance <= weaponDataset.baseRareChance && maxDropRarity == Rarity.Uncommon)
+            return GetRandomWeapon(Rarity.Uncommon);
+        else
+            return GetRandomWeapon(Rarity.Common);
     }
 
     public WeaponData GetRandomWeapon(Rarity rarity)

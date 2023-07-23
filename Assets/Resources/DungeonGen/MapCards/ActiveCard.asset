@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaab2ec01754d2e4c9654c153624b53e, type: 3}
   m_Name: ActiveCard
   m_EditorClassIdentifier: 
-  cardName: Mission Start
+  cardName: Mission
   tileset: {fileID: 11400000, guid: d7cdca113c3161c4d96510de1445ce9c, type: 2}
   env: {fileID: 11400000, guid: d9ecf5b8bb002e5488b2f758884cbf9c, type: 2}
   obscureTileset: 0
   lengthMod: 0
   secondaryMod: 0
-  lvlReq: 0
-  hostility: 0
-  richness: 0
+  enemyWaveCount: 1
+  npcWavePool:
+  - {fileID: 11400000, guid: fe9d50a8971c6a4429d9c083b87671e1, type: 2}
+  maxRarity: 0
+  lootDropChance: 1

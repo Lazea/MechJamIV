@@ -10,6 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     public Controls.GameplayActions controls;
 
+    bool fireDown;
     Vector2 look;
     Vector2 move;
 
@@ -25,6 +26,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     [Header("Action Events")]
     public UnityEvent onFire;
+    public UnityEvent onFireHold;
     public UnityEvent onFireRelease;
     public UnityEvent onMelee;
     public UnityEvent onInteractStart;
@@ -57,8 +59,8 @@ public class PlayerInputHandler : MonoBehaviour
         };
         controls.LateralThrust.canceled += ctx => { onLateralThrustRelease.Invoke(); };
 
-        controls.Fire.started += ctx => { onFire.Invoke(); };
-        controls.Fire.canceled += ctx => { onFireRelease.Invoke(); };
+        controls.Fire.started += ctx => { onFire.Invoke(); fireDown = true; };
+        controls.Fire.canceled += ctx => { onFireRelease.Invoke(); fireDown = false; };
         controls.Melee.started += ctx => { onMelee.Invoke(); };
         controls.Interact.started += ctx => { onInteractStart.Invoke(); };
         controls.Interact.canceled += ctx => { onInteractRelease.Invoke(); };
@@ -87,6 +89,8 @@ public class PlayerInputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(fireDown)
+            onFireHold.Invoke();
         onLook.Invoke(look);
         onMove.Invoke(move);
     }

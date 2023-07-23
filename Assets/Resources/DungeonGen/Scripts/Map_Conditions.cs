@@ -87,12 +87,17 @@ public class Map_Conditions : Singleton<Map_Conditions>
         reverb = cam.GetComponent<AudioReverbFilter>();
         post = GetComponent<Volume>();
         player = FindObjectOfType<Player>().transform;
+    }
+
+    public void SetSeedLengths()
+    {
+        seedLength = Mathf.Min(activeCard.lengthMod, 1);
+        secondaryLength = activeCard.secondaryMod;
         startingLength = seedLength;
         startingSecondary = secondaryLength;
 
         BuildMap();
-
-        navSurface.BuildNavMesh();
+        BuildNavMesh();
     }
 
     // Start is called before the first frame update
@@ -116,7 +121,7 @@ public class Map_Conditions : Singleton<Map_Conditions>
 
     public void clearMap()
     {
-        activeCard.lengthMod = 0;
+        activeCard.lengthMod = 1;
         activeCard.secondaryMod = 0;
 
         if (weather)
@@ -173,8 +178,8 @@ public class Map_Conditions : Singleton<Map_Conditions>
 
         //sun.colorTemperature = env.lightTemp;
 
-        seedLength += activeCard.lengthMod;
-        secondaryLength += activeCard.secondaryMod;
+        seedLength = activeCard.lengthMod;
+        secondaryLength = activeCard.secondaryMod;
 
         reverb.reverbPreset = env.reverb;
 
@@ -238,8 +243,10 @@ public class Map_Conditions : Singleton<Map_Conditions>
                         if (chunks.Count == 0 && player)
                         {
                             Vector3 pY = Vector3.up * (player.position.y + 7);
-                            
-                            player.position = (new Vector3(seedPos.x, 0, seedPos.y) * tileset.res * tileset.tileSize) + pY;
+
+                            Vector3 playerPos = (new Vector3(seedPos.x, 0, seedPos.y) * tileset.res * tileset.tileSize) + pY;
+                            playerPos.y = Mathf.Min(playerPos.y, 50f);
+                            player.position = playerPos;
                         }
 
                         chunks.Add(seedPos, new ChunkInfo());
@@ -349,6 +356,11 @@ public class Map_Conditions : Singleton<Map_Conditions>
         
 
         isBuilding = false;
+    }
+
+    public void BuildNavMesh()
+    {
+        navSurface.BuildNavMesh();
     }
 
     //searches surrounding area for immediately adjacent chunks, and adds a link if conditions are right.

@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: mask.m_Bits
       value: 137
       objectReference: {fileID: 0}
+    - target: {fileID: 3470776959614934130, guid: 2be508c907d1f2d49b9a971368b4dfbe,
+        type: 3}
+      propertyPath: damage.amount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3470776959614934140, guid: 2be508c907d1f2d49b9a971368b4dfbe,
         type: 3}
       propertyPath: m_Name

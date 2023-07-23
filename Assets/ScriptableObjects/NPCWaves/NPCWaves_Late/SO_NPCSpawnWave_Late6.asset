@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563f807bfda85bb41b0f2aedf60e2664, type: 3}
+  m_Name: SO_NPCSpawnWave_Late6
+  m_EditorClassIdentifier: 
+  turretCount: 0
+  turrets:
+  - {fileID: 8313568275865629066, guid: f25e9e6310809cc4799e2788919f992f, type: 3}
+  - {fileID: 6477526955744559622, guid: 9aa4679326cb9b24483b9638162ca5f9, type: 3}
+  enemyUnitSets:
+  - enemyUnit: {fileID: 8902664786216819013, guid: fbbafbcc837f62d4e891b7c194d67e29,
+      type: 3}
+    unitCount: 8

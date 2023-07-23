@@ -147,6 +147,9 @@ MonoBehaviour:
   onFire:
     m_PersistentCalls:
       m_Calls: []
+  onFireHold:
+    m_PersistentCalls:
+      m_Calls: []
   onFireRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -198,11 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb51b17cf66037e4b856580d19935828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSensitivity: 90
-  ySensitivity: 80
   invertedY: 0
-  maxVerticalAngle: 310
-  minVerticalAngle: 50
+  maxVerticalAngle: 290
+  minVerticalAngle: 60
 --- !u!1773428102 &4686328506284627610
 ParentConstraint:
   m_ObjectHideFlags: 0

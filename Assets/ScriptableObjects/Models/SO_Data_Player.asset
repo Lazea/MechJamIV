@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c46ce4b441b214e8379ec5d2808bce, type: 3}
   m_Name: SO_Data_Player
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 100
-  maxShield: 100
-  shield: 100
+  maxHealth: 750
+  health: 750
+  maxShield: 150
+  shield: 150
   resetHealthOnStart: 1
   lateralThrustCooldown: 0.8
-  lateralSpeedBoostScaler: 1.125
+  lateralSpeedBoostScaler: 1.5
   jumpForce: 18
   verticalThrust: 150
   maxVerticalSpeedFuelFalloff:
@@ -29,78 +29,59 @@ MonoBehaviour:
       value: 6
       inSlope: 0
       outSlope: 0
-      tangentMode: 136
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.55
+      time: 0.5
       value: 6
       inSlope: 0
       outSlope: 0
-      tangentMode: 136
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.8
+      time: 0.75
       value: 12
       inSlope: 0
       outSlope: 0
-      tangentMode: 136
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 12
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxVerticalThrusterFuel: 100
+  maxVerticalThrusterFuel: 125
   verticalThrusterFuleRate: 125
   verticalThrustCooldown: 0.75
   speedScaler: 1
-  defaultStartingWeaponData:
-    projectileType: 0
-    projectileModifiers: 
-    spawnOffset: 0
-    damageType: 0
-    damageAmount: 0
-    shieldMultiplier: 0
-    fireMode: 0
-    fireModeModifier: 0
-    recoil: 0.03
-    power: 0
-    rarity: 0
   weaponData:
     projectileType: 0
     projectileModifiers: 
     spawnOffset: 0
     damageType: 0
-    damageAmount: 0
-    shieldMultiplier: 0
+    baseDamage: 18
+    shieldMultiplier: 1
     fireMode: 0
     fireModeModifier: 0
-    recoil: 0.03
-    power: 0
+    baseAccuracy: 0.032
+    baseFireRate: 0.13
     rarity: 0
   damageMultiplier: 1
   critChance: 0.04
   critDamageMultiplier: 2
-  shieldEnergyDamageMultiplier: 1.5
-  fireChance: 0.15
-  fireDamage: 4
+  shieldEnergyDamageMultiplier: 1
+  fireChance: 0.12
+  fireDamage: 5
   fireDuration: 4
-  shockChance: 0.15
-  shockDuration: 2.25
-  credits: 80
+  shockChance: 0.08
+  shockDuration: 2.1
+  legendaryDropChance: 0.005
+  credits: 0
   creditsSaved: 0
   kills: 0
   stageCount: 0
+  playTime: 0

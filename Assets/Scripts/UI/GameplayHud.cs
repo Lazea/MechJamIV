@@ -33,7 +33,6 @@ public class GameplayHud : Singleton<GameplayHud>
     public TextMeshProUGUI stageCountText;
     public TextMeshProUGUI killCountText;
     public TextMeshProUGUI timerText;
-    float tm;
 
     GameManager Manager { get { return GameManager.Instance; } }
     PlayerData PlayerData { get { return Manager.playerData; } }
@@ -49,7 +48,7 @@ public class GameplayHud : Singleton<GameplayHud>
     {
         UpdateCreditsCount();
         UpdateKillCount();
-        tm += Time.deltaTime;
+        GameManager.Instance.playerData.playTime += Time.deltaTime;
         UpdateStageTimeCount();
     }
 
@@ -153,6 +152,7 @@ public class GameplayHud : Singleton<GameplayHud>
 
     public void UpdateStageTimeCount()
     {
+        float tm = GameManager.Instance.playerData.playTime;
         float minutes = Mathf.FloorToInt(tm / 60);
         float seconds = Mathf.FloorToInt(tm % 60);
         timerText.text = string.Format(

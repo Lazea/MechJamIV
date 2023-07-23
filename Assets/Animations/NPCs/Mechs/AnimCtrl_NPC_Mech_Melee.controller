@@ -767,9 +767,9 @@ MonoBehaviour:
   boolParameter: InCombat
   boolParameterValue: 0
   minStrafeCount: 2
-  maxStrafeCount: 3
+  maxStrafeCount: 4
   minStrafeRange: 3
-  maxStrafeRange: 5
+  maxStrafeRange: 6
   strafeEndBoolParameter: Attacking
   strafeEndBoolParameterValue: 1
 --- !u!1101 &-1842059490995362547
@@ -1094,7 +1094,7 @@ MonoBehaviour:
     exitBoolParameterValue: 0
   - exitBoolParameter: InCombat
     exitBoolParameterValue: 0
-  lifeTime: 5
+  lifeTime: 2.55
   attackRange: 5
   attackTriggerParameter: Melee
   offsetFromTarget: 1

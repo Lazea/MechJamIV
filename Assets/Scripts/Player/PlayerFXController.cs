@@ -14,6 +14,12 @@ public class PlayerFXController : MonoBehaviour
     public ParticleSystem[] MoveFX;
     public ParticleSystem[] SkateFX;
 
+    [Header("Shield")]
+    public MeshRenderer[] mechRenderers;
+    public float shieldPowerOnHit = 0.15f;
+    public float shieldSmooth = 0.1f;
+    public ParticleSystem[] shieldBreakFX;
+
     // Components
     Animator anim;
 
@@ -85,6 +91,12 @@ public class PlayerFXController : MonoBehaviour
                     fx.Stop();
             }
         }
+
+        float shieldPower = Mathf.Lerp(
+            GetShieldPower(),
+            0f,
+            shieldSmooth * Time.deltaTime);
+        SetShieldPower(shieldPower);
     }
 
     public void PlayDashForwardFX()
@@ -126,5 +138,30 @@ public class PlayerFXController : MonoBehaviour
     public void PlayLandingFX() 
     {
         landingImpactFX.Play();
+    }
+
+    [ContextMenu("Shield Hit")]
+    public void PlayShieldHit()
+    {
+        SetShieldPower(shieldPowerOnHit);
+    }
+
+    [ContextMenu("Shield Break")]
+    public void PlayShieldBreak()
+    {
+        SetShieldPower(0f);
+        foreach (var fx in shieldBreakFX)
+            fx.Play();
+    }
+
+    float GetShieldPower()
+    {
+        return mechRenderers[0].material.GetFloat("_Shield_Power");
+    }
+
+    void SetShieldPower(float value)
+    {
+        foreach(var mr in mechRenderers)
+            mr.material.SetFloat("_Shield_Power", value);
     }
 }

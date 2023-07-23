@@ -24,6 +24,7 @@ public class Player : MonoBehaviour, IDamageable
         get { return data.shield; }
         set { data.shield = value; }
     }
+    bool shieldBroken;
 
     [Header("Damage Effects")]
     public DamageEffect shockDamageEffect;
@@ -41,6 +42,8 @@ public class Player : MonoBehaviour, IDamageable
     public UnityEvent onFireDamage;
     public UnityEvent onShockStart;
     public UnityEvent onShockEnd;
+    public UnityEvent onShieldHit;
+    public UnityEvent onShieldBreak;
     public SOGESys.Events.DamageGameEvent onHit;
     public SOGESys.Events.IntGameEvent onHealthChange;
     public SOGESys.Events.IntGameEvent onShieldChange;
@@ -160,6 +163,15 @@ public class Player : MonoBehaviour, IDamageable
         Damage damageDealt = null;
         CombatUtils.ApplyDamage(damage, false, this, out damageDealt);
         ApplyDamageEffect(damage);
+
+        if(data.shield > 0)
+            onShieldHit.Invoke();
+
+        if (!shieldBroken && data.shield <= 0)
+        {
+            shieldBroken = true;
+            onShieldBreak.Invoke();
+        }
 
         onHealthChange.Raise(data.health);
         onShieldChange.Raise(data.shield);

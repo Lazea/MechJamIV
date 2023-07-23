@@ -28,7 +28,7 @@ public class CardHand : MonoBehaviour
     {
         map = FindObjectOfType<Map_Conditions>();
         hand.SetActive(false);
-        StartCoroutine(pickCards());
+        //StartCoroutine(pickCards());
     }
 
     // Update is called once per frame
@@ -80,10 +80,13 @@ public class CardHand : MonoBehaviour
         }
     }
 
+    public void PickCards()
+    {
+        StartCoroutine(pickCards());
+    }
+
     IEnumerator pickCards()
     {
-        
-
         for (int i = 0; i < cards.Length; i++)
         {
             int r = Random.Range(0, cardPool.Length);

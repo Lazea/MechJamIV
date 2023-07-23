@@ -34,6 +34,10 @@ public class PlayerMovementController : MonoBehaviour
     bool isGrounded;
     RaycastHit groundHit;
     public LayerMask groundMask;
+    float staticFriction;
+    float dynamicFriction;
+    float targetStaticFriction = 0f;
+    float targetDynamicFriction = 0f;
 
     [Header("Physics Material")]
     public PhysicMaterial staticMaterial;
@@ -92,7 +96,7 @@ public class PlayerMovementController : MonoBehaviour
         // Set speed for the animator
         float targetSpeed = inputMove.magnitude;
         if (lateralThrustHold)
-            targetSpeed *= (data.speedScaler + data.lateralSpeedBoostScaler);
+            targetSpeed = (targetSpeed * data.speedScaler) + data.lateralSpeedBoostScaler;
         else
             targetSpeed *= data.speedScaler;
 
@@ -124,6 +128,9 @@ public class PlayerMovementController : MonoBehaviour
             HandleVerticalThrust();
         }
         HandleLateralThrust();
+
+        staticFriction = coll.material.staticFriction;
+        dynamicFriction = coll.material.dynamicFriction;
     }
 
     /// <summary>
@@ -149,8 +156,8 @@ public class PlayerMovementController : MonoBehaviour
     void HandleColliderMaterial()
     {
         // Set the target friction values
-        float targetStaticFriction = 0f;
-        float targetDynamicFriction = 0f;
+        targetStaticFriction = 0f;
+        targetDynamicFriction = 0f;
 
         if (isGrounded)
         {
@@ -158,9 +165,9 @@ public class PlayerMovementController : MonoBehaviour
             bool isMoving = (inputMove.magnitude >= 0.01f);
             coll.material.frictionCombine = isMoving ?
                 dynamicMaterial.frictionCombine : staticMaterial.frictionCombine;
-            targetStaticFriction = (inputMove.magnitude >= 0.01f) ?
+            targetStaticFriction = (isMoving) ?
                 dynamicMaterial.staticFriction : staticMaterial.staticFriction;
-            targetDynamicFriction = (inputMove.magnitude >= 0.01f) ?
+            targetDynamicFriction = (isMoving) ?
                 dynamicMaterial.dynamicFriction : staticMaterial.dynamicFriction;
         }
         else

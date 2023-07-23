@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaab2ec01754d2e4c9654c153624b53e, type: 3}
+  m_Name: Desert_Late
+  m_EditorClassIdentifier: 
+  cardName: Cactus Oasis
+  tileset: {fileID: 11400000, guid: f88f6abb8e9378348921d9e8440e4e7f, type: 2}
+  env: {fileID: 11400000, guid: 7ea03b208c8f24c45a66295a2e9fe215, type: 2}
+  obscureTileset: 0
+  lengthMod: 4
+  secondaryMod: 5
+  enemyWaveCount: 3
+  npcWavePool:
+  - {fileID: 11400000, guid: 6d317a0010b28b444879ed49c7e30717, type: 2}
+  - {fileID: 11400000, guid: ff233eb624fdf444da71e76e56386880, type: 2}
+  - {fileID: 11400000, guid: d393a65ae49904c46896fd388c3e7c86, type: 2}
+  - {fileID: 11400000, guid: 18ce2e6358cfae047ac8161ab85a2ed4, type: 2}
+  - {fileID: 11400000, guid: 190237b6fe628a047860bf05c61495f0, type: 2}
+  - {fileID: 11400000, guid: 301b4e273a6578e44984c114aaf5118e, type: 2}
+  - {fileID: 11400000, guid: 008a866a41c7c90449be17f8219cac3f, type: 2}
+  - {fileID: 11400000, guid: 4f6259df438c2fd47bf079286f3ec19b, type: 2}
+  - {fileID: 11400000, guid: 783d3a41aee35cf4998beeae43fa7ea5, type: 2}
+  - {fileID: 11400000, guid: b7e893665e5ead54bacd65d6bbeb61b9, type: 2}
+  - {fileID: 11400000, guid: 7e1c157cc3e46cd49bc67acc2ef495c1, type: 2}
+  maxRarity: 2
+  lootDropChance: 0.2

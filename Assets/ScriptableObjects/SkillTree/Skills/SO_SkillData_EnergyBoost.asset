@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SO_SkillData_EnergyBoost
   m_EditorClassIdentifier: 
   name: Energy Shield Damage Boost
-  id: 8
+  id: 12
   icon: {fileID: 21300000, guid: c08c73a5997225c4594f94f82f043e56, type: 3}
   description: +{0}% to Shield Damage
-  cost: 1300
+  cost: 250
   statBoosts:
   - statBoostType: 11
     isPercentage: 1

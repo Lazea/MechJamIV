@@ -51,7 +51,7 @@ public class RepairShop : MonoBehaviour
     {
         creditsText.text = string.Format(
             creditsTextFormat,
-            playerData.credits.ToString("D6"));
+            playerData.creditsSaved.ToString("D6"));
     }
 
     public void UpdateMechHPText()

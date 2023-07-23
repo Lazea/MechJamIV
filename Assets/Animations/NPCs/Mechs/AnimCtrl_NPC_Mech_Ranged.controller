@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolParameter: Firing
   boolParameterValue: 1
-  minCooldownTime: 0.65
+  minCooldownTime: 1
   maxCooldownTime: 3
   animLayer: 0
   checkAnimStates: []

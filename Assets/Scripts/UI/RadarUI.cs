@@ -12,6 +12,7 @@ public class RadarUI : MonoBehaviour
 
     [Header("Markers")]
     public GameObject enemyMarker;
+    public GameObject exitMarker;
 
     [System.Serializable]
     public struct Marker
@@ -92,6 +93,17 @@ public class RadarUI : MonoBehaviour
             enemyMarker,
             radarUIObject.transform).GetComponent<RectTransform>();
         marker.markedNPC = npc.gameObject;
+
+        markers.Add(marker);
+    }
+
+    public void SpawnExitMarker()
+    {
+        Marker marker = new Marker();
+        marker.marker = Instantiate(
+            exitMarker,
+            radarUIObject.transform).GetComponent<RectTransform>();
+        marker.markedNPC = GameObject.Find("Exit");
 
         markers.Add(marker);
     }

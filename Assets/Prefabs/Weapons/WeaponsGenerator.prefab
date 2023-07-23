@@ -51,963 +51,1925 @@ MonoBehaviour:
     - projectileType: 0
       projectileModifiers: 
       spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 13
-      rarity: 0
-    - projectileType: 1
-      projectileModifiers: 
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 11
-      rarity: 0
-    - projectileType: 0
-      projectileModifiers: 
-      spawnOffset: 0
       damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 18
+      shieldMultiplier: 1
       fireMode: 0
-      fireModeModifier: 3
-      recoil: 0
-      power: 8
+      fireModeModifier: 0
+      baseAccuracy: 0.032
+      baseFireRate: 0.13
       rarity: 0
     - projectileType: 0
       projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 14
+      shieldMultiplier: 1
       fireMode: 0
-      fireModeModifier: 3
-      recoil: 0
-      power: 14
+      fireModeModifier: 0
+      baseAccuracy: 0.032
+      baseFireRate: 0.13
       rarity: 0
     - projectileType: 1
       projectileModifiers: 
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 3
-      recoil: 0
-      power: 15
-      rarity: 0
-    - projectileType: 2
-      projectileModifiers: 
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 3
-      recoil: 0
-      power: 10
-      rarity: 0
-    - projectileType: 1
-      projectileModifiers: 03000000
       spawnOffset: 0
       damageType: 1
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
+      baseDamage: 14
+      shieldMultiplier: 1
+      fireMode: 0
       fireModeModifier: 0
-      recoil: 0
-      power: 31
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
       rarity: 0
-    - projectileType: 0
-      projectileModifiers: 
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 1
-      recoil: 0
-      power: 14
-      rarity: 0
-    - projectileType: 0
+    - projectileType: 1
       projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 3
-      recoil: 0
-      power: 15
-      rarity: 0
-    - projectileType: 2
-      projectileModifiers: 
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 3
-      recoil: 0
-      power: 20
-      rarity: 0
-    - projectileType: 0
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 4
-      recoil: 0
-      power: 35
-      rarity: 0
-    - projectileType: 2
-      projectileModifiers: 
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
+      baseDamage: 14
+      shieldMultiplier: 1
+      fireMode: 0
       fireModeModifier: 0
-      recoil: 0
-      power: 12
-      rarity: 0
-    - projectileType: 0
-      projectileModifiers: 
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 1
-      recoil: 0
-      power: 15
-      rarity: 0
-    - projectileType: 2
-      projectileModifiers: 
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 1
-      recoil: 0
-      power: 8
-      rarity: 0
-    - projectileType: 3
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 1
-      recoil: 0
-      power: 33
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
       rarity: 0
     - projectileType: 1
       projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 18
+      baseDamage: 14
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 0
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
       rarity: 0
-    - projectileType: 3
+    - projectileType: 0
       projectileModifiers: 
       spawnOffset: 0
       damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 11
+      baseDamage: 22
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.0465
+      baseFireRate: 0.85
       rarity: 0
-    - projectileType: 3
+    - projectileType: 0
       projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.0465
+      baseFireRate: 0.85
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 0
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 14
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 17
+      fireModeModifier: 0
+      baseAccuracy: 0.0725
+      baseFireRate: 0.08
+      rarity: 0
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 10
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.0725
+      baseFireRate: 0.08
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 10
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 10
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
+      rarity: 0
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 10
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
       rarity: 0
     Uncommon:
-    - projectileType: 1
-      projectileModifiers: 0300000001000000
+    - projectileType: 0
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      damageType: 0
+      baseDamage: 22
+      shieldMultiplier: 1
       fireMode: 0
       fireModeModifier: 0
-      recoil: 0
-      power: 45
+      baseAccuracy: 0.032
+      baseFireRate: 0.13
       rarity: 1
     - projectileType: 0
-      projectileModifiers: 0300000001000000
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
+      damageType: 2
+      baseDamage: 17
+      shieldMultiplier: 1
       fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 40
-      rarity: 1
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 55
+      fireModeModifier: 0
+      baseAccuracy: 0.032
+      baseFireRate: 0.13
       rarity: 1
     - projectileType: 1
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 38
-      rarity: 1
-    - projectileType: 1
-      projectileModifiers: 0300000001000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 50
-      rarity: 1
-    - projectileType: 1
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 3
-      recoil: 0
-      power: 42
-      rarity: 1
-    - projectileType: 1
-      projectileModifiers: 03000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 1
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 17
+      shieldMultiplier: 1
       fireMode: 0
-      fireModeModifier: 4
-      recoil: 0
-      power: 38
+      fireModeModifier: 0
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
       rarity: 1
     - projectileType: 1
-      projectileModifiers: 03000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 17
+      shieldMultiplier: 1
       fireMode: 0
-      fireModeModifier: 4
-      recoil: 0
-      power: 41
+      fireModeModifier: 0
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
       rarity: 1
     - projectileType: 1
-      projectileModifiers: 03000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 1
-      recoil: 0
-      power: 39
-      rarity: 1
-    - projectileType: 1
-      projectileModifiers: 0300000001000000
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 1
-      recoil: 0
-      power: 48
+      baseDamage: 17
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 0
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
       rarity: 1
     - projectileType: 0
-      projectileModifiers: 0100000002000000
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
+      damageType: 0
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 0
       fireModeModifier: 3
-      recoil: 0
-      power: 45
-      rarity: 1
-    - projectileType: 1
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 3
-      recoil: 0
-      power: 43
+      baseAccuracy: 0.032
+      baseFireRate: 0.13
       rarity: 1
     - projectileType: 0
-      projectileModifiers: 03000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 4
-      recoil: 0
-      power: 41
+      baseDamage: 14
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 0.13
       rarity: 1
     - projectileType: 1
-      projectileModifiers: 03000000
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 4
-      recoil: 0
-      power: 45
+      damageType: 1
+      baseDamage: 14
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
       rarity: 1
-    - projectileType: 3
-      projectileModifiers: 03000000
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 14
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 14
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.17
+      rarity: 1
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 204
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 1.67
+      rarity: 1
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 200
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 1.67
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 27
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.0465
+      baseFireRate: 0.85
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 22
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.0465
+      baseFireRate: 0.85
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 22
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 22
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 22
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 22
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.85
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.85
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 18
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.95
+      rarity: 1
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 184
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 3
+      rarity: 1
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 180
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 3
+      rarity: 1
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 17
+      shieldMultiplier: 1
       fireMode: 2
       fireModeModifier: 0
-      recoil: 0
-      power: 40
+      baseAccuracy: 0.0725
+      baseFireRate: 0.08
       rarity: 1
     - projectileType: 0
-      projectileModifiers: 0300000002000000
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
+      damageType: 2
+      baseDamage: 12
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 1
-      recoil: 0
-      power: 48
+      fireModeModifier: 0
+      baseAccuracy: 0.0725
+      baseFireRate: 0.08
       rarity: 1
     - projectileType: 1
-      projectileModifiers: 03000000
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      damageType: 1
+      baseDamage: 12
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 1
-      recoil: 0
-      power: 40
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
       rarity: 1
-    - projectileType: 3
-      projectileModifiers: 03000000
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 12
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 12
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 1
-      recoil: 0
-      power: 42
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
       rarity: 1
     - projectileType: 0
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 38
-      rarity: 1
-    - projectileType: 3
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 1
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 38
-      rarity: 1
-    - projectileType: 1
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 3
-      recoil: 0
-      power: 41
-      rarity: 1
-    - projectileType: 3
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 1
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 3
-      recoil: 0
-      power: 40
-      rarity: 1
-    - projectileType: 3
-      projectileModifiers: 03000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 14
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 4
-      recoil: 0
-      power: 39
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.08
       rarity: 1
-    - projectileType: 3
-      projectileModifiers: 03000000
-      spawnOffset: 0
-      damageType: 1
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 4
-      recoil: 0
-      power: 42
-      rarity: 1
-    - projectileType: 3
-      projectileModifiers: 03000000
+    - projectileType: 0
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 10
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 4
-      recoil: 0
-      power: 45
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.08
       rarity: 1
-    - projectileType: 3
-      projectileModifiers: 03000000
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 10
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 10
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
+      rarity: 1
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 10
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 4
-      recoil: 0
-      power: 48
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.13
+      rarity: 1
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 179
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 1.33
+      rarity: 1
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 175
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 1.33
       rarity: 1
     Rare:
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      damageType: 0
+      baseDamage: 36
+      shieldMultiplier: 1
       fireMode: 0
       fireModeModifier: 0
-      recoil: 0
-      power: 62
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
       rarity: 2
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 0
-      recoil: 0
-      power: 65
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 58
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 28
+      shieldMultiplier: 1
       fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 64
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 1
-      recoil: 0
-      power: 67
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 3
-      recoil: 0
-      power: 62
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 3
-      recoil: 0
-      power: 59
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 4
-      recoil: 0
-      power: 64
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 4
-      recoil: 0
-      power: 58
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 0
-      fireModeModifier: 4
-      recoil: 0
-      power: 61
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
       fireModeModifier: 0
-      recoil: 0
-      power: 57
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 0
-      recoil: 0
-      power: 63
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 0
-      recoil: 0
-      power: 66
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 3
-      recoil: 0
-      power: 63
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 3
-      recoil: 0
-      power: 57
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 3
-      recoil: 0
-      power: 60
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 4
-      recoil: 0
-      power: 65
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 4
-      recoil: 0
-      power: 62
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
       rarity: 2
     - projectileType: 1
-      projectileModifiers: 0300000001000000
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
-      fireModeModifier: 4
-      recoil: 0
-      power: 57
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
+      damageType: 1
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
       fireModeModifier: 0
-      recoil: 0
-      power: 58
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 1
-      recoil: 0
-      power: 60
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 1
-      recoil: 0
-      power: 57
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 62
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 59
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 3
-      recoil: 0
-      power: 64
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 3
-      recoil: 0
-      power: 58
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 3
-      recoil: 0
-      power: 61
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
-      spawnOffset: 0
-      damageType: 0
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 4
-      recoil: 0
-      power: 66
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 4
-      recoil: 0
-      power: 60
-      rarity: 2
-    - projectileType: 0
-      projectileModifiers: 0300000002000000
-      spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 2
-      fireModeModifier: 4
-      recoil: 0
-      power: 63
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
       rarity: 2
     - projectileType: 1
-      projectileModifiers: 0300000001000000
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 0
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 0
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 408
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 0
+      baseAccuracy: 0.032
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 400
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 0
+      baseAccuracy: 0.032
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 408
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 400
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.032
+      baseFireRate: 0.48
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.032
+      baseFireRate: 0.48
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.008
+      baseFireRate: 0.63
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.008
+      baseFireRate: 0.63
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.008
+      baseFireRate: 0.63
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 44
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 368
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 360
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 0
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 44
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 368
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 360
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 44
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 44
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 1
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 1
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 1
+      baseAccuracy: 0.012
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 1
+      baseAccuracy: 0.012
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 36
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 1
+      baseAccuracy: 0.012
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 358
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.0725
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 350
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 0
+      baseAccuracy: 0.0725
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 358
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 350
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.9
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 28
+      shieldMultiplier: 1
       fireMode: 2
       fireModeModifier: 4
-      recoil: 0
-      power: 58
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 4
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 4
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 4
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 4
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 28
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 1
+      baseAccuracy: 0.0725
+      baseFireRate: 0.3
+      rarity: 2
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 1
+      baseAccuracy: 0.0725
+      baseFireRate: 0.3
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 1
+      baseAccuracy: 0.018
+      baseFireRate: 0.48
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 1
+      baseAccuracy: 0.018
+      baseFireRate: 0.48
+      rarity: 2
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 20
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 1
+      baseAccuracy: 0.018
+      baseFireRate: 0.48
       rarity: 2
     Legendary:
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      damageType: 0
+      baseDamage: 54
+      shieldMultiplier: 1
       fireMode: 0
       fireModeModifier: 3
-      recoil: 0
-      power: 68
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
       rarity: 3
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 42
+      shieldMultiplier: 1
       fireMode: 0
-      fireModeModifier: 4
-      recoil: 0
-      power: 70
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
       rarity: 3
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 42
+      shieldMultiplier: 1
       fireMode: 0
-      fireModeModifier: 4
-      recoil: 0
-      power: 73
+      fireModeModifier: 3
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 3
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 499
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 0.9
+      rarity: 3
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 490
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 3
+      baseAccuracy: 0.032
+      baseFireRate: 0.9
       rarity: 3
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.032
+      baseFireRate: 0.11
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 4
+      baseAccuracy: 0.008
+      baseFireRate: 0.15
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.032
+      baseFireRate: 0.48
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.032
+      baseFireRate: 0.48
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.008
+      baseFireRate: 0.63
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.008
+      baseFireRate: 0.63
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 0
+      fireModeModifier: 1
+      baseAccuracy: 0.008
+      baseFireRate: 0.63
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 66
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 3
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 450
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
+      rarity: 3
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 441
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 3
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 66
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.0465
+      baseFireRate: 0.74
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 4
+      baseAccuracy: 0.012
+      baseFireRate: 0.83
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 66
+      shieldMultiplier: 1
       fireMode: 1
       fireModeModifier: 1
-      recoil: 0
-      power: 68
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
       rarity: 3
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 54
+      shieldMultiplier: 1
       fireMode: 1
-      fireModeModifier: 3
-      recoil: 0
-      power: 69
+      fireModeModifier: 1
+      baseAccuracy: 0.0465
+      baseFireRate: 0.9
       rarity: 3
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 1
+      baseAccuracy: 0.012
+      baseFireRate: 0.9
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 54
+      shieldMultiplier: 1
+      fireMode: 1
+      fireModeModifier: 1
+      baseAccuracy: 0.012
+      baseFireRate: 0.9
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 54
+      shieldMultiplier: 1
       fireMode: 1
-      fireModeModifier: 3
-      recoil: 0
-      power: 72
+      fireModeModifier: 1
+      baseAccuracy: 0.012
+      baseFireRate: 0.9
       rarity: 3
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
-      fireMode: 1
+      baseDamage: 30
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 30
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 30
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 3
+      baseDamage: 30
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 3
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 438
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.9
+      rarity: 3
+    - projectileType: 2
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 428
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 3
+      baseAccuracy: 0.0725
+      baseFireRate: 0.9
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 42
+      shieldMultiplier: 1
+      fireMode: 2
       fireModeModifier: 4
-      recoil: 0
-      power: 71
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
       rarity: 3
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 30
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 4
+      baseAccuracy: 0.0725
+      baseFireRate: 0.07
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 1
+      baseDamage: 30
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 4
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 2
+      baseDamage: 30
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 4
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 3
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 30
+      shieldMultiplier: 1
+      fireMode: 2
+      fireModeModifier: 4
+      baseAccuracy: 0.018
+      baseFireRate: 0.11
+      rarity: 3
+    - projectileType: 0
+      projectileModifiers: 
+      spawnOffset: 0
+      damageType: 0
+      baseDamage: 42
+      shieldMultiplier: 1
       fireMode: 2
       fireModeModifier: 1
-      recoil: 0
-      power: 69
+      baseAccuracy: 0.0725
+      baseFireRate: 0.3
       rarity: 3
     - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 30
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 68
+      fireModeModifier: 1
+      baseAccuracy: 0.0725
+      baseFireRate: 0.3
       rarity: 3
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
-      damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      damageType: 1
+      baseDamage: 30
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 2
-      recoil: 0
-      power: 71
+      fireModeModifier: 1
+      baseAccuracy: 0.018
+      baseFireRate: 0.48
       rarity: 3
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 2
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 30
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 3
-      recoil: 0
-      power: 70
+      fireModeModifier: 1
+      baseAccuracy: 0.018
+      baseFireRate: 0.48
       rarity: 3
-    - projectileType: 0
-      projectileModifiers: 030000000100000002000000
+    - projectileType: 1
+      projectileModifiers: 
       spawnOffset: 0
       damageType: 3
-      damageAmount: 0
-      shieldMultiplier: 0
+      baseDamage: 30
+      shieldMultiplier: 1
       fireMode: 2
-      fireModeModifier: 4
-      recoil: 0
-      power: 75
+      fireModeModifier: 1
+      baseAccuracy: 0.018
+      baseFireRate: 0.48
       rarity: 3
+    baseUncommonChance: 0.45
+    baseRareChance: 0.2
+  maxDropRarity: 0
+  onlySpawnPreferredRarity: 0
+  preferredRarity: 0
   baseWeaponPickupPrefab: {fileID: 7435747472242557168, guid: 4d69826cbc4c7864ebc09b9cb5c19987,
     type: 3}
   longBallisticBarrelMeshes:
