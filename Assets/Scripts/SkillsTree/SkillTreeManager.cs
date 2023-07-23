@@ -239,13 +239,13 @@ public class SkillTreeManager : MonoBehaviour
             return false;
         }
 
-        if (playerData.credits < skill.skillData.cost)
+        if (playerData.creditsSaved < skill.skillData.cost)
         {
             PlayUnlockFailAudioClip();
             return false;
         }
 
-        playerData.credits -= skill.skillData.cost;
+        playerData.creditsSaved -= skill.skillData.cost;
         skill.unlocked = true;
 
         ApplySkill(skill);
@@ -317,7 +317,7 @@ public class SkillTreeManager : MonoBehaviour
     {
         creditsText.text = string.Format(
             "Credits Earned: {0}",
-            playerData.credits.ToString("D4"));
+            playerData.creditsSaved.ToString("D4"));
     }
 
     #region [Skill Details]
@@ -394,14 +394,14 @@ public class SkillTreeManager : MonoBehaviour
                 break;
         }
 
-        string colorText = (playerData.credits < skill.skillData.cost) ? "red" : "green";
+        string colorText = (playerData.creditsSaved < skill.skillData.cost) ? "red" : "green";
         skillCostText.text = string.Format(
             "Credits Cost: <color={0}>{1}</color>/{2}",
             colorText,
-            playerData.credits,
+            playerData.creditsSaved,
             skill.skillData.cost);
 
-        if(playerData.credits < skill.skillData.cost ||
+        if(playerData.creditsSaved < skill.skillData.cost ||
             skill.unlocked ||
             !IsSkillUnlockable(skill))
         {

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7807476372875561797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 9.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   energyColor: {r: 0, g: 0.8067975, b: 1, a: 1}
   shockColor: {r: 1, g: 0.76788056, b: 0, a: 1}
   critColor: {r: 1, g: 0, b: 0, a: 1}
-  lifetime: 0.45
+  lifetime: 0.7
   scaleCurve:
     serializedVersion: 2
     m_Curve:

@@ -22,6 +22,16 @@ PrefabInstance:
       propertyPath: mask.m_Bits
       value: 137
       objectReference: {fileID: 0}
+    - target: {fileID: 3900512962670478124, guid: 8c5459d4a3067a5478f6ee41879d0cac,
+        type: 3}
+      propertyPath: damage.amount
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900512962670478124, guid: 8c5459d4a3067a5478f6ee41879d0cac,
+        type: 3}
+      propertyPath: damage.shieldMultiplier
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3900512962670478127, guid: 8c5459d4a3067a5478f6ee41879d0cac,
         type: 3}
       propertyPath: m_RootOrder

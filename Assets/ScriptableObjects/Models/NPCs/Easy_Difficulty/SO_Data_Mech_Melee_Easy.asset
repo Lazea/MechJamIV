@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84d9e0cfb514ac429ba00bc34c29b41, type: 3}
+  m_Name: SO_Data_Mech_Melee_Easy
+  m_EditorClassIdentifier: 
+  health: 175
+  shield: 100
+  aimSpeed: 20
+  attackInterval: 0.2
+  minAttackEventRate: 2
+  maxAttackEventRate: 3.5
+  aimAngle: 20
+  combatRange: 14
+  chaseRange: 250
+  isElite: 0
+  credits: 65

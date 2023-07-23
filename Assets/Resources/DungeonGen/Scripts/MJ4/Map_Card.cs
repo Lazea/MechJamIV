@@ -8,28 +8,37 @@ public class Map_Card : ScriptableObject
     [Header("Name of map")]
     public string cardName;
 
-    [Header("tileset for next map, leave blank to pick on instantiation")]
+    [Header("Env Settings")]
+    [Header("Tileset for next map, leave blank to pick on instantiation")]
     public Tileset_Info tileset;
-    [Header("environment for next map, leave blank to pick at instantiation")]
+    [Header("Environment for next map, leave blank to pick at instantiation")]
     public Tileset_ENV env;
 
-    [Header("hide environmental data in map screen")]
+    [Header("Tile Settings")]
+    [Header("Hide environmental data in map screen")]
     public bool obscureTileset;
-
-    [Header("number to stack on top of default seed length")]
+    [Header("Number to stack on top of default seed length")]
     public int lengthMod = 0;
-
     [Header("Number to stack on top of default seondary passes")]
     public int secondaryMod = 0;
 
-    [Header("after how many levels will this card be available")]
-    public int lvlReq;
+    [Header("Difficulty Settings")]
+    [Header("Enemy wave count")]
+    [Min(1)]
+    public int enemyWaveCount;
+    [Header("Pool of NPC waves this stage can use")]
+    public NPCSpawnWave[] npcWavePool; 
+    [Header("Max loot Rarity")]
+    public Rarity maxRarity;
+    [Header("Loot drop chance. Chance of 1.0 is 100% chance")]
+    [Range(0.0f, 1.0f)]
+    public float lootDropChance = 1f;
+}
 
-    [Header("intensity of enemy encounters")]
-    [Range(0, 100)]
-    public float hostility;
-
-    [Header("richness of loot")]
-    [Range(0, 100)]
-    public float richness;
+[System.Serializable]
+public enum Difficulty
+{
+    Easy,
+    Medium,
+    Hard
 }

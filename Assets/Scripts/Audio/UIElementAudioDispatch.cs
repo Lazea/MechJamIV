@@ -9,6 +9,9 @@ public class UIElementAudioDispatch : MonoBehaviour
     public AudioClip enterClip;
     public AudioClip exitClip;
 
+    private float minPitch = 0.97f;
+    private float maxPitch = 1.03f;
+
     public void SendClip(AudioClip clip)
     {
         var manager = UIAudioManager.Instance;
@@ -20,7 +23,8 @@ public class UIElementAudioDispatch : MonoBehaviour
         }
         else
         {
-            manager.AudioSource.PlayOneShot(clip);
+            manager.AudioSource.pitch = Random.Range(minPitch, maxInclusive: maxPitch);
+            manager.AudioSource.PlayOneShot(clip, 0.8f);
         }
     }
 

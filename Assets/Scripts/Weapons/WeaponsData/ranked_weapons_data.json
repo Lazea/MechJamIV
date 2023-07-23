@@ -1,1067 +1,1908 @@
 {
-    "Uncommon": [
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate"
-            ],
-            "damageType": "Shock",
-            "power": 54,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate"
-            ],
-            "damageType": "Fire",
-            "power": 53,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 49,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 51,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 68,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate"
-            ],
-            "damageType": "Shock",
-            "power": 57,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 66,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Fire",
-            "power": 57,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 61,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate"
-            ],
-            "damageType": "Shock",
-            "power": 61,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 49,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 50,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 47,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 63,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 51,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 52,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 64,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 67,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 70,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 47,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 49,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 64,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Normal",
-            "power": 52,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 48,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 48,
-            "rarity": "Uncommon"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 47,
-            "rarity": "Uncommon"
-        }
-    ],
     "Common": [
         {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.13,
+            "baseDamage": 18
+        },
+        {
+            "projectileType": "Ballistic",
             "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.13,
+            "baseDamage": 14
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "None",
             "damageType": "Energy",
-            "power": 6,
-            "rarity": "Common"
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 14
         },
         {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
             "damageType": "Fire",
-            "power": 10,
-            "rarity": "Common"
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 14
         },
         {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
             "damageType": "Shock",
-            "power": 13,
-            "rarity": "Common"
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 14
         },
         {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
             "projectileType": "Ballistic",
             "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 13,
-            "rarity": "Common"
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.85,
+            "baseDamage": 22
         },
         {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
+            "projectileType": "Ballistic",
             "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
             "damageType": "Fire",
-            "power": 11,
-            "rarity": "Common"
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.85,
+            "baseDamage": 18
         },
         {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Rocket",
+            "projectileType": "Plasma",
             "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 12,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
             "damageType": "Energy",
-            "power": 12,
-            "rarity": "Common"
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 18
         },
         {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 18
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 18
+        },
+        {
             "projectileType": "Ballistic",
             "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
             "damageType": "Normal",
-            "power": 10,
-            "rarity": "Common"
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.08,
+            "baseDamage": 14
         },
         {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
+            "projectileType": "Ballistic",
             "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.08,
+            "baseDamage": 10
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
             "damageType": "Energy",
-            "power": 14,
-            "rarity": "Common"
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 10
         },
         {
-            "fireMode": "BurstFire",
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 10
+        },
+        {
+            "projectileType": "Plasma",
             "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
             "damageType": "Shock",
-            "power": 13,
-            "rarity": "Common"
-        },
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 10
+        }
+    ],
+    "Uncommon": [
         {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "Penetrate"
-            ],
-            "damageType": "Shock",
-            "power": 33,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit"
-            ],
-            "damageType": "Normal",
-            "power": 35,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Normal",
-            "power": 11,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 20,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
             "projectileType": "Ballistic",
             "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "None",
             "damageType": "Normal",
-            "power": 11,
-            "rarity": "Common"
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.13,
+            "baseDamage": 22,
+            "rarity": "Uncommon"
         },
         {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "None",
             "projectileType": "Ballistic",
             "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 10,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
+            "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
             "damageType": "Fire",
-            "power": 11,
-            "rarity": "Common"
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.13,
+            "baseDamage": 17,
+            "rarity": "Uncommon"
         },
         {
-            "fireMode": "FullAuto",
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 14,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 15,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 46,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
-            "damageType": "Fire",
-            "power": 13,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
-            "damageType": "Shock",
-            "power": 18,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [],
             "damageType": "Energy",
-            "power": 14,
-            "rarity": "Common"
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 17,
+            "rarity": "Uncommon"
         },
         {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
+            "projectileType": "Plasma",
             "projectileModifiers": [],
-            "damageType": "Normal",
-            "power": 12,
-            "rarity": "Common"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "None",
             "damageType": "Fire",
-            "power": 18,
-            "rarity": "Common"
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 17,
+            "rarity": "Uncommon"
         },
         {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
+            "projectileType": "Plasma",
             "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "None",
             "damageType": "Shock",
-            "power": 22,
-            "rarity": "Common"
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 17,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.13,
+            "baseDamage": 18,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.13,
+            "baseDamage": 14,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 14,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 14,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.17,
+            "baseDamage": 14,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 1.67,
+            "baseDamage": 204,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 1.67,
+            "baseDamage": 200,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.85,
+            "baseDamage": 27,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.85,
+            "baseDamage": 22,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 22,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 22,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 22,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.85,
+            "baseDamage": 22,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.85,
+            "baseDamage": 18,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 18,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 18,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.95,
+            "baseDamage": 18,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 3.0,
+            "baseDamage": 184,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 3.0,
+            "baseDamage": 180,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.08,
+            "baseDamage": 17,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.08,
+            "baseDamage": 12,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 12,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 12,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Shock",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 12,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.08,
+            "baseDamage": 14,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.08,
+            "baseDamage": 10,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 10,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 10,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.13,
+            "baseDamage": 10,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 1.33,
+            "baseDamage": 179,
+            "rarity": "Uncommon"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 1.33,
+            "baseDamage": 175,
+            "rarity": "Uncommon"
         }
     ],
     "Rare": [
         {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 78,
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 36,
             "rarity": "Rare"
         },
         {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
             "damageType": "Fire",
-            "power": 81,
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 28,
             "rarity": "Rare"
         },
         {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 80,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 86,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Shock",
-            "power": 77,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Fire",
-            "power": 76,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Shock",
-            "power": 79,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 86,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "BurstFire",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
             "damageType": "Energy",
-            "power": 79,
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
             "rarity": "Rare"
         },
         {
-            "fireMode": "BurstFire",
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
             "damageType": "Fire",
-            "power": 82,
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
             "rarity": "Rare"
         },
         {
-            "fireMode": "BurstFire",
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
             "damageType": "Shock",
-            "power": 85,
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
             "rarity": "Rare"
         },
         {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 81,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 84,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Shock",
-            "power": 78,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 85,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Shock",
-            "power": 80,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
             "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 76,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "FullAuto",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 80,
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.9,
+            "baseDamage": 408,
             "rarity": "Rare"
         },
         {
-            "fireMode": "FullAuto",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
             "fireModeModifier": "None",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 86,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 82,
-            "rarity": "Rare"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
             "damageType": "Fire",
-            "power": 85,
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.9,
+            "baseDamage": 400,
             "rarity": "Rare"
         },
         {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
             "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
-            "damageType": "Shock",
-            "power": 77,
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 36,
             "rarity": "Rare"
         },
         {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.9,
+            "baseDamage": 408,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.9,
+            "baseDamage": 400,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.48,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.48,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Energy",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.63,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.63,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Shock",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.63,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 44,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 368,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 360,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 44,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 368,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 360,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 44,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 44,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.9,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.9,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.9,
+            "baseDamage": 36,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Shock",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.9,
+            "baseDamage": 358,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "None",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.9,
+            "baseDamage": 350,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
             "fireMode": "FullAuto",
             "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Energy",
-            "power": 86,
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 28,
             "rarity": "Rare"
         },
         {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "TrippleSplit",
             "projectileType": "Ballistic",
-            "projectileModifiers": [
-                "Penetrate",
-                "ExplodeOnHit",
-                "Ricochet"
-            ],
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
             "damageType": "Fire",
-            "power": 78,
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 20,
             "rarity": "Rare"
         },
         {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.9,
+            "baseDamage": 358,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.9,
+            "baseDamage": 350,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
             "fireMode": "FullAuto",
             "fireModeModifier": "TrippleSplit",
-            "projectileType": "Rocket",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "ExplodeOnHit"
-            ],
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
             "damageType": "Shock",
-            "power": 77,
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.3,
+            "baseDamage": 28,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.3,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.48,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.48,
+            "baseDamage": 20,
+            "rarity": "Rare"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Shock",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.48,
+            "baseDamage": 20,
             "rarity": "Rare"
         }
     ],
     "Legendary": [
         {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
             "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 87,
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 54,
             "rarity": "Legendary"
         },
         {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
             "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 90,
-            "rarity": "Legendary"
-        },
-        {
-            "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
             "damageType": "Fire",
-            "power": 89,
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 42,
             "rarity": "Legendary"
         },
         {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
             "fireMode": "SemiAuto",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 92,
-            "rarity": "Legendary"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 87,
-            "rarity": "Legendary"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
+            "fireModeModifier": "DualSplit",
             "damageType": "Energy",
-            "power": 87,
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 42,
             "rarity": "Legendary"
         },
         {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 90,
-            "rarity": "Legendary"
-        },
-        {
-            "fireMode": "BurstFire",
-            "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 93,
-            "rarity": "Legendary"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "ClusterFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 88,
-            "rarity": "Legendary"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Fire",
-            "power": 87,
-            "rarity": "Legendary"
-        },
-        {
-            "fireMode": "FullAuto",
-            "fireModeModifier": "RampUpFire",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
-            "damageType": "Shock",
-            "power": 90,
-            "rarity": "Legendary"
-        },
-        {
-            "fireMode": "FullAuto",
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
             "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
             "damageType": "Fire",
-            "power": 89,
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 42,
             "rarity": "Legendary"
         },
         {
-            "fireMode": "FullAuto",
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
             "fireModeModifier": "DualSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
             "damageType": "Shock",
-            "power": 92,
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 42,
             "rarity": "Legendary"
         },
         {
-            "fireMode": "FullAuto",
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.9,
+            "baseDamage": 499,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.9,
+            "baseDamage": 490,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
             "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.11,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
             "damageType": "Energy",
-            "power": 88,
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 42,
             "rarity": "Legendary"
         },
         {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.15,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Normal",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.48,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.032,
+            "baseFireRate": 0.48,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Energy",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.63,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.63,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "SemiAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Shock",
+            "baseAccuracy": 0.008,
+            "baseFireRate": 0.63,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 66,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 450,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 441,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 66,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.74,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.83,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 66,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0465,
+            "baseFireRate": 0.9,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Energy",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.9,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.9,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "BurstFire",
+            "fireModeModifier": "Cluster",
+            "damageType": "Shock",
+            "baseAccuracy": 0.012,
+            "baseFireRate": 0.9,
+            "baseDamage": 54,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Shock",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.9,
+            "baseDamage": 438,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Rocket",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "DualSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.9,
+            "baseDamage": 428,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
             "fireMode": "FullAuto",
             "fireModeModifier": "TrippleSplit",
-            "projectileType": "EnergyBeam",
-            "projectileModifiers": [
-                "ClusterOnHit",
-                "Penetrate",
-                "ExplodeOnHit"
-            ],
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.07,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "TrippleSplit",
             "damageType": "Shock",
-            "power": 94,
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.11,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Normal",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.3,
+            "baseDamage": 42,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Ballistic",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.0725,
+            "baseFireRate": 0.3,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Energy",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.48,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Fire",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.48,
+            "baseDamage": 30,
+            "rarity": "Legendary"
+        },
+        {
+            "projectileType": "Plasma",
+            "projectileModifiers": [],
+            "fireMode": "FullAuto",
+            "fireModeModifier": "Cluster",
+            "damageType": "Shock",
+            "baseAccuracy": 0.018,
+            "baseFireRate": 0.48,
+            "baseDamage": 30,
             "rarity": "Legendary"
         }
     ]

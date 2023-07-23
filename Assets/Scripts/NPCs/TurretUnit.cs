@@ -71,6 +71,7 @@ public class TurretUnit : BaseNPC
         }
 
         HandleDamageEffects();
+        HandleShieldFX();
     }
 
     private void LateUpdate()

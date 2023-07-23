@@ -72,8 +72,6 @@ public class PlayerData : ScriptableObject
     public float speedScaler = 1f;
 
     [Header("Weapon Data")]
-    [SerializeField]
-    WeaponData defaultStartingWeaponData;
     public WeaponData weaponData;
 
     [Header("Damage Scale")]
@@ -107,6 +105,9 @@ public class PlayerData : ScriptableObject
     [Tooltip("The amount of time the shock effect lasts.")]
     public float shockDuration = 2f;
 
+    [Header("Legendary Drop Chance")]
+    public float legendaryDropChance = 0.05f;
+
     [Header("Player Stat Tracking")]
     [Tooltip("The amount of credits the player earned.")]
     public int credits;
@@ -116,11 +117,34 @@ public class PlayerData : ScriptableObject
     public int kills;
     [Tooltip("The amount of completed stages.")]
     public int stageCount;
+    [Tooltip("The player's play time.")]
+    public float playTime;
+
+    [ContextMenu("Reset All Data")]
+    public void ResetAllData()
+    {
+        ResetDataToDefault();
+        ResetWeaponData();
+        ResetCredits();
+        ResetCreditsDeposit();
+        ResetKillCount();
+        ResetStageCount();
+    }
 
     [ContextMenu("Reset Base Data")]
     public void ResetData()
     {
         Debug.Log("Player Data Reset");
+
+        health = maxHealth;
+        shield = maxShield;
+        resetHealthOnStart = true;
+    }
+
+    [ContextMenu("Reset Base Data To Default")]
+    public void ResetDataToDefault()
+    {
+        Debug.Log("Player Data Reset To Default");
 
         IniParser parser = new IniParser();
         string filePath = Path.Combine(Application.dataPath, "settings", "GameConfig.ini");
@@ -150,7 +174,7 @@ public class PlayerData : ScriptableObject
         critChance = parser.GetValue<float>(section, "critChance");
         critDamageMultiplier = parser.GetValue<float>(section, "critDamageMultiplier");
         shieldEnergyDamageMultiplier = parser.GetValue<float>(section, "shieldEnergyDamageMultiplier");
-        
+
         fireChance = parser.GetValue<float>(section, "fireChance");
         fireDamage = parser.GetValue<int>(section, "fireDamage");
         fireDuration = parser.GetValue<float>(section, "fireDuration");
@@ -158,28 +182,31 @@ public class PlayerData : ScriptableObject
         shockChance = parser.GetValue<float>(section, "shockChance");
         shockDuration = parser.GetValue<float>(section, "shockDuration");
 
-        resetHealthOnStart = true;
-    }
+        legendaryDropChance = parser.GetValue<float>(section, "legendaryDropChance");
 
-    [ContextMenu("Reset In Run Modifiers")]
-    public void ResetInRunModifiers()
-    {
-        // TODO: Reset all modifier stacks
-        throw new NotImplementedException();
+        resetHealthOnStart = true;
+
+        playTime = 0f;
     }
 
     [ContextMenu("Reset Weapon Data")]
     public void ResetWeaponData()
     {
         Debug.LogFormat("Player Weapon Data Reset");
-        weaponData = defaultStartingWeaponData;
+        weaponData = WeaponGenerator.Instance.weaponDataset.Common[0];
     }
 
     [ContextMenu("Reset Credits")]
     public void ResetCredits()
     {
-        Debug.LogFormat("Player Credits set to {0}", creditsSaved);
-        credits = creditsSaved;
+        Debug.LogFormat("Player Credits set to 0");
+        credits = 0;
+    }
+
+    [ContextMenu("Reset Credits")]
+    public void ResetCreditsDeposit()
+    {
+        Debug.LogFormat("Player Saved Credits set to 0");
         creditsSaved = 0;
     }
 

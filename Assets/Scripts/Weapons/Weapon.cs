@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
     [Header("Projectile")]
     GameObject projectilePrefab;
     public GameObject[] ballisticProjectilePrefabs;
-    public GameObject[] energyBeamProjectilePrefabs;
+    public GameObject[] plasmaProjectilePrefabs;
     public GameObject[] rocketProjectilePrefabs;
     public GameObject[] laserProjectilePrefabs;
     public Transform projectileSpawnPoint;
@@ -30,8 +30,6 @@ public class Weapon : MonoBehaviour
     public Transform[] tripleProjectileSpawnPoints;
 
     [Header("Fire Rates")]
-    public float fireRate;
-    public float rampUpRate;
     float nextFireTime;
     bool isFiring;
     bool canFire;
@@ -70,9 +68,10 @@ public class Weapon : MonoBehaviour
     {
         if(!isFiring)
         {
-            isFiring = true;
+            //isFiring = true;
             if(Time.time >= nextFireTime)
             {
+                isFiring = true;
                 canFire = true;
                 nextFireTime = Time.time;
             }
@@ -95,7 +94,7 @@ public class Weapon : MonoBehaviour
 
         FireProjectile();
         canFire = false;
-        nextFireTime = Time.time + fireRate;
+        nextFireTime = Time.time + Data.baseFireRate;
     }
 
     void FireBurst()
@@ -108,7 +107,7 @@ public class Weapon : MonoBehaviour
             if (burstCount == 3)
             {
                 // Apply delay before next burst
-                nextFireTime = Time.time + fireRate;
+                nextFireTime = Time.time + Data.baseFireRate * 0.5f;
                 burstCount = 0;
                 isFiring = false;
                 canFire = false;
@@ -116,7 +115,7 @@ public class Weapon : MonoBehaviour
             else
             {
                 // Apply delay between shots in the burst
-                nextFireTime = Time.time + (fireRate / 4f);
+                nextFireTime = Time.time + ((Data.baseFireRate * 0.5f) / 4f);
             }
         }
     }
@@ -124,28 +123,44 @@ public class Weapon : MonoBehaviour
     void FireFullAuto()
     {
         FireProjectile();
-        nextFireTime = Time.time + fireRate;
+        nextFireTime = Time.time + Data.baseFireRate;
     }
 
     [ContextMenu("Fire Projectile")]
     public void FireProjectile()
     {
-        switch(playerData.weaponData.fireModeModifier)
+        Vector2 recoilOffset = Random.insideUnitCircle * playerData.weaponData.baseAccuracy;
+        switch (playerData.weaponData.fireModeModifier)
         {
-            case FireModeModifier.ClusterFire:
+            case FireModeModifier.Cluster:
                 for(int i = 0; i < 6; i++)
-                    SpawnProjectile(projectilePrefab, projectileSpawnPoint);
+                    SpawnProjectile(
+                        projectilePrefab,
+                        projectileSpawnPoint,
+                        projectileSpawnPoint);
                 break;
             case FireModeModifier.DualSplit:
                 foreach (Transform t in dualProjectileSpawnPoints)
-                    SpawnProjectile(projectilePrefab, t);
+                    SpawnProjectile(
+                        projectilePrefab,
+                        t,
+                        projectileSpawnPoint,
+                        recoilOffset);
                 break;
             case FireModeModifier.TrippleSplit:
                 foreach (Transform t in tripleProjectileSpawnPoints)
-                    SpawnProjectile(projectilePrefab, t);
+                    SpawnProjectile(
+                        projectilePrefab,
+                        t,
+                        projectileSpawnPoint,
+                        recoilOffset);
                 break;
             default:
-                SpawnProjectile(projectilePrefab, projectileSpawnPoint);
+                SpawnProjectile(
+                    projectilePrefab,
+                    projectileSpawnPoint,
+                    projectileSpawnPoint,
+                    recoilOffset);
                 break;
         }
 
@@ -154,23 +169,24 @@ public class Weapon : MonoBehaviour
 
     void SpawnProjectile(
         GameObject projectilePrefab,
-        Transform spawnTransform)
+        Transform spawnTransform,
+        Transform spawnDirTransfrom,
+        Vector2 recoilOffset = default)
     {
-        Vector2 offset = Random.insideUnitCircle * playerData.weaponData.spawnOffset;
-        Vector3 point = projectileSpawnPoint.position;
-        point += projectileSpawnPoint.right * offset.x;
-        point += projectileSpawnPoint.up * offset.y;
+        Vector3 point = spawnTransform.position;
 
-        Vector2 recoilOffset = Random.insideUnitCircle * playerData.weaponData.recoil;
-        Vector3 dir = spawnTransform.forward;
-        dir += spawnTransform.right * recoilOffset.x;
-        dir += spawnTransform.up * recoilOffset.y;
+        if (recoilOffset == default)
+            recoilOffset = Random.insideUnitCircle * playerData.weaponData.baseAccuracy;
+        Vector3 dir = spawnDirTransfrom.forward;
+        dir += spawnDirTransfrom.right * recoilOffset.x;
+        dir += spawnDirTransfrom.up * recoilOffset.y;
         Quaternion rot = Quaternion.LookRotation(dir.normalized);
+        rot.eulerAngles += spawnTransform.localEulerAngles;
 
         CombatUtils.SpawnProjectile(
             point,
             rot,
-            playerData.damageMultiplier,
+            Data.baseDamage * playerData.damageMultiplier,
             playerData.shieldEnergyDamageMultiplier,
             playerData.critChance,
             playerData.critDamageMultiplier,
@@ -194,9 +210,9 @@ public class Weapon : MonoBehaviour
                 projectilePrefab = GetProjectileByDamageType(
                     ballisticProjectilePrefabs);
                 break;
-            case ProjectileType.EnergyBeam:
+            case ProjectileType.Plasma:
                 projectilePrefab = GetProjectileByDamageType(
-                    energyBeamProjectilePrefabs);
+                    plasmaProjectilePrefabs);
                 break;
             case ProjectileType.Rocket:
                 projectilePrefab = GetProjectileByDamageType(

@@ -23,10 +23,8 @@ public static class CombatUtils
         // Check GUID before applying damage
         if (!damageable.CheckGUIDIsInBuffer(damage.guid))
         {
-            Debug.LogFormat("Damage of GUID {0} already dealt", damage.guid);
             return;
         }
-        Debug.LogFormat("Damage of GUID {0} has not been dealt!!!", damage.guid);
 
         int shieldDamage = 0;
         int totalDamage = 0;
@@ -323,7 +321,7 @@ public static class CombatUtils
     public static void SpawnProjectile(
         Vector3 point,
         Quaternion orientation,
-        float damageMultiplier,
+        float damageAmount,
         float shieldDamageMultiplier,
         float critChance,
         float critDamageMultiplier,
@@ -341,7 +339,7 @@ public static class CombatUtils
             orientation).GetComponent<IProjectile>();
         _projectile.Damage.source = source;
 
-        _projectile.Damage.amount *= damageMultiplier;
+        _projectile.Damage.amount = damageAmount;
         _projectile.Damage.shieldMultiplier = shieldDamageMultiplier;
 
         if (Random.Range(0f, 1f) <= critChance)

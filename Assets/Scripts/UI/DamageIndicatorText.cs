@@ -68,6 +68,7 @@ public class DamageIndicatorText : MonoBehaviour
         if(damage.isCrit)
         {
             textMesh.color = critColor;
+            textMesh.transform.localScale = Vector3.one * 1.75f;
         }
         else
         {
@@ -88,9 +89,15 @@ public class DamageIndicatorText : MonoBehaviour
             }
         }
 
-        Debug.LogFormat("{0} hit with Damage {1}",
-            (damage.source != null) ? damage.source.name : "NAN",
-            damage.amount);
-        textMesh.text = damage.amount.ToString();
+        if (damage.isCrit)
+        {
+            textMesh.text = string.Format(
+                "<i>{0}</i>",
+                damage.amount.ToString());
+        }
+        else
+        {
+            textMesh.text = damage.amount.ToString();
+        }
     }
 }

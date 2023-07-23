@@ -12,6 +12,8 @@ public class MechUnit : BaseNPC
     Vector3 target;
 
     [Header("Move Smooth")]
+    [Min(1f)]
+    public float speedScale = 1f;
     public float moveSmooth;
     Vector3 vel;
 
@@ -46,6 +48,9 @@ public class MechUnit : BaseNPC
 
         // Handle Damage Effects
         HandleDamageEffects();
+
+        // Handle shield effects
+        HandleShieldFX();
 
         if (isStunned)
             Stop();
@@ -83,7 +88,7 @@ public class MechUnit : BaseNPC
             moveSmooth);
         anim.SetFloat("SpeedX", vel.x);
         anim.SetFloat("SpeedY", vel.z);
-        anim.SetFloat("Speed", vel.magnitude);
+        anim.SetFloat("Speed", vel.magnitude * speedScale);
     }
 
     private void OnAnimatorMove()

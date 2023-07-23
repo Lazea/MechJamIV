@@ -39,7 +39,7 @@ MonoBehaviour:
     - skillData: {fileID: 11400000, guid: ab4c9142ecf48904ba6f78cadee3e20d, type: 2}
       unlocked: 0
       skillTreeLayer: 2
-      childrenInNextLayer: 00000000
+      childrenInNextLayer: 0000000001000000
       childrenInLayer: 
     - skillData: {fileID: 11400000, guid: 8c16fc147aaa0ad45843d95a284bb9da, type: 2}
       unlocked: 0
@@ -50,39 +50,59 @@ MonoBehaviour:
     - skillData: {fileID: 11400000, guid: 8c16fc147aaa0ad45843d95a284bb9da, type: 2}
       unlocked: 0
       skillTreeLayer: 3
-      childrenInNextLayer: 00000000
+      childrenInNextLayer: 0000000001000000
       childrenInLayer: 
     - skillData: {fileID: 11400000, guid: 502eb26e9efad9548845b73342b248d2, type: 2}
       unlocked: 0
       skillTreeLayer: 3
-      childrenInNextLayer: 0100000002000000
+      childrenInNextLayer: 0200000003000000
       childrenInLayer: 
   - skills:
     - skillData: {fileID: 11400000, guid: 1c49590781dcd664ebb1b6fd52f0b683, type: 2}
       unlocked: 0
       skillTreeLayer: 4
-      childrenInNextLayer: 00000000
+      childrenInNextLayer: 0000000001000000
       childrenInLayer: 
     - skillData: {fileID: 11400000, guid: bb9d91bb674303149984c9adb055cebc, type: 2}
       unlocked: 0
       skillTreeLayer: 4
-      childrenInNextLayer: 0000000001000000
+      childrenInNextLayer: 
+      childrenInLayer: 
+    - skillData: {fileID: 11400000, guid: 28e5e3b9129bb8f4eb6e8cb638fbefa1, type: 2}
+      unlocked: 0
+      skillTreeLayer: 4
+      childrenInNextLayer: 02000000
       childrenInLayer: 
     - skillData: {fileID: 11400000, guid: 2d6006889dc4e9e4d87358489543bc99, type: 2}
       unlocked: 0
       skillTreeLayer: 4
-      childrenInNextLayer: 
+      childrenInNextLayer: 0300000004000000
       childrenInLayer: 
   - skills:
+    - skillData: {fileID: 11400000, guid: 1c49590781dcd664ebb1b6fd52f0b683, type: 2}
+      unlocked: 0
+      skillTreeLayer: 5
+      childrenInNextLayer: 
+      childrenInLayer: 
+    - skillData: {fileID: 11400000, guid: de65a02b2deabb34795745b454e2f6b9, type: 2}
+      unlocked: 0
+      skillTreeLayer: 5
+      childrenInNextLayer: 
+      childrenInLayer: 
     - skillData: {fileID: 11400000, guid: 1868bd83459801d4a913d0a11072bb77, type: 2}
       unlocked: 0
       skillTreeLayer: 5
-      childrenInNextLayer: 00000000
+      childrenInNextLayer: 0000000001000000
       childrenInLayer: 
-    - skillData: {fileID: 11400000, guid: da9e017c387bc8846989ff1ae63320fd, type: 2}
+    - skillData: {fileID: 11400000, guid: c0430b3011621f74582efd85cc0b8124, type: 2}
       unlocked: 0
       skillTreeLayer: 5
-      childrenInNextLayer: 00000000
+      childrenInNextLayer: 
+      childrenInLayer: 
+    - skillData: {fileID: 11400000, guid: 60e79551708ba204dbdf3fe12c8a863c, type: 2}
+      unlocked: 0
+      skillTreeLayer: 5
+      childrenInNextLayer: 
       childrenInLayer: 
   - skills:
     - skillData: {fileID: 11400000, guid: 8c16fc147aaa0ad45843d95a284bb9da, type: 2}
@@ -90,9 +110,25 @@ MonoBehaviour:
       skillTreeLayer: 6
       childrenInNextLayer: 00000000
       childrenInLayer: 
+    - skillData: {fileID: 11400000, guid: 1868bd83459801d4a913d0a11072bb77, type: 2}
+      unlocked: 0
+      skillTreeLayer: 6
+      childrenInNextLayer: 01000000
+      childrenInLayer: 
   - skills:
     - skillData: {fileID: 11400000, guid: 28e5e3b9129bb8f4eb6e8cb638fbefa1, type: 2}
       unlocked: 0
       skillTreeLayer: 7
+      childrenInNextLayer: 00000000
+      childrenInLayer: 
+    - skillData: {fileID: 11400000, guid: c0430b3011621f74582efd85cc0b8124, type: 2}
+      unlocked: 0
+      skillTreeLayer: 7
+      childrenInNextLayer: 00000000
+      childrenInLayer: 
+  - skills:
+    - skillData: {fileID: 11400000, guid: 28e5e3b9129bb8f4eb6e8cb638fbefa1, type: 2}
+      unlocked: 0
+      skillTreeLayer: 8
       childrenInNextLayer: 
       childrenInLayer: 

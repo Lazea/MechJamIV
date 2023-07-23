@@ -10,6 +10,7 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
     public GameObject pickupInfoParent;
 
     [Header("Carry Weapon UI Elements")]
+    public Image carryWeaponUI;
     public Image carryWeaponIcon;
     public TextMeshProUGUI carryWeaponName;
     public TextMeshProUGUI carryWeaponDamageStat;
@@ -20,6 +21,7 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
     public TextMeshProUGUI[] carryWeaponModifierStats;
 
     [Header("Ground Weapon UI Elements")]
+    public Image groundWeaponUI;
     public Image groundWeaponIcon;
     public TextMeshProUGUI groundWeaponName;
     public TextMeshProUGUI groundWeaponDamageStat;
@@ -47,6 +49,12 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
     public Sprite fireDmgIcon;
     public Sprite shockDmgIcon;
     public Sprite energyDmgIcon;
+
+    [Header("Rarity Colors")]
+    public Color commonColor;
+    public Color uncommonColor;
+    public Color rareColor;
+    public Color legendaryColor;
 
     [Header("Audio Settings")]
     public AudioSource audioSource;
@@ -111,56 +119,101 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
 
     public void SetCarryWeapon(WeaponData data)
     {
-        // TODO: Set icon
-
-        carryWeaponDamageStat.text = data.damageAmount.ToString();
-
-        float accuracy = 1f - Mathf.Clamp01(data.recoil / 0.075f);
-        accuracy *= 100f;
-        carryWeaponAccuracyStat.text = Mathf.RoundToInt(accuracy).ToString();
-
-        carryWeaponProjectileIcon.sprite = GetProjectileTypeSprite(data.projectileType);
-        carryWeaponFireModeIcon.sprite = GetFireModeSprite(data.fireMode);
-        carryWeaponDamageTypeIcon.sprite = GetDamageTypeSprite(data.damageType);
-
-        foreach(var mod in carryWeaponModifierStats)
-        {
-            mod.text = "";
-            mod.gameObject.SetActive(false);
-        }
-
-        int i = 0;
-        if(SetFireModeModifier(data.fireModeModifier, carryWeaponModifierStats[i]))
-            i++;
-
-        SetProjectileModifiers(data.projectileModifiers, carryWeaponModifierStats, i);
+        SetWeaponInfo(
+            data,
+            carryWeaponUI,
+            carryWeaponName,
+            carryWeaponDamageStat,
+            carryWeaponAccuracyStat,
+            carryWeaponModifierStats,
+            carryWeaponProjectileIcon,
+            carryWeaponFireModeIcon,
+            carryWeaponDamageTypeIcon);
     }
 
     public void SetGroundWeapon(WeaponData data)
     {
-        // TODO: Set icon
+        SetWeaponInfo(
+            data,
+            groundWeaponUI,
+            groundWeaponName,
+            groundWeaponDamageStat,
+            groundWeaponAccuracyStat,
+            groundWeaponModifierStats,
+            groundWeaponProjectileIcon,
+            groundWeaponFireModeIcon,
+            groundWeaponDamageTypeIcon);
+    }
 
-        carryWeaponDamageStat.text = data.damageAmount.ToString();
+    public void SetWeaponInfo(
+        WeaponData data,
+        Image weaponUI,
+        TextMeshProUGUI weaponNameText,
+        TextMeshProUGUI weaponDamageStat,
+        TextMeshProUGUI weaponAccuracyStat,
+        TextMeshProUGUI[] weaponModifierStats,
+        Image weaponProjectileIcon,
+        Image weaponFireModeIcon,
+        Image weaponDamageTypeIcon)
+    {
+        switch(data.rarity)
+        {
+            case Rarity.Common:
+                weaponNameText.text = "Common";
+                weaponUI.color = commonColor;
+                break;
+            case Rarity.Uncommon:
+                weaponNameText.text = "Unommon";
+                weaponUI.color = uncommonColor;
+                break;
+            case Rarity.Rare:
+                weaponNameText.text = "Rare";
+                weaponUI.color = rareColor;
+                break;
+            case Rarity.Legendary:
+                weaponNameText.text = "Legendary";
+                weaponUI.color = legendaryColor;
+                break;
+        }
 
-        float accuracy = 1f - Mathf.Clamp01(data.recoil / 0.075f);
+        int shotsPerSecond = Mathf.RoundToInt(1f / data.baseFireRate);
+        if (data.fireMode == FireMode.BurstFire)
+            shotsPerSecond *= 3;
+        switch (data.fireModeModifier)
+        {
+            case FireModeModifier.Cluster:
+                shotsPerSecond *= 6;
+                break;
+            case FireModeModifier.DualSplit:
+                shotsPerSecond *= 2;
+                break;
+            case FireModeModifier.TrippleSplit:
+                shotsPerSecond *= 3;
+                break;
+        }    
+        weaponDamageStat.text = (shotsPerSecond * data.baseDamage).ToString();
+
+        float accuracy = 1f - Mathf.Clamp01(data.baseAccuracy / 0.1f);
         accuracy *= 100f;
-        groundWeaponAccuracyStat.text = Mathf.RoundToInt(accuracy).ToString();
+        weaponAccuracyStat.text = string.Format(
+            "{0}%",
+            Mathf.RoundToInt(accuracy).ToString());
 
-        groundWeaponProjectileIcon.sprite = GetProjectileTypeSprite(data.projectileType);
-        groundWeaponFireModeIcon.sprite = GetFireModeSprite(data.fireMode);
-        groundWeaponDamageTypeIcon.sprite = GetDamageTypeSprite(data.damageType);
+        weaponProjectileIcon.sprite = GetProjectileTypeSprite(data.projectileType);
+        weaponFireModeIcon.sprite = GetFireModeSprite(data.fireMode);
+        weaponDamageTypeIcon.sprite = GetDamageTypeSprite(data.damageType);
 
-        foreach(var mod in groundWeaponModifierStats)
+        foreach (var mod in weaponModifierStats)
         {
             mod.text = "";
             mod.gameObject.SetActive(false);
         }
 
         int i = 0;
-        if(SetFireModeModifier(data.fireModeModifier, groundWeaponModifierStats[i]))
+        if (SetFireModeModifier(data.fireModeModifier, weaponModifierStats[i]))
             i++;
 
-        SetProjectileModifiers(data.projectileModifiers, groundWeaponModifierStats, i);
+        SetProjectileModifiers(data.projectileModifiers, weaponModifierStats, i);
     }
 
     public bool SetFireModeModifier(FireModeModifier fireModeModifier, TextMeshProUGUI modifierStat)
@@ -175,9 +228,9 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
                 modifierStat.gameObject.SetActive(true);
                 modifierStat.text = "Triple Split";
                 return true;
-            case FireModeModifier.ClusterFire:
+            case FireModeModifier.Cluster:
                 modifierStat.gameObject.SetActive(true);
-                modifierStat.text = "Cluster Fire";
+                modifierStat.text = "Cluster";
                 return true;
             case FireModeModifier.RampUpFire:
                 modifierStat.gameObject.SetActive(true);
@@ -243,7 +296,7 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
         {
             case ProjectileType.Ballistic:
                 return ballisticIcon;
-            case ProjectileType.EnergyBeam:
+            case ProjectileType.Plasma:
                 return plasmaIcon;
             case ProjectileType.Rocket:
                 return rocketIcon;
@@ -271,23 +324,26 @@ public class PickupMenuUI : Singleton<PickupMenuUI>
 
     public void SetPickupIndicatorFillBar(float value)
     {
-        audioSource.pitch = Mathf.Lerp(
+        if(pickupInfoParent.activeSelf)
+        {
+            audioSource.pitch = Mathf.Lerp(
             minTickPitch,
             maxTickPitch,
             value);
 
-        if(value >= 1f)
-        {
-            audioSource.PlayOneShot(interactTickClip);
-            tickCount = 0;
-        }
-        else
-        {
-            float tickInterval = 1f / totalTickCount;
-            if (value >= tickInterval * tickCount)
+            if (value >= 1f)
             {
                 audioSource.PlayOneShot(interactTickClip);
-                tickCount++;
+                tickCount = 0;
+            }
+            else
+            {
+                float tickInterval = 1f / totalTickCount;
+                if (value >= tickInterval * tickCount)
+                {
+                    audioSource.PlayOneShot(interactTickClip);
+                    tickCount++;
+                }
             }
         }
 

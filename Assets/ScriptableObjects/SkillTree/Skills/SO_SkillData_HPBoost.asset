@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SO_SkillData_HPBoost
   m_EditorClassIdentifier: 
   name: HP Boost
-  id: 12
+  id: 15
   icon: {fileID: 21300000, guid: 0457a8887b501064498812906c1ebef3, type: 3}
   description: +{0} to Max HP
-  cost: 250
+  cost: 150
   statBoosts:
   - statBoostType: 0
     isPercentage: 0
-    value: 15
+    value: 50

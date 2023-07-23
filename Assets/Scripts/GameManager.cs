@@ -24,20 +24,43 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     CardHand cardHand;
 
+    [Header("Difficulty Manage")]
+    public DifficultyManager difficultyManager;
+    public Map_Card activeCard;
+
     [Header("Events")]
     public UnityEvent onPause;
     public UnityEvent onResume;
 
-    private void Start()
+    private void Awake()
     {
-        player = GameObject.Find("Player");
-        IncrementStageCount();
-    }
+        base.Awake();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player = GameObject.Find("Player");
+
+        // Setup Scene with starting stage
+        if (playerData.stageCount == 0)
+        {
+            var card = difficultyManager.GetRandomCard(difficultyManager.startingCardPool);
+            BaseCardReader.SetActiveCard(
+                Map_Conditions.Instance,
+                card,
+                card.env);
+        }
+        Debug.LogFormat("Set active card {0}", activeCard.cardName);
+
+        // Init NPC Spawn
+        difficultyManager.ApplyNPCSpawnWaveSettings(activeCard);
+        difficultyManager.ApplyCardLootRarityToWeaponGenerator(activeCard);
+
+        IncrementStageCount();  // Stage count++
+
+        // Setup NPC spawn and card hand
+        var cardPool = difficultyManager.SelectCardPool(playerData.stageCount);
+        difficultyManager.ApplyCardPoolToHand(cardPool);
+
+        // Setup Map
+        Map_Conditions.Instance.SetSeedLengths();
     }
 
     public void TogglePause()

@@ -26,27 +26,7 @@ public class CardReader : BaseCardReader, ICardReader
     //HANDLE LEVEL ITERATION HERE--------------------------------------------------------------------------------------------------------------------------
     protected override void SelectCard()
     {
-        //swap tilesets from selected card, to held card
-        map.activeCard.cardName = card.cardName;
-        map.activeCard.tileset = card.tileset;
-        map.activeCard.env = env;
-
-        //add starting length values to held card. Prevent from taking length below default value;
-        if (map.startingLength + (map.activeCard.lengthMod + card.lengthMod) > map.startingLength)
-            map.activeCard.lengthMod += card.lengthMod;
-        else
-            map.activeCard.lengthMod = 0;
-
-        if (map.startingSecondary + (map.activeCard.secondaryMod + card.secondaryMod) > 0)
-            map.activeCard.secondaryMod += card.secondaryMod;
-        else
-            map.activeCard.secondaryMod = 0;
-
-        //FURTHER LEVEL ITERATION SHOULD GO RIGhT HERE!
-        //VV
-
-
-        //^^
+        BaseCardReader.SetActiveCard(map, card, env);
 
         //call on map to regenerate here
         map.newMap();
@@ -65,7 +45,7 @@ public class CardReader : BaseCardReader, ICardReader
         //string lSign = card.lengthMod + card.secondaryMod >= 0 ? "+" : "";
        // length.text = $"Length: {lSign}{card.lengthMod + card.secondaryMod}";
 
-        string weather = "clear";
+        string weather = "Clear";
 
         //if specific env is not specified, then grab env from tileset info
         if (card.env)

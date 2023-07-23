@@ -33,7 +33,6 @@ public class NPCsManager : Singleton<NPCsManager>
     public SOGESys.Events.TransformGameEvent NPCSpawned;
     public SOGESys.BaseGameEvent CombatComplete;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Grab all fuzzy spawn points
@@ -61,9 +60,9 @@ public class NPCsManager : Singleton<NPCsManager>
         // Pick a wave that has the most turrets in count
         NPCSpawnWave selectedTurretSpawnWave = sceneSpawnWaves[0];
         int waveTurretCount = 0;
-        foreach(var wave in sceneSpawnWaves)
+        foreach (var wave in sceneSpawnWaves)
         {
-            if(wave.turretCount > waveTurretCount)
+            if (wave.turretCount > waveTurretCount)
             {
                 waveTurretCount = wave.turretCount;
                 selectedTurretSpawnWave = wave;
@@ -76,11 +75,11 @@ public class NPCsManager : Singleton<NPCsManager>
         int maxTurretCount = Mathf.Min(
             shuffledSpawns.Length,
             selectedTurretSpawnWave.turretCount);
-        for(int i = 0; i < maxTurretCount; i++)
+        for (int i = 0; i < maxTurretCount; i++)
         {
             int j = UnityEngine.Random.Range(0, selectedTurretSpawnWave.turrets.Length);
             Vector3 playerPosition = Vector3.zero;
-            if(GameManager.Instance.Player != null)
+            if (GameManager.Instance.Player != null)
                 playerPosition = GameManager.Instance.Player.transform.position;
             if (Vector3.Distance(playerPosition, shuffledSpawns[i].position) >= minSpawnDistance * 0.5f)
                 SpawnNPC(
@@ -90,7 +89,7 @@ public class NPCsManager : Singleton<NPCsManager>
         }
 
         // Spawn initial wave
-        foreach(var unitSet in sceneSpawnWaves[waveIndex].enemyUnitSets)
+        foreach (var unitSet in sceneSpawnWaves[waveIndex].enemyUnitSets)
         {
             Debug.LogFormat("Spawning unit {0}", unitSet.enemyUnit.name);
             SpawnNPCsWave(unitSet.enemyUnit, unitSet.unitCount);
@@ -123,6 +122,10 @@ public class NPCsManager : Singleton<NPCsManager>
 
     public List<NPCSpawnWave> SelectSpawnWavesFromPool()
     {
+        Debug.LogFormat(
+            "Selecting {0} Spawn waves from a pool of {1} waves",
+            wavesCount,
+            spawnWavesPool.Length);
         List<NPCSpawnWave> waves = new List<NPCSpawnWave>();
 
         // TODO: Control save count and selection based on player stage count
@@ -149,6 +152,18 @@ public class NPCsManager : Singleton<NPCsManager>
 
     public GameObject SpawnNPC(GameObject npc, Vector3 position, List<GameObject> spawnedList = default)
     {
+        Ray ray = new Ray(position + Vector3.up * 100f, Vector3.down);
+        RaycastHit hit;
+        if(Physics.Raycast(
+            ray,
+            out hit,
+            100f,
+            LayerMask.GetMask("Default")))
+        {
+            if (Vector3.Distance(hit.point, position) > 4f)
+                return null;
+        }
+
         GameObject _npc = Instantiate(
             npc,
             position,

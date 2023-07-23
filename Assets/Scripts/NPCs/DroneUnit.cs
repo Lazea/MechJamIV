@@ -30,6 +30,7 @@ public class DroneUnit : BaseNPC
         targetInAim = IsTargetInAim();
 
         HandleDamageEffects();
+        HandleShieldFX();
 
         if (isStunned)
             Stop();

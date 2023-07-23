@@ -81,6 +81,13 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     protected Vector3 targetDir;
     public Vector3 TargetDir { get { return targetDir; } }
 
+    [Header("Mesh Renderers")]
+    public MeshRenderer[] meshRenderers;
+    public float shieldPowerOnHit = 0.15f;
+    public float shieldSmooth = 0.1f;
+    bool shieldBroken;
+    public ParticleSystem[] shieldBreakFX;
+
     [Header("Effects On Kill")]
     public GameObject[] effects;
     public GameObject[] debris;
@@ -137,6 +144,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         targetInAim = IsTargetInAim();
 
         HandleDamageEffects();
+        HandleShieldFX();
 
         if (isStunned)
             Stop();
@@ -209,8 +217,15 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         CombatUtils.ApplyDamage(damage, false, this, out damageDealt);
         ApplyDamageEffect(damage);
 
-        if (shield <= 0)
+        if (shield <= 0 && !shieldBroken)
+        {
+            shieldBroken = true;
             BreakShield();
+        }
+        else if(!shieldBroken)
+        {
+            PlayShieldHit();
+        }
 
         if (damageDealt != null)
         {
@@ -318,8 +333,7 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
     public virtual void BreakShield()
     {
         shield = 0;
-
-        // TODO: Call fx to provide feedback
+        PlayShieldBreak();
     }
 
     [ContextMenu("Kill Unit")]
@@ -480,6 +494,44 @@ public class BaseNPC : MonoBehaviour, IDamageable, IActor
         gunEulerAngles.x = Mathf.Clamp(gunEulerAngles.x, minLookAngle, maxLookAngle);
         gunBarrel.localRotation = Quaternion.Euler(gunEulerAngles);
     }
+
+    #region [Shield FX]
+    protected void HandleShieldFX()
+    {
+        float shieldPower = Mathf.Lerp(
+            GetShieldPower(),
+            0f,
+            shieldSmooth * Time.deltaTime);
+        SetShieldPower(shieldPower);
+    }
+
+    [ContextMenu("Shield Hit")]
+    public void PlayShieldHit()
+    {
+        SetShieldPower(shieldPowerOnHit);
+    }
+
+    [ContextMenu("Shield Break")]
+    public void PlayShieldBreak()
+    {
+        SetShieldPower(0f);
+        foreach (var fx in shieldBreakFX)
+            fx.Play();
+    }
+
+    float GetShieldPower()
+    {
+        if(meshRenderers.Length > 0)
+            return meshRenderers[0].material.GetFloat("_Shield_Power");
+        return 0f;
+    }
+
+    void SetShieldPower(float value)
+    {
+        foreach (var mr in meshRenderers)
+            mr.material.SetFloat("_Shield_Power", value);
+    }
+    #endregion
 
     private void OnDrawGizmos()
     {

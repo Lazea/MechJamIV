@@ -81,7 +81,7 @@ public class PlayerWeaponPickup : MonoBehaviour
                 Debug.LogFormat("Found pickup {0}", newPickup.gameObject.name);
 
                 PickupMenuUI.Instance.SetCarryWeapon(weapon.Data);
-                PickupMenuUI.Instance.SetGroundWeapon(newPickup.data);
+                PickupMenuUI.Instance.SetGroundWeapon(newPickup.Data);
 
                 PickupMenuUI.Instance.enabled = true;
             }
@@ -138,7 +138,7 @@ public class PlayerWeaponPickup : MonoBehaviour
         var currData = weapon.Data;
 
         // Set ground weapon as current weapon and generate mesh in hand
-        weapon.Data = pickup.data;
+        weapon.Data = pickup.Data;
         weapon.ResetWeaponData();
         Destroy(weaponBody.gameObject);
         var newWeapon = WeaponGenerator.Instance.GenerateWeapon(

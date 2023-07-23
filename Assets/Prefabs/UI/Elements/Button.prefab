@@ -75,7 +75,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282580997
+    rgba: 4294967295
   m_fontColor: {r: 0.019607844, g: 0, b: 0.2627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -335,5 +335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickClip: {fileID: 8300000, guid: 59b470e4d5dc34491b2c6dbb9319a015, type: 3}
+  clickReleaseClip: {fileID: 0}
   enterClip: {fileID: 8300000, guid: 7b67eab32a2784060aaeb2138d5ed129, type: 3}
   exitClip: {fileID: 0}
