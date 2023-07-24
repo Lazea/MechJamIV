@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardReader : BaseCardReader, ICardReader
+public class CardReader : BaseCardReader
 {
     protected Map_Conditions map;
     public Map_Card card;
@@ -33,7 +33,7 @@ public class CardReader : BaseCardReader, ICardReader
     }
 
     //read cards replaces the values in the HUD card readers, with a new card from the pool
-    public void ReadCard(Map_Card newCard)
+    public virtual void ReadCard(Map_Card newCard)
     {
         card = newCard;
 
