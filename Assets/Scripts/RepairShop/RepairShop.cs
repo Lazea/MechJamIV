@@ -13,6 +13,8 @@ public class RepairShop : MonoBehaviour
 
     string creditsTextFormat;
     public TextMeshProUGUI creditsText;
+    string creditsSavedTextFormat;
+    public TextMeshProUGUI creditsSavedText;
 
     bool repairLocked;
     string mechHPTextFormat;
@@ -32,6 +34,7 @@ public class RepairShop : MonoBehaviour
     void Start()
     {
         creditsTextFormat = creditsText.text;
+        creditsSavedTextFormat = creditsSavedText.text;
         mechHPTextFormat = mechHPText.text;
         mechRepairTextFormat = mechRepairText.text;
         creditsDepositTextFormat = creditsDepositText.text;
@@ -51,6 +54,9 @@ public class RepairShop : MonoBehaviour
     {
         creditsText.text = string.Format(
             creditsTextFormat,
+            playerData.credits.ToString("D6"));
+        creditsSavedText.text = string.Format(
+            creditsSavedTextFormat,
             playerData.creditsSaved.ToString("D6"));
     }
 
@@ -131,7 +137,7 @@ public class RepairShop : MonoBehaviour
             return;
 
         int remaining = playerData.credits - pay;
-        playerData.creditsSaved = remaining;
+        playerData.creditsSaved += remaining;
         playerData.credits = 0;
 
         depositLocked = true;

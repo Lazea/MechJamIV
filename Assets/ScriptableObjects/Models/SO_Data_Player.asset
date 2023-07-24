@@ -16,7 +16,7 @@ MonoBehaviour:
   health: 750
   maxShield: 150
   shield: 150
-  resetHealthOnStart: 1
+  resetHealthOnStart: 0
   lateralThrustCooldown: 0.8
   lateralSpeedBoostScaler: 1.5
   jumpForce: 18
@@ -62,8 +62,8 @@ MonoBehaviour:
     projectileType: 0
     projectileModifiers: 
     spawnOffset: 0
-    damageType: 0
-    baseDamage: 18
+    damageType: 2
+    baseDamage: 14
     shieldMultiplier: 1
     fireMode: 0
     fireModeModifier: 0
@@ -80,8 +80,8 @@ MonoBehaviour:
   shockChance: 0.08
   shockDuration: 2.1
   legendaryDropChance: 0.005
-  credits: 0
-  creditsSaved: 0
-  kills: 0
-  stageCount: 0
-  playTime: 0
+  credits: 4
+  creditsSaved: 96
+  kills: 8
+  stageCount: 4
+  playTime: 112.471306
