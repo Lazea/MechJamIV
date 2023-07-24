@@ -8,7 +8,7 @@ public static class GameSettings
     public static int guidBufferCapacity = 10;
 
     [SerializeField]
-    public static float xMouseSensitivity = 50f;
+    public static float xMouseSensitivity = 33f;
     [SerializeField]
-    public static float yMouseSensitivity = 50f;
+    public static float yMouseSensitivity = 33f;
 }
