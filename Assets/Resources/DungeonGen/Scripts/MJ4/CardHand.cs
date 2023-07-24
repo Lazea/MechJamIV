@@ -11,7 +11,7 @@ public class CardHand : MonoBehaviour
 
     public GameObject hand;
 
-    public BaseCardReader[] cards;
+    public CardReader[] cards;
 
     public Map_Card[] cardPool;
 
@@ -91,7 +91,7 @@ public class CardHand : MonoBehaviour
         {
             int r = Random.Range(0, cardPool.Length);
 
-            ICardReader card = cards[i].GetComponent<ICardReader>();
+            CardReader card = cards[i].GetComponent<CardReader>();
 
             card.ReadCard(cardPool[r]);
 /*
