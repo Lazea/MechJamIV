@@ -72,6 +72,8 @@ public class SceneTransitionUI : Singleton<SceneTransitionUI>
 
         ui.StartCoroutine(ui.SwapPanel(mDirector, gameScreen));
 
+        yield return new WaitForSecondsRealtime(1);
+
         EnteredGameplay();
     }
     

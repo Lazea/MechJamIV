@@ -39,6 +39,7 @@ public class ExitController : MonoBehaviour
         {
             Debug.Log("[ENTER] Exit bounds");
             cards.isShowing = true;
+            cards.onCardsShowing.Invoke();
             //StartCoroutine(cards.showCards());
 
             uiA.SwapIstant(sceneUI.cardHand);
@@ -47,6 +48,8 @@ public class ExitController : MonoBehaviour
         {
             Debug.Log("[EXIT] Exit bounds");
             cards.isShowing = false;
+            cards.onCardsHiding.Invoke();
+
             uiA.SwapIstant(sceneUI.gameScreen);
             //StartCoroutine(cards.showCards());
         }

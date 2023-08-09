@@ -34,7 +34,7 @@ public class CardHand : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-
+        /*
         if(isShowing != _isShowing)
         {
             _isShowing = isShowing;
@@ -46,7 +46,7 @@ public class CardHand : MonoBehaviour
             {
                 onCardsHiding.Invoke();
             }
-        }
+        }*/
     }
 
     public void PickCards()
