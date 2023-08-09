@@ -1,6 +1,6 @@
 public class RepairShopCard : CardReader
 {
-    protected override void SelectCard()
+   public void LoadRepairShop()
     {
         BaseCardReader.SetActiveCard(map, card, env);
 

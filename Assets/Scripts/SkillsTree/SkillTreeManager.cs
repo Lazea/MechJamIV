@@ -394,7 +394,7 @@ public class SkillTreeManager : MonoBehaviour
                 break;
         }
 
-        string colorText = (playerData.creditsSaved < skill.skillData.cost) ? "red" : "green";
+        string colorText = (playerData.creditsSaved < skill.skillData.cost) ? "#B0273E" : "#49DCFF";
         skillCostText.text = string.Format(
             "Credits Cost: <color={0}>{1}</color>/{2}",
             colorText,

@@ -24,7 +24,7 @@ public class CardReader : BaseCardReader
     }
 
     //HANDLE LEVEL ITERATION HERE--------------------------------------------------------------------------------------------------------------------------
-    protected override void SelectCard()
+    public void PickCard()
     {
         BaseCardReader.SetActiveCard(map, card, env);
 

@@ -27,20 +27,13 @@ public class CardHand : MonoBehaviour
     void Start()
     {
         map = FindObjectOfType<Map_Conditions>();
-        hand.SetActive(false);
+        //hand.SetActive(false);
         //StartCoroutine(pickCards());
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        //if (Input.GetKeyDown(KeyCode.I))
-        //{
-        //    isShowing = !isShowing;
-
-        //    if (isShowing)
-        //        StartCoroutine(showCards());
-        //}
 
         if(isShowing != _isShowing)
         {
@@ -52,30 +45,6 @@ public class CardHand : MonoBehaviour
             else
             {
                 onCardsHiding.Invoke();
-            }
-        }
-
-        int cardsToShow = 0;
-        foreach (var c in cards)
-            cardsToShow += (c.isShowing) ? 1 : 0;
-
-        if(cardsToShow > 1)
-        {
-            int count = 0;
-            for (int i = 0; i < cards.Length; i++)
-            {
-                if (cards[i].isShowing)
-                {
-                    float x = 1f - ((count / (cardsToShow - 1f)) * 2f);
-                    float y = -1f * Mathf.Pow(x, 2f) + 1f;
-
-                    RectTransform cardRect = cards[i].GetComponent<RectTransform>();
-                    cardRect.localPosition = new Vector3(
-                        x * width,
-                        y * height,
-                        0f);
-                    count++;
-                }
             }
         }
     }
@@ -94,55 +63,11 @@ public class CardHand : MonoBehaviour
             CardReader card = cards[i].GetComponent<CardReader>();
 
             card.ReadCard(cardPool[r]);
-/*
-            if (card == null)
-                continue;
-
-            //r = Random.Range(0, (int)(cardPool.Length));
-
-            
-
-            
-            if (!containsCard(cardPool[r]))
-            {
-                rKeep = r;
-                r = Random.Range(0, 3);
-            }
-            else
-            {
-                while (containsCard(cardPool[r]))
-                {
-                    r++;
-                    r = r % cardPool.Length;
-
-                    yield return null;
-                }
-            }*/
         }
 
         yield return null;
     }
-
-    bool containsCard(Map_Card card)
-    {
-        bool test = false;
-
-        foreach(BaseCardReader c in cards)
-        {
-            CardReader _c = c.GetComponent<CardReader>();
-            if (_c != null)
-            {
-                if (_c.card == card)
-                    test = true;
-            }
-        }
-
-        if (card != map.activeCard)
-            test = true;
-
-        return test;
-    }
-
+    /*
     public IEnumerator showCards()
     {
         float waitTime = .15f;
@@ -172,5 +97,5 @@ public class CardHand : MonoBehaviour
         hand.SetActive(false);
     }
 
-
+    */
 }

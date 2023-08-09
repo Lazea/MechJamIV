@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class GameManager : Singleton<GameManager>
 {
     public PlayerData playerData;
+    SceneTransitionUI sceneUI;
 
     GameObject player;
     public GameObject Player { get { return player; } }
@@ -35,6 +36,8 @@ public class GameManager : Singleton<GameManager>
     private void Awake()
     {
         base.Awake();
+
+        sceneUI = FindObjectOfType<SceneTransitionUI>();
 
         player = GameObject.Find("Player");
 
@@ -80,6 +83,8 @@ public class GameManager : Singleton<GameManager>
 
     public void PauseGame()
     {
+        sceneUI.StartPause();
+        
         if (cardHand.isShowing)
             return;
 
@@ -91,10 +96,14 @@ public class GameManager : Singleton<GameManager>
 
         Time.timeScale = 0f;
         onPause.Invoke();
+
+        
     }
 
     public void ResumeGame() 
     {
+        sceneUI.ResumeGame();
+
         Time.timeScale = 1f;
 
         AudioSettingsManager.Instance.SetVolume("MusicVolumeParam", 1f);
