@@ -33,12 +33,14 @@ public class MouseLocker : MonoBehaviour
 
     public void LockMouse()
     {
+        Debug.Log("hide");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void UnlockMouse()
     {
+        Debug.Log("show");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
