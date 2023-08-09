@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildHideUI : MonoBehaviour
 {
+    public bool hideInstead = true;
     public bool destroyOnStandalone = false;
     public bool destroyOnEditor = false;
     public bool destroyOnWebGL = true;
@@ -13,13 +14,22 @@ public class BuildHideUI : MonoBehaviour
     {
 #if UNITY_STANDALONE
         if (destroyOnStandalone)
-            Destroy(gameObject);
+            if(hideInstead)
+                gameObject.SetActive(false);
+            else
+                Destroy(gameObject);
 #elif UNITY_EDITOR
-        if(destroyOnEditor)
-            Destroy(gameObject);
+        if (destroyOnEditor)
+            if (hideInstead)
+                gameObject.SetActive(false);
+            else
+                Destroy(gameObject);
 #elif UNITY_WEBGL
         if(destroyOnWebGL)
-            Destroy(gameObject);
+            if(hideInstead)
+                gameObject.SetActive(false);
+            else
+                Destroy(gameObject);
 #endif
     }
 }

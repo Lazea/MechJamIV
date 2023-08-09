@@ -9,6 +9,7 @@ public class NPCsManager : Singleton<NPCsManager>
 {
     public Transform npcsParent;
 
+
     [Header("Waves Pool")]
     public NPCSpawnWave[] spawnWavesPool;
 
@@ -35,6 +36,7 @@ public class NPCsManager : Singleton<NPCsManager>
 
     void Start()
     {
+
         // Grab all fuzzy spawn points
         fuzzySpawnPoints = new List<Transform>();
         var spawns = GameObject.FindObjectsOfType<GameObject>()
@@ -114,6 +116,8 @@ public class NPCsManager : Singleton<NPCsManager>
             else if(!combatComplete)
             {
                 Debug.Log("All waves completed. Combat is Done");
+                
+
                 combatComplete = true;
                 CombatComplete.Raise();
             }

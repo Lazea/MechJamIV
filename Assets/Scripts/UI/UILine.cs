@@ -7,7 +7,7 @@ public class UILine : MaskableGraphic
 {
     public Vector2 startPoint;
     public Vector2 endPoint;
-    public float thickness = 1f;
+    public float thickness = .25f;
 
     protected override void OnPopulateMesh(VertexHelper vh)
     {

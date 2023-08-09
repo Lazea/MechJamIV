@@ -6,26 +6,38 @@ using SOGameEventSystem;
 
 public class SceneTransitionUI : Singleton<SceneTransitionUI>
 {
+    UI_Aesthetics ui;
+    UI_MenuDirector mDirector;
+
+    public UI_HeadElement messageScreen;
+    public UI_HeadElement gameScreen;
+    public UI_HeadElement pauseScreen;
+    public UI_HeadElement cardHand;
+    public CanvasGroup mGroup;
+    public CanvasGroup dGroup;
+
     [Header("Mission Intro")]
-    public TMPro.TextMeshProUGUI missionIntroText;
-    [TextAreaAttribute]
-    public string missionIntroTextFormat;
+    public UI_SubElement messageTitle;
+    public UI_SubElement messageBody;
 
     [Header("Player Death")]
-    public TMPro.TextMeshProUGUI deathText;
     [TextAreaAttribute]
     public string deathTextFormat;
 
     [Header("Events")]
     public BaseGameEvent onGameplayReady;
 
-    Animator anim;
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        ui = FindObjectOfType<UI_Aesthetics>();
+        mDirector = GetComponent<UI_MenuDirector>();
 
         SetMissionIntroText(Map_Conditions.Instance.activeCard.cardName);
+
+        messageTitle.t.color = Color.white;
+        ui.StartCoroutine(ui.SwapPanel(mDirector, messageScreen));
+        StartCoroutine(FadeIn());
     }
 
     // Update is called once per frame
@@ -33,6 +45,7 @@ public class SceneTransitionUI : Singleton<SceneTransitionUI>
     {
         if(GameManager.Instance.PlayerIsDead)
         {
+            /*
             if(anim.GetCurrentAnimatorStateInfo(0).IsName("Gameplay"))
             {
                 SetDeathText(
@@ -40,9 +53,28 @@ public class SceneTransitionUI : Singleton<SceneTransitionUI>
                 GameManager.Instance.playerData.credits,
                 GameManager.Instance.playerData.creditsSaved);
                 anim.SetTrigger("PlayerDeath");
-            }
+            }*/
         }
     }
+
+    IEnumerator FadeIn()
+    {
+        ui.StartCoroutine(ui.DisplayText(messageTitle, ui.messageRead, 1));
+        ui.StartCoroutine(ui.DisplayText(messageBody, ui.messageRead, 2));
+
+        ui.StartCoroutine(ui.Fade(mGroup, true, 1));
+
+        yield return new WaitForSecondsRealtime(5);
+
+        ui.StartCoroutine(ui.Fade(mGroup, false, 1));
+
+        yield return new WaitForSecondsRealtime(1);
+
+        ui.StartCoroutine(ui.SwapPanel(mDirector, gameScreen));
+
+        EnteredGameplay();
+    }
+    
 
     public void EnteredGameplay()
     {
@@ -54,23 +86,51 @@ public class SceneTransitionUI : Singleton<SceneTransitionUI>
         ScenesManager.Instance.LoadScene(1);
     }
 
-    public void SetDeathText(
-        int killCount,
-        int credits,
-        int creditsDeposited)
+    IEnumerator DeathEvent()
     {
-        deathText.text = string.Format(
-            deathTextFormat,
-            killCount,
-            credits,
-            creditsDeposited);
+        messageTitle.t.text = "";
+        messageBody.t.text = "";
+
+        ui.StartCoroutine(ui.SwapPanel(mDirector, messageScreen));
+
+        ui.StartCoroutine(ui.Fade(dGroup, true, 5));
+
+        messageTitle.t.color = ui.warnColor;
+        messageTitle.t.text = "YOU DIED";
+        messageBody.t.text = string.Format(deathTextFormat, GameManager.Instance.playerData.kills, GameManager.Instance.playerData.credits, GameManager.Instance.playerData.creditsSaved);
+
+        ui.StartCoroutine(ui.DisplayText(messageTitle, ui.messageRead, 2));
+        ui.StartCoroutine(ui.DisplayText(messageBody, ui.messageRead, 3));
+
+        
+
+        yield return new WaitForSecondsRealtime(10);
+
+        DeathFinished();
     }
 
-    public void SetMissionIntroText(
-        string missionTitle)
+    public void StartDeathEvent()
     {
-        missionIntroText.text = string.Format(
-            missionIntroTextFormat,
-            missionTitle);
+        StartCoroutine(DeathEvent());
+    }
+
+    public void StartPause()
+    {
+        
+        ui.StartCoroutine(ui.SwapPanel(mDirector, pauseScreen));
+    }
+
+    public void ResumeGame()
+    {
+        ui.StartCoroutine(ui.SwapPanel(mDirector, gameScreen));
+    }
+
+    public void SetMissionIntroText(string missionTitle)
+    {
+        messageTitle.t.text = missionTitle;
+
+        //replace later
+        messageBody.t.text = "destroy all enemies to proceed";
+
     }
 }

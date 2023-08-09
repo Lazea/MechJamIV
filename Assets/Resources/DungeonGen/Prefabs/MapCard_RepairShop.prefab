@@ -23,7 +23,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122665391722905975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -73,7 +73,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 45}
-  m_SizeDelta: {x: 299, y: 50}
+  m_SizeDelta: {x: 287, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &122665391791901769
 CanvasRenderer:
@@ -105,8 +105,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Repair Shop
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 41301cb8e960ebc44b5bbeef62bc1971, type: 2}
-  m_sharedMaterial: {fileID: 6710025684479923757, guid: 41301cb8e960ebc44b5bbeef62bc1971,
+  m_fontAsset: {fileID: 11400000, guid: cb7d98a8b7ca9574c87e37446734752c, type: 2}
+  m_sharedMaterial: {fileID: -8081470068447986793, guid: cb7d98a8b7ca9574c87e37446734752c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -131,13 +131,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.85
-  m_fontSizeBase: 48
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 24
   m_fontSizeMax: 58
-  m_fontStyle: 19
+  m_fontStyle: 16
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -183,9 +183,10 @@ GameObject:
   m_Component:
   - component: {fileID: 122665392067747810}
   - component: {fileID: 122665392067747808}
-  - component: {fileID: 122665392067747809}
   - component: {fileID: -4365794599761748823}
   - component: {fileID: 7733962009374572001}
+  - component: {fileID: 7553441993507120017}
+  - component: {fileID: 1420296418}
   m_Layer: 5
   m_Name: MapCard_RepairShop
   m_TagString: Untagged
@@ -223,7 +224,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122665392067747811}
   m_CullTransparentMesh: 1
---- !u!114 &122665392067747809
+--- !u!114 &-4365794599761748823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122665392067747811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf593b09b40a6b41bd6a44de295b5f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShowing: 0
+  card: {fileID: 0}
+  missionName: {fileID: 0}
+  loc: {fileID: 0}
+  conditions: {fileID: 0}
+--- !u!225 &7733962009374572001
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122665392067747811}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &7553441993507120017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,8 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.16313633, g: 0.31663215, b: 0.735849, a: 0.8352941}
+  m_Material: {fileID: 2100000, guid: 9d0853939df70004993fa54c0b232f8f, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -253,7 +283,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-4365794599761748823
+--- !u!114 &1420296418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,23 +292,97 @@ MonoBehaviour:
   m_GameObject: {fileID: 122665392067747811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf593b09b40a6b41bd6a44de295b5f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ee30c4847576e447af87a5be061f4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShowing: 0
-  flashColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 0.8352941}
---- !u!225 &7733962009374572001
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122665392067747811}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  menu: {fileID: 0}
+  t: {fileID: 0}
+  r: {fileID: 0}
+  img: {fileID: 0}
+  group: {fileID: 0}
+  clickClip: {fileID: 0}
+  startTextColor: {r: 0, g: 0, b: 0, a: 0}
+  startScale: {x: 0, y: 0, z: 0}
+  startTextPos: {x: 0, y: 0, z: 0}
+  startIMGColor: {r: 0, g: 0, b: 0, a: 0}
+  holdIMGColor: {r: 0.019607844, g: 0.06666667, b: 0.08627451, a: 0.80784315}
+  isSliding: 0
+  isFlashing: 0
+  isScaling: 0
+  isBlinking: 0
+  isReading: 0
+  elementLocked: 0
+  holdUntilRelease: 0
+  isActive: 0
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4365794599761748823}
+        m_TargetAssemblyTypeName: RepairShopCard, Assembly-CSharp
+        m_MethodName: LoadRepairShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onAwake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1420296418}
+        m_TargetAssemblyTypeName: UI_SubElement, Assembly-CSharp
+        m_MethodName: StartFade
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1420296418}
+        m_TargetAssemblyTypeName: UI_SubElement, Assembly-CSharp
+        m_MethodName: StartScale
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UI_Aesthetics, Assembly-CSharp
+        m_MethodName: PlayHover
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1420296418}
+        m_TargetAssemblyTypeName: UI_SubElement, Assembly-CSharp
+        m_MethodName: FlashIMG
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &122665392840345742
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,8 +451,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Make repairs to your mech and safely deposit credits.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4d1e68cb39b1fa44a82bf9a8e070879d, type: 2}
+  m_sharedMaterial: {fileID: 6710025684479923757, guid: 4d1e68cb39b1fa44a82bf9a8e070879d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -372,10 +477,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.05
-  m_fontSizeBase: 28
+  m_fontSize: 19.4
+  m_fontSizeBase: 19.4
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 28
   m_fontStyle: 0
